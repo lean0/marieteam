@@ -728,7 +728,7 @@ a.w3ls-button-agile:hover {
 }
 /*-- stats --*/
 section.stat_w3l{
-	background: url('https://images.pexels.com/photos/813011/pexels-photo-813011.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') no-repeat;
+	background: url('../images/ship.jpg') no-repeat;
 	background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
