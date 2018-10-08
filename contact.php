@@ -56,33 +56,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <h3 class="agile-title text-uppercase"></h3>
         <span class="w3-line"></span>
 		<div class="w3ls-titles text-center mb-5">
-				<h3 class="title"><span class="hdng">Contact  </span>us</h3>
+				<h3 class="title"><span class="hdng">Contactez nous </span>nous</h3>
 				<span class="btmspn">
-					<i class="fas fa-bus"></i>
+					<i class="fas fa-ship"></i>
 				</span>
-				<p class="mt-2 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur dolorum, voluptatum possimus temporibus vel ab, nesciunt quod!</p>
+				<p class="mt-2 mx-auto">Contactez nous pour plus de renseignements !</p>
 			</div>
         <div class="row py-md-5 py-sm-3">
             <div class="col-md-6">
                 <form id="contact-form" name="myForm" class="form" action="#" onsubmit="return validateForm()" method="POST">
                     <div class="form-group">
                         <label class="form-label" id="nameLabel" for="name"></label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom" tabindex="1">
                     </div>
                     <div class="form-group">
                         <label class="form-label" id="emailLabel" for="email"></label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" tabindex="2">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" tabindex="2">
                     </div>
                     <div class="form-group">
                         <label class="form-label" id="subjectLabel" for="subject"></label>
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Objet" tabindex="3">
                     </div>
                     <div class="form-group">
                         <label class="form-label" id="messageLabel" for="message"></label>
-                        <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Your message" tabindex="4"></textarea>
+                        <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Votre message" tabindex="4"></textarea>
                     </div>
                     <div class="text-center mt-5">
-                        <button type="submit" class="serv_bottom btn btn-border btn-lg w-100">Send Message</button>
+                        <button type="submit" class="serv_bottom btn btn-border btn-lg w-100">Envoyer</button>
                     </div>
                 </form>
             </div>

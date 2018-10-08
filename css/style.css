@@ -1,4 +1,4 @@
-/*--Author: W3Layouts
+ /*--Author: W3Layouts
 	Author URL: http://w3layouts.com
 	License: Creative Commons Attribution 3.0 Unported
 	License URL: http://creativecommons.org/licenses/by/3.0/
@@ -156,7 +156,7 @@ header h1 a span {
 .navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
-	color: #b84373;
+	color: #42c8f4;
 	background:transparent;
 	border-radius: 5px;
 }
@@ -171,7 +171,7 @@ header h1 a span {
 .w3ls-btn {
     letter-spacing: 1px;
     font-weight: 600;
-    background: #b84373;
+    background: #42c8f4;
 }
 
 /*-- //header --*/
@@ -208,7 +208,7 @@ li.breadcrumb-item a {
 }
 
 .breadcrumb-item.active {
-	color: #b84373;
+	color: #42c8f4;
 	font-weight: bold;
 	font-size: 0.9em;
 	letter-spacing: 1px;
@@ -431,7 +431,7 @@ li.breadcrumb-item a {
 	height: 15px;
 	width: 15px;
 	display: inline-block;
-	background: #b84373;
+	background: #42c8f4;
 	border: 2px solid #ffffff;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
@@ -491,14 +491,14 @@ p.sub-para {
 	font-size: 16px;
 	font-weight: 600;
 	letter-spacing: 1px;
-	border-color:#b84373;
-	background: #b84373;
+	border-color:#42c8f4;
+	background: #42c8f4;
 }
 
 .slider-info a:hover {
 	color: #fff;
-	background: #b34fa9;
-	border-color: #b34fa9;
+	background: #42c8f4;
+	border-color: #42c8f4;
 }
 
 /* //text slider */
@@ -535,7 +535,7 @@ p.sub-para {
 
 .agileits-services-grids i {
     font-size: 2em;
-    color: #b84373;
+    color: #42c8f4;
     text-align: center;
 }
 
@@ -546,7 +546,7 @@ p.sub-para {
     display: inline-block;
 }
 a.service-btn {
-    background: #b84373;
+    background: #42c8f4;
     color: #fff;
     font-size: 14px;
     text-transform: capitalize;
@@ -655,7 +655,7 @@ h3.title {
     font-size: 42px;
 }
 .w3ls-titles i {
-    color: #b84373;
+    color: #42c8f4;
     font-size: 26px;
     margin-top: 5px;
 }
@@ -664,7 +664,7 @@ span.btmspn {
 }
 span.btmspn:before {
     content: " ";
-    background: #b84373;
+    background: #42c8f4;
     width: 64px;
     height: 2px;
     position: absolute;
@@ -673,7 +673,7 @@ span.btmspn:before {
 }
 span.btmspn:after {
     content: " ";
-    background: #b84373;
+    background: #42c8f4;
     width: 64px;
     height: 2px;
     position: absolute;
@@ -681,7 +681,7 @@ span.btmspn:after {
     right: -75px;
 }
 span.hdng {
-    color: #b84373;
+    color: #42c8f4;
 }
 .banner-bottom {
    background: url(../images/bg2.jpg) no-repeat;
@@ -723,7 +723,7 @@ a.w3ls-button-agile {
 }
 a.w3ls-button-agile:hover {
     letter-spacing: 3px;
-    background: #b84373;
+    background: #42c8f4;
     color: #fff !important;
 }
 /*-- stats --*/
@@ -754,7 +754,7 @@ section.stat_w3l{
 }
 .stats_info i {
     font-size: 2.3em;
-    color: #b84373;
+    color: #42c8f4;
     margin: 0;
 }
 .stats_bottom_grid_left img {
@@ -875,7 +875,7 @@ section.stat_w3l{
 }
 
 button.btn1 {
-    color:#b84373;
+    color:#42c8f4;
     border: none;
     padding: 10px 0;
     outline: none;
@@ -936,7 +936,7 @@ ul.links li a:hover{
 	background:#212121;
 }
 h6.text-left a,.cpy-right p a{
-    color: #b84373;
+    color: #42c8f4;
 }
 /*--//footer--*/
 .typo-wthree h4 {
@@ -980,7 +980,7 @@ h6.text-left a,.cpy-right p a{
 	-webkit-box-shadow: none;
 	border-bottom: 1px;
 	border-style: none none solid none;
-	border-color:#b84373;
+	border-color:#42c8f4;
 }
 
 .form-group .form-control:focus {
@@ -1079,18 +1079,18 @@ label {
 
 /* //contact */
 .serv_bottom {
-    background: #b84373;
+    background: #42c8f4;
 	color:#fff;
 }
 .serv_bottom:hover {
-	 background: #b84373;
+	 background: #42c8f4;
 	color:#fff;
 }
 h5.card-title {
     font-size: 22px;
     letter-spacing: 2px;
     margin-bottom: 1em;
-    color:#b84373;
+    color:#42c8f4;
     font-weight: 600;
 }
 p.card-text {
@@ -1102,7 +1102,7 @@ p.card-text {
 .card-body.w3ls-card a {
     font-size: 14px;
     padding: 8px 18px;
-    background: #b84373;
+    background: #42c8f4;
     outline: none;
     border: none;
     display: inline-block;
@@ -1110,7 +1110,7 @@ p.card-text {
 }
 /*-- welcome --*/
 .welcome-left h3 {
-    color:#b84373;
+    color:#42c8f4;
     font-size: 36px;
     letter-spacing: 1px;
 }
@@ -1144,7 +1144,7 @@ p.card-text {
     transition: .5s all;
 }
 .team h4 {
-    color: #b84373;
+    color: #42c8f4;
     font-size: 22px;
     letter-spacing: 2px;
     font-weight: 600;
@@ -1161,7 +1161,7 @@ p.card-text {
 }
 
 .social-lsicon a:hover {
-    color: #b84373;
+    color: #42c8f4;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
