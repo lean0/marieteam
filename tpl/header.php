@@ -28,12 +28,12 @@
                             </a>
                         </li>
                         <li class="nav-item  mr-lg-3">
-                            <a class="nav-link" href="about.php">A propos</a>
+                            <a class="nav-link" href="about.php">À propos</a>
                         </li>
                         <li class="nav-item active dropdown mr-lg-3">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
-                                Dropdown
+                                menu déroulant
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="services.php">Service</a>
