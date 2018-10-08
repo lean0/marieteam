@@ -728,8 +728,8 @@ a.w3ls-button-agile:hover {
 }
 /*-- stats --*/
 section.stat_w3l{
-	    background: url(../images/bg1.jpg) no-repeat;
-    background-size: cover;
+	background: url('../images/ship.jpg') no-repeat;
+	background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
