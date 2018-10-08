@@ -90,7 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				</div>
 				<div class="col-md-3 button">
-					<a href="about.html" class="w3ls-button-agile">Réserver
+					<a href="about.php " class="w3ls-button-agile">Réserver
 						<i class="fas fa-hand-point-right"></i>
 					</a>
 				</div>

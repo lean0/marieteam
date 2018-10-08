@@ -5,8 +5,7 @@
                         <div class="col-md-6 callnumber text-left">
                         </div>
                         <div class="col-md-6 callnumber text-right">
-                            <li class="mr-3">Numéro : +0666666666</li>
-                            <li>Newyork : +4584567890</li>
+                            <li class="mr-3">Numéro : +33622457859</li>
                         </div>
                     </div>
                 </div>
