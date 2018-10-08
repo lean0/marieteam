@@ -35,63 +35,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- banner -->
     <div class="inner-banner">
         <!-- header -->
-        <header>
-			  <div class="top-head py-3">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 callnumber text-left">
-                            </div>
-                            <div class="col-md-6 callnumber text-right">
-                                <li class="mr-3">Australia : +5687567890</li>
-								<li>Newyork : +4584567890</li>
-                            </div>
-                         </div>
-                    </div>
-               </div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
-                <h1>
-                    <a class="navbar-brand" href="index.html">
-                        Expedition
-                    </a>
-                </h1>
-                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-lg-auto text-center">
-                        <li class="nav-item mr-lg-3">
-                            <a class="nav-link" href="index.html">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item  mr-lg-3">
-                            <a class="nav-link" href="about.html">about</a>
-                        </li>
-                        <li class="nav-item active dropdown mr-lg-3">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="services.html">Services</a>
-                                <a class="dropdown-item" href="gallery.html">Gallery</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="typo.html">Typography</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">contact</a>
-                        </li>
-                        <li>
-                            <button type="button" class="btn serv_bottom ml-lg-5 w3ls-btn text-white" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
-                                Login
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <?php
+        require("tpl/header.php");
+
+        ?>
+
         <!-- //header -->
     </div>
     <!-- //banner -->
@@ -340,74 +288,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- //typography -->
 
    <!--footer -->
-<footer>
-<section class="footer footer_w3layouts_section_1its py-5">
-	<div class="container py-md-4">
-		<div class="row footer-top">
-			<div class="col-lg-4 col-md-6 col-sm-6 footer-grid_section_1its_w3">
-				<div class="footer-title">
-					<h3>About Us</h3>
-				</div>
-				<div class="footer-text">
-					<p>Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at tellus.
-						Nulla porttitor accumsana tincidunt. Vestibulum ante ipsum primis tempus convallis.</p>
-					
-				</div>
-			</div>
-			
-			<div class="col-lg-3 col-md-6 col-sm-3 footer-grid_section_1its_w3">
-				<div class="footer-title">
-					<h3>Useful Links</h3>
-				</div>
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-5 col-md-12 col-sm-12 footer-grid_section_1its_w3">
-				<div class="footer-title">
-					<h3>Subscribe</h3>
-				</div>
-				<div class="footer-text">
-					<p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
-					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Enter your email..." required="">
-						<button class="btn1"><i class="fa fa-envelope" aria-hidden="true"></i></button>
-						<div class="clearfix"> </div>
-					</form>
-				</div>
-				<ul class="social_section_1info">
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-google-plus-g"></i></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></i></a></li>
-					</ul>
-			</div>
-		</div>
-		<div class="row mt-md-5">
-			<div class="col-md-4 phn_w3l">
-				<h6 class="text-btm text-white">Phone : +2534894364</h6>
-			</div>
-			<div class="col-md-4 fax_w3l">
-				<h6 class="text-btm text-white">Fax : +2534894364</h6>
-			</div>
-			<div class="col-md-4 ema-w3l">
-				<h6 class="text-btm text-white">Email : <a href="mailto:info@example.com">info@example.com</a></h6>
-			</div>
-		</div>
-	</div>
-</section>
-</footer>
-<!-- //footer -->
-
-    <div class="cpy-right text-center  py-3">
-        <p class="text-white">© 2018 Expedition. All rights reserved | Design by
-            <a href="http://w3layouts.com" class="text-white"> W3layouts.</a>
-        </p>
-    </div>
+    <?php
+    require("tpl/footer.php");
+    ?>
     <!-- //footer -->
 
     <!-- login  -->

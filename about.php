@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <title>Expedition A Travel Category Bootstrap Responsive website Template | Contact :: w3layouts</title>
+    <title>Expedition A Travel Category Bootstrap Responsive website Template | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="keywords" content="Expedition Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -35,63 +35,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- banner -->
     <div class="inner-banner">
         <!-- header -->
-        <header>
-			  <div class="top-head py-3">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 callnumber text-left">
-                            </div>
-                            <div class="col-lg-6 callnumber text-right">
-                                <li class="mr-3">Australia : +5687567890</li>
-								<li>Newyork : +4584567890</li>
-                            </div>
-                         </div>
-                    </div>
-               </div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
-                <h1>
-                    <a class="navbar-brand" href="index.html">
-                        Expedition
-                    </a>
-                </h1>
-                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-lg-auto text-center">
-                        <li class="nav-item mr-lg-3">
-                            <a class="nav-link" href="index.html">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item  mr-lg-3">
-                            <a class="nav-link" href="about.html">about</a>
-                        </li>
-                        <li class="nav-item dropdown mr-lg-3">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="services.html">Services</a>
-                                <a class="dropdown-item" href="gallery.html">Gallery</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="typo.html">Typography</a>
-                            </div>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="contact.html">contact</a>
-                        </li>
-                        <li>
-                            <button type="button" class="btn serv_bottom ml-lg-5 w3ls-btn text-white" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
-                                Login
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <?php
+        require("tpl/header.php");
+
+        ?>
+
         <!-- //header -->
     </div>
     <!-- //banner -->
@@ -100,120 +48,154 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <li class="breadcrumb-item">
                 <a href="index.html">Home</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+            <li class="breadcrumb-item active" aria-current="page">About Us</li>
         </ol>
     </nav>
-	 <!-- contact -->
-    <div class="container py-lg-5 mt-sm-5 mt-3">
-        <h3 class="agile-title text-uppercase"></h3>
-        <span class="w3-line"></span>
-		<div class="w3ls-titles text-center mb-5">
-				<h3 class="title"><span class="hdng">Contactez </span>nous</h3>
+	<!-- about -->
+	<section class="welcome py-5">
+		<div class="container py-md-4 mt-md-3">
+			<div class="w3ls-titles text-center">
+				<h3 class="title"><span class="hdng">About </span>Us</h3>
 				<span class="btmspn">
-					<i class="fas fa-ship"></i>
+					<i class="fas fa-bus"></i>
 				</span>
-				<p class="mt-2 mx-auto">Contactez nous pour plus de renseignements</p>
+				<p class="mt-2 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur dolorum, voluptatum possimus temporibus vel ab, nesciunt quod!</p>
 			</div>
-        <div class="row py-md-5 py-sm-3">
-            <div class="col-md-6">
-                <form id="contact-form" name="myForm" class="form" action="#" onsubmit="return validateForm()" method="POST">
-                    <div class="form-group">
-                        <label class="form-label" id="nameLabel" for="name"></label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom" tabindex="1">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" id="emailLabel" for="email"></label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" tabindex="2">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" id="subjectLabel" for="subject"></label>
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Objet" tabindex="3">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" id="messageLabel" for="message"></label>
-                        <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Votre message" tabindex="4"></textarea>
-                    </div>
-                    <div class="text-center mt-5">
-                        <button type="submit" class="serv_bottom btn btn-border btn-lg w-100">Envoyer</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-6 map mt-md-0 mt-5">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805184.6315353655!2d144.49269953060633!3d-37.971237044864175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne+VIC%2C+Australia!5e0!3m2!1sen!2sin!4v1532474074705"  allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-    <!-- //contact -->
 
-   <!--footer -->
-<footer>
-<section class="footer footer_w3layouts_section_1its py-5">
-	<div class="container py-md-4">
-		<div class="row footer-top">
-			<div class="col-lg-4 col-md-6 col-sm-6 footer-grid_section_1its_w3">
-				<div class="footer-title">
-					<h3>About Us</h3>
+			<div class="row about-tp mt-md-5 pt-5">
+				<div class="col-lg-6 welcome-left">
+					<h3>Welcome</h3>
+					<h4>We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years
+						of experience. Our greatest satisfaction comes in serving large numbers of satisfied clients who have experienced the
+						joys and inspiration of travel.</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta erat sit amet eros sagittis, quis hendrerit
+						libero aliquam. Fusce semper augue ac dolor efficitur, a pretium metus pellentesque.</p>
 				</div>
-				<div class="footer-text">
-					<p>Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at tellus.
-						Nulla porttitor accumsana tincidunt. Vestibulum ante ipsum primis tempus convallis.</p>
-					
+				<div class="col-lg-6 welcome-right">
+					<div class="welcome-right-top">
+						<img src="images/g1.jpg" alt="" class="img-fluid">
+					</div>
 				</div>
-			</div>
-			
-			<div class="col-lg-3 col-md-6 col-sm-3 footer-grid_section_1its_w3">
-				<div class="footer-title">
-					<h3>Useful Links</h3>
-				</div>
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
-				</ul>
-			</div>
-			<div class="col-lg-5 col-md-12 col-sm-12 footer-grid_section_1its_w3">
-				<div class="footer-title">
-					<h3>Subscribe</h3>
-				</div>
-				<div class="footer-text">
-					<p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
-					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Enter your email..." required="">
-						<button class="btn1"><i class="fa fa-envelope" aria-hidden="true"></i></button>
-						<div class="clearfix"> </div>
-					</form>
-				</div>
-				<ul class="social_section_1info">
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-google-plus-g"></i></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></i></a></li>
-					</ul>
 			</div>
 		</div>
-		<div class="row mt-md-5">
-			<div class="col-md-4 phn_w3l">
-				<h6 class="text-btm text-white">Phone : +2534894364</h6>
-			</div>
-			<div class="col-md-4 fax_w3l">
-				<h6 class="text-btm text-white">Fax : +2534894364</h6>
-			</div>
-			<div class="col-md-4 ema-w3l">
-				<h6 class="text-btm text-white">Email : <a href="mailto:info@example.com">info@example.com</a></h6>
+	</section>
+	<!-- //about -->
+	<!-- banner bottom -->
+	<div class="banner-bottom py-5">
+		<div class="container py-xl-3 py-lg-3">
+			<div class="row">
+				<div class="col-md-9 banner-left-bottom-w3ls">
+					<h3 class="text-white my-3">Fastest Way to Compare and Book over 450 Cheap Flights</h3>
+
+				</div>
+				<div class="col-md-3 button">
+					<a href="about.html" class="w3ls-button-agile">Read More
+						<i class="fas fa-hand-point-right"></i>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
-</section>
-</footer>
-<!-- //footer -->
+	<!-- //banner bottom -->
 
-    <div class="cpy-right text-center  py-3">
-        <p class="text-white">© 2018 Expedition. All rights reserved | Design by
-            <a href="http://w3layouts.com" class="text-white"> W3layouts.</a>
-        </p>
-    </div>
+
+	<!-- about-team -->
+	<section class="team py-5">
+		<div class="container py-md-4 mt-md-3">
+			<div class="w3ls-titles text-center">
+				<h3 class="title"><span class="hdng">Our </span>Agents</h3>
+				<span class="btmspn">
+					<i class="fas fa-bus"></i>
+				</span>
+				<p class="mt-2 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur dolorum, voluptatum possimus temporibus vel ab, nesciunt quod!</p>
+			</div>
+
+			<div class="row team-row-agileinfo mt-md-5 pt-5">
+				<div class="col-lg-3 col-md-6 col-sm-6 team-grids">
+					<div class="thumbnail team-agileits">
+						<img src="images/te1.jpg" class="img-fluid" alt="" />
+						<div class="effectd-caption">
+							<h4 class="mb-3">Tegsner</h4>
+							<div class="social-lsicon">
+								<a href="#" class="social-button twitter">
+									<span class="fab fa-twitter"></span>
+								</a>
+								<a href="#" class="social-button facebook">
+									<span class="fab fa-facebook-f"></span>
+								</a>
+								<a href="#" class="social-button google">
+									<span class="fab fa-google-plus-g"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 team-grids">
+					<div class="thumbnail team-agileits">
+						<img src="images/te2.jpg" class="img-fluid" alt="" />
+						<div class="effectd-caption">
+							<h4 class="mb-3">John</h4>
+							<div class="social-lsicon">
+								<a href="#" class="social-button twitter">
+									<span class="fab fa-twitter"></span>
+								</a>
+								<a href="#" class="social-button facebook">
+									<span class="fab fa-facebook-f"></span>
+								</a>
+								<a href="#" class="social-button google">
+									<span class="fab fa-google-plus-g"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 team-grids">
+					<div class="thumbnail team-agileits">
+						<img src="images/te3.jpg" class="img-fluid" alt="" />
+						<div class="effectd-caption">
+							<h4 class="mb-3">Erison</h4>
+							<div class="social-lsicon">
+								<a href="#" class="social-button twitter">
+									<span class="fab fa-twitter"></span>
+								</a>
+								<a href="#" class="social-button facebook">
+									<span class="fab fa-facebook-f"></span>
+								</a>
+								<a href="#" class="social-button google">
+									<span class="fab fa-google-plus-g"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 team-grids">
+					<div class="thumbnail team-agileits">
+						<img src="images/te4.jpg" class="img-fluid" alt="" />
+						<div class="effectd-caption">
+							<h4 class="mb-3">Roger</h4>
+							<div class="social-lsicon">
+								<a href="#" class="social-button twitter">
+									<span class="fab fa-twitter"></span>
+								</a>
+								<a href="#" class="social-button facebook">
+									<span class="fab fa-facebook-f"></span>
+								</a>
+								<a href="#" class="social-button google">
+									<span class="fab fa-google-plus-g"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- //about-team -->
+
+   <!--footer -->
+    <?php
+    require("tpl/footer.php");
+    ?>
     <!-- //footer -->
 
     <!-- login  -->
