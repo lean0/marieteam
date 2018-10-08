@@ -300,7 +300,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<i class="fas fa-bus"></i>
 				</span>
             <p class="mt-2 mx-auto">
-                Depuis Octobre, nous avons acqueri la possiiblité de desservir sur ses nouvelles destinations
+                Depuis Octobre, nous avons acqueri la possiiblité de desservir sur ses nouvelles destinations!
             </p>
         </div>
 
