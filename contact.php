@@ -56,7 +56,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <h3 class="agile-title text-uppercase"></h3>
         <span class="w3-line"></span>
 		<div class="w3ls-titles text-center mb-5">
-				<h3 class="title"><span class="hdng">Contactez nous </span>nous</h3>
+				<h3 class="title"><span class="hdng">Contact </span>nous</h3>
 				<span class="btmspn">
 					<i class="fas fa-ship"></i>
 				</span>
