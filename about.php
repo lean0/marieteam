@@ -3,10 +3,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <title>Expedition A Travel Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+    <title>Voyage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="keywords" content="Expedition Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -35,18 +34,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- banner -->
     <div class="inner-banner">
         <!-- header -->
-        <?php
-        require("tpl/header.php");
-
-        ?>
-
+        <header>
+            <?php
+            require("tpl/header.php");
+            ?>
         <!-- //header -->
     </div>
     <!-- //banner -->
      <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">About Us</li>
         </ol>
@@ -55,21 +53,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<section class="welcome py-5">
 		<div class="container py-md-4 mt-md-3">
 			<div class="w3ls-titles text-center">
-				<h3 class="title"><span class="hdng">About </span>Us</h3>
+				<h3 class="title"><span class="hdng">A propos </span> de nous</h3>
 				<span class="btmspn">
-					<i class="fas fa-bus"></i>
+					<i class="fas fa-ship"></i>
 				</span>
-				<p class="mt-2 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur dolorum, voluptatum possimus temporibus vel ab, nesciunt quod!</p>
+
 			</div>
 
 			<div class="row about-tp mt-md-5 pt-5">
 				<div class="col-lg-6 welcome-left">
-					<h3>Welcome</h3>
-					<h4>We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years
-						of experience. Our greatest satisfaction comes in serving large numbers of satisfied clients who have experienced the
-						joys and inspiration of travel.</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta erat sit amet eros sagittis, quis hendrerit
-						libero aliquam. Fusce semper augue ac dolor efficitur, a pretium metus pellentesque.</p>
+					<h3>Bienvenue</h3>
+					<h4>MarieTeam est une compagnie de transports maritimes assurant la desserte
+						d'îles du littoral français. </br>
+						Nous assurons le transport de voyageurs, ainsi que le transport
+						de marchandises.
+						Parmis les îles desservies, se trouve par exemple Belle-Île-en-mer,
+						Houat, Île de Groix, Ouessant, Molène, Sein, Bréhat, Batz, Aix, et bien
+						plus encore !
+					</h4>
 				</div>
 				<div class="col-lg-6 welcome-right">
 					<div class="welcome-right-top">
@@ -85,11 +86,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container py-xl-3 py-lg-3">
 			<div class="row">
 				<div class="col-md-9 banner-left-bottom-w3ls">
-					<h3 class="text-white my-3">Fastest Way to Compare and Book over 450 Cheap Flights</h3>
+					<h3 class="text-white my-3">N'hésitez plus, réservez maintenant ! </h3>
 
 				</div>
 				<div class="col-md-3 button">
-					<a href="about.html" class="w3ls-button-agile">Read More
+					<a href="about.html" class="w3ls-button-agile">Réserver
 						<i class="fas fa-hand-point-right"></i>
 					</a>
 				</div>
@@ -103,88 +104,114 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<section class="team py-5">
 		<div class="container py-md-4 mt-md-3">
 			<div class="w3ls-titles text-center">
-				<h3 class="title"><span class="hdng">Our </span>Agents</h3>
+				<h3 class="title"><span class="hdng">Les </span>capitaines</h3>
 				<span class="btmspn">
-					<i class="fas fa-bus"></i>
+					<i class="fas fa-ship"></i>
 				</span>
-				<p class="mt-2 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur dolorum, voluptatum possimus temporibus vel ab, nesciunt quod!</p>
 			</div>
 
 			<div class="row team-row-agileinfo mt-md-5 pt-5">
 				<div class="col-lg-3 col-md-6 col-sm-6 team-grids">
 					<div class="thumbnail team-agileits">
-						<img src="images/te1.jpg" class="img-fluid" alt="" />
+						<img src="images/capitaine1.jpg" class="img-fluid" alt="" />
 						<div class="effectd-caption">
-							<h4 class="mb-3">Tegsner</h4>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fab fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fab fa-facebook-f"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fab fa-google-plus-g"></span>
-								</a>
-							</div>
+							<h4 class="mb-3">Jean-Charles</h4>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 team-grids">
 					<div class="thumbnail team-agileits">
-						<img src="images/te2.jpg" class="img-fluid" alt="" />
+						<img src="images/capitaine1.jpg" class="img-fluid" alt="" />
 						<div class="effectd-caption">
-							<h4 class="mb-3">John</h4>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fab fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fab fa-facebook-f"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fab fa-google-plus-g"></span>
-								</a>
-							</div>
+
+							<h4 class="mb-3">Bilel</h4>
+
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 team-grids">
 					<div class="thumbnail team-agileits">
-						<img src="images/te3.jpg" class="img-fluid" alt="" />
+						<img src="images/capitaine1.jpg" class="img-fluid" alt="" />
 						<div class="effectd-caption">
 							<h4 class="mb-3">Erison</h4>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fab fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fab fa-facebook-f"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fab fa-google-plus-g"></span>
-								</a>
-							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-6 team-grids">
 					<div class="thumbnail team-agileits">
-						<img src="images/te4.jpg" class="img-fluid" alt="" />
+						<img src="images/capitaine1.jpg" class="img-fluid" alt="" />
 						<div class="effectd-caption">
 							<h4 class="mb-3">Roger</h4>
-							<div class="social-lsicon">
-								<a href="#" class="social-button twitter">
-									<span class="fab fa-twitter"></span>
-								</a>
-								<a href="#" class="social-button facebook">
-									<span class="fab fa-facebook-f"></span>
-								</a>
-								<a href="#" class="social-button google">
-									<span class="fab fa-google-plus-g"></span>
-								</a>
-							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- our services -->
+	<section class="wthree-row w3-about  py-5">
+		<div class="container py-md-4 mt-md-3">
+			<div class="w3ls-titles text-center mb-5">
+				<h3 class="title"><span class="hdng">Nos </span>Traversée</h3>
+				<span class="btmspn">
+					<i class="fas fa-ship"></i>
+				</span>
+			</div>
+
+
+			<div class="card-deck mt-md-5 pt-4">
+				<div class="card">
+					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
+					<div class="card-body w3ls-card">
+						<h5 class="card-title">Belle-Ile-en-Mer</h5>
+						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
+						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
+						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
+					</div>
+				</div>
+				<div class="card">
+					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
+					<div class="card-body w3ls-card">
+						<h5 class="card-title">Belle-Ile-en-Mer</h5>
+						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
+						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
+						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
+					</div>
+				</div>
+				<div class="card">
+					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
+					<div class="card-body w3ls-card">
+						<h5 class="card-title">Belle-Ile-en-Mer</h5>
+						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
+						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
+						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
+					</div>
+				</div>
+				<div class="card">
+					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
+					<div class="card-body w3ls-card">
+						<h5 class="card-title">Belle-Ile-en-Mer</h5>
+						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
+						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
+						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
+					</div>
+				</div>
+				<div class="card">
+					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
+					<div class="card-body w3ls-card">
+						<h5 class="card-title">Belle-Ile-en-Mer</h5>
+						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
+						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
+						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
+					</div>
+				</div>
+				<div class="card">
+					<img src="images/g6.jpg" class="img-fluid" alt="Card image cap">
+					<div class="card-body w3ls-card">
+						<h5 class="card-title">South Africa</h5>
+						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Namibia / Durban</p>
+						<p class="card-text mb-3"><i class="far fa-clock pr-2"></i>3 days - 2 nights</p>
+						<a href="#" class="btn btn-primary">$580</a>
 					</div>
 				</div>
 			</div>
@@ -193,11 +220,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //about-team -->
 
    <!--footer -->
+<footer>
     <?php
     require("tpl/footer.php");
     ?>
     <!-- //footer -->
-
+</footer>
     <!-- login  -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
