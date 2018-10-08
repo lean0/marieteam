@@ -43,7 +43,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contactez</a>
+                            <a class="nav-link" href="contact.php">Contactez-nous</a>
                         </li>
                         <li>
                             <button type="button" class="btn serv_bottom ml-lg-5 w3ls-btn text-white" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
