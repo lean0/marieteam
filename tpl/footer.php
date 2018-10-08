@@ -4,35 +4,38 @@
             <div class="row footer-top">
                 <div class="col-lg-4 col-md-6 col-sm-6 footer-grid_section_1its_w3">
                     <div class="footer-title">
-                        <h3>A propos</h3>
+                        <h3>À propos</h3>
                     </div>
                     <div class="footer-text">
-                        <p>Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at tellus.
-                            Nulla porttitor accumsana tincidunt. Vestibulum ante ipsum primis tempus convallis.</p>
+                        <p>MarieTeam est une compagnie de transports maritimes assurant la desserte d'îles du littoral français.
+                            Nous assurons le transport de voyageurs, ainsi que le transport de marchandises.
+                            Parmis les îles desservies, se trouve par exemple Belle-Île-en-mer, Houat, Île de Groix, Ouessant, Molène, Sein, Bréhat, Batz, Aix, et bien plus encore ! </p>
+
+
 
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-3 footer-grid_section_1its_w3">
                     <div class="footer-title">
-                        <h3>Useful Links</h3>
+                        <h3>Liens Utiles</h3>
                     </div>
                     <ul class="links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="gallery.html">Galerie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-5 col-md-12 col-sm-12 footer-grid_section_1its_w3">
                     <div class="footer-title">
-                        <h3>Subscribe</h3>
+                        <h3>Abonnez vous</h3>
                     </div>
                     <div class="footer-text">
-                        <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
+                        <p>En vous abonnant à notre Newsletter vous restez au courant de nos dernières nouveautés.</p>
                         <form action="#" method="post">
-                            <input type="email" name="Email" placeholder="Enter your email..." required="">
+                            <input type="email" name="Email" placeholder="Entrer votre email" required="">
                             <button class="btn1"><i class="fa fa-envelope" aria-hidden="true"></i></button>
                             <div class="clearfix"> </div>
                         </form>
@@ -47,13 +50,10 @@
             </div>
             <div class="row mt-md-5">
                 <div class="col-md-4 phn_w3l">
-                    <h6 class="text-btm text-white">Phone : +2534894364</h6>
-                </div>
-                <div class="col-md-4 fax_w3l">
-                    <h6 class="text-btm text-white">Fax : +2534894364</h6>
+                    <h6 class="text-btm text-white">Téléphone :  +33622457859</h6>
                 </div>
                 <div class="col-md-4 ema-w3l">
-                    <h6 class="text-btm text-white">Email : <a href="mailto:info@example.com">info@example.com</a></h6>
+                    <h6 class="text-btm text-white">Email : <a href="mailto:info@example.com">MarieTeaminfo@info.com</a></h6>
                 </div>
             </div>
         </div>
@@ -63,6 +63,6 @@
 
 <div class="cpy-right text-center  py-3">
     <p class="text-white">© 2018 Expedition. All rights reserved | Design by
-        <a href="http://w3layouts.com" class="text-white"> W3layouts.</a>
+        <a href="http://w3layouts.com" class="text-white"> MarieTeam.</a>
     </p>
 </div>
