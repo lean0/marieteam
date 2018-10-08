@@ -94,10 +94,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </header>
     <!-- //header -->
     <div class="container">
+
         <!-- banner-text -->
         <div class="banner-text">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <select id="inputState" class="form-control">
+                            <option selected>Ville Départ</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <select id="inputState" class="form-control">
+                            <option selected>Ville arrivé</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" placeholder="Date départ">
+            </div>
             <div class="callbacks_container" style="color: red;">
-                ???</div>
+                </div>
         </div>
     </div>
     <!-- //container -->
