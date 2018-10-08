@@ -542,7 +542,7 @@ p.sub-para {
 .agileits-services-grids span {
     width: 40px;
     height: 2px;
-    background: #d56e9b;
+    background: #42c8f4;
     display: inline-block;
 }
 a.service-btn {
@@ -564,7 +564,7 @@ a.service-btn {
 
 
 .card-header:first-child {
-    background: #d56e9b;
+    background: #42c8f4;
 }
 
 .card {
@@ -822,7 +822,7 @@ section.stat_w3l{
     text-transform: capitalize;
 }
 .copyright p a{
-	color:#42c8f4;
+	color:#4286f4;
 	text-decoration: underline;
 }
 .copyright p a:hover {
@@ -940,14 +940,14 @@ h6.text-left a,.cpy-right p a{
 }
 /*--//footer--*/
 .typo-wthree h4 {
-	color: #af4eaa;
+	color: #42c8f4;
 	font-size: 1.5em;
 	text-transform: capitalize;
 }
 
 .bg-flex {
     background-color: rgba(184, 67, 115, 0.67);
-    border: 1px solid rgb(207, 129, 161);
+    border: 1px solid rgb(66, 134, 244);
 }
 .bg-flex-item {
 	background-color: #fff;
