@@ -46,7 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">Services</li>
         </ol>

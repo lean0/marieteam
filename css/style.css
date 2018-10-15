@@ -185,7 +185,7 @@ header h1 a span {
 	-o-background-size: cover;
 	-ms-background-size: cover;
 	background-size: cover;
-	height: 50vw;
+	height: 95vh;
 	position: relative;
 }
 
@@ -215,7 +215,7 @@ li.breadcrumb-item a {
 }
 
 .banner-text {
-    padding: 18vw 37vw 0vw 0vw;
+    padding: 120px 37vw 0vw 0vw;
     box-sizing: border-box;
 }
 /*-- text Slider --*/
