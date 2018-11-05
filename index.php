@@ -97,6 +97,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         <!-- banner-text -->
         <div class="banner-text">
+
+            <div class="row">
+                <div class="col-6">
+                    Type d'emab
+                 <div>  <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Personne</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Objet</label>
+                    </div>
+                 </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-6">
                     <div class="form-group">
@@ -118,8 +133,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="form-group">
                 <input type="date" class="form-control" placeholder="Date départ">
             </div>
-            <div class="callbacks_container" style="color: red;">
+
+            <div class="col-4 center-block">
+                <div class="form-group">
+                    <input type="submit" class="form-control" placeholder="Rechercher">
                 </div>
+                <div class="callbacks_container" style="color: red;">
+                </div>
+            </div>
         </div>
     </div>
     <!-- //container -->
