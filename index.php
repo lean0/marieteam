@@ -524,9 +524,11 @@ require("tpl/footer.php");
                                 <span></span>I Accept to the Terms & Conditions</label>
                         </div>
                     </div>
+
                     <div class="right-w3l">
                         <input type="submit" class="form-control serv_bottom" value="Register">
                     </div>
+
                 </form>
             </div>
         </div>
