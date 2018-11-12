@@ -99,17 +99,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="container" style=" margin-top: 120px;display: flex;flex-direction: row; justify-content: space-around;padding: 0; ">
 
         <!-- banner-text -->
-        <form>
+        <form id="trip_form">
 
             <div class="entity">
                 <span class="libelle">aller</span>
                 <br>
-                <input type="text" id="date_from" class="date_from" placeholder="EG. HAWAII" style="padding: 10px 15px; border-radius: 5px; border: none;">
+                <input type="text" id="date_from" class="place" placeholder="EG. HAWAII" style="padding: 10px 15px; border-radius: 5px; border: none;">
             </div>
 
             <div class="entity">
                 <span class="libelle">arrivé</span><br>
-                <input type="text" id="date_from" class="date_from" placeholder="EG. MIAMI" style="padding: 10px 15px;border-radius: 5px; border: none; ">
+                <input type="text" id="date_from" class="place" placeholder="EG. MIAMI" style="padding: 10px 15px;border-radius: 5px; border: none; ">
             </div>
 
             <div class="entity">
@@ -124,7 +124,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         </form>
         <style>
-            form
+            #trip_form
             {
                 font-family: Poppins;
                 background: rgb(0,0,0,0.5);
@@ -147,17 +147,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     width: 85%;
                     margin: auto;
                 }
-                input[type="text"]
+                .place
                 {
                     width: 100%;
                 }
-                form{
+                #trip_form{
                     width: 550px;
                 }
             }
             @media all and (max-width:950px) {
 
-                form
+                #trip_form
                 {
                     width: 300px;
                     margin: 2% auto;
