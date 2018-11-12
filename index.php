@@ -38,63 +38,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- banner -->
 <div class="banner" id="home">
     <!-- header -->
-    <header>
-        <div class="top-head py-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 callnumber text-left">
-                    </div>
-                    <div class="col-md-6 callnumber text-right">
-                        <li class="mr-3">Australia : +5687567890</li>
-                        <li>Newyork : +4584567890</li>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
-            <h1>
-                <a class="navbar-brand" href="index.php">
-                    MarieTeam
-                </a>
-            </h1>
-            <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-lg-auto text-center">
-                    <li class="nav-item active  mr-lg-3">
-                        <a class="nav-link" href="index.php">Accueil
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  mr-lg-3">
-                        <a class="nav-link" href="about.php">A propos</a>
-                    </li>
-                    <li class="nav-item dropdown mr-lg-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                           aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="services.php">Service</a>
-                            <a class="dropdown-item" href="gallery.php">Gallerie</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="typo.php">Typography</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.php">contactez</a>
-                    </li>
-                    <li>
-                        <button type="button" class="btn serv_bottom ml-lg-5 w3ls-btn text-white" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
-                            Connexion
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <?php
+    require("tpl/header.php");
+    ?>
     <!-- //header -->
     <div class="container" style=" margin-top: 120px;display: flex;flex-direction: row; justify-content: space-around;padding: 0; ">
 
@@ -464,122 +410,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //branches -->
 <!--footer -->
 <?php
-require("tpl/footer.php");
+    require("tpl/footer.php");
+     //footer
+
+    include 'session/login.php';
+    include 'session/register.php';
 ?>
-<!-- //footer -->
-
-<!-- login  -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Username</label>
-                        <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name" required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-form-label">Password</label>
-                        <input type="password" class="form-control" placeholder=" " name="Password" id="password" required="">
-                    </div>
-                    <div class="right-w3l">
-                        <input type="submit" class="form-control serv_bottom" value="Login">
-                    </div>
-                    <div class="row sub-w3l my-3">
-                        <div class="col sub-agile">
-                            <input type="checkbox" id="brand1" value="">
-                            <label for="brand1" class="text-secondary">
-                                <span></span>Remember me?</label>
-                        </div>
-                        <div class="col forgot-w3l text-right">
-                            <a href="#" class="text-secondary">Forgot Password?</a>
-                        </div>
-                    </div>
-                    <p class="text-center text-secondary">Don't have an account?
-                        <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark font-weight-bold">
-                            Register Now</a>
-                    </p>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- // login -->
-<!-- register -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Register</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Username</label>
-                        <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-rname" required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-email" class="col-form-label">Email</label>
-                        <input type="email" class="form-control" placeholder=" " name="Email" id="recipient-email" required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="password1" class="col-form-label">Password</label>
-                        <input type="password" class="form-control" placeholder=" " name="Password" id="password1" required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="password2" class="col-form-label">Confirm Password</label>
-                        <input type="password" class="form-control" placeholder=" " name="Confirm Password" id="password2" required="">
-                    </div>
-                    <div class="sub-w3l">
-                        <div class="sub-agile">
-                            <input type="checkbox" id="brand2" value="">
-                            <label for="brand2" class="mb-3">
-                                <span></span>I Accept to the Terms & Conditions</label>
-                        </div>
-                    </div>
-
-                    <div class="right-w3l">
-                        <input type="submit" class="form-control serv_bottom" value="Register">
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- // register -->
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>
-<!-- //js -->
-<!-- script for password match -->
-<script>
-    window.onload = function () {
-        document.getElementById("password1").onchange = validatePassword;
-        document.getElementById("password2").onchange = validatePassword;
-    }
 
-    function validatePassword() {
-        var pass2 = document.getElementById("password2").value;
-        var pass1 = document.getElementById("password1").value;
-        if (pass1 != pass2)
-            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-        else
-            document.getElementById("password2").setCustomValidity('');
-        //empty string means no validation error
-    }
-</script>
-<!-- script for password match -->
 <!-- contact validation js -->
 <script src="js/form-validation.js"></script>
+
 <!-- Responsiveslides -->
 <script src="js/responsiveslides.min.js"></script>
 <script>
