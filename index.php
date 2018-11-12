@@ -25,6 +25,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -93,55 +96,74 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </nav>
     </header>
     <!-- //header -->
-    <div class="container">
+    <div class="container" style=" margin-top: 120px;display: flex;flex-direction: row; justify-content: space-around;padding: 0; ">
 
         <!-- banner-text -->
-        <div class="banner-text">
+        <form>
 
-            <div class="row">
-                <div class="col-6">
-                    Type d'emab
-                 <div>  <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Personne</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Objet</label>
-                    </div>
-                 </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group">
-                        <select id="inputState" class="form-control">
-                            <option selected>Ville Départ</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <select id="inputState" class="form-control">
-                            <option selected>Ville arrivé</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <input type="date" class="form-control" placeholder="Date départ">
+            <div class="entity">
+                <span class="libelle">aller</span>
+                <br>
+                <input type="text" id="date_from" class="date_from" placeholder="EG. HAWAII" style="padding: 10px 15px; border-radius: 5px; border: none;">
             </div>
 
-            <div class="col-4 center-block">
-                <div class="form-group">
-                    <input type="submit" class="form-control" placeholder="Rechercher">
-                </div>
-                <div class="callbacks_container" style="color: red;">
-                </div>
+            <div class="entity">
+                <span class="libelle">arrivé</span><br>
+                <input type="text" id="date_from" class="date_from" placeholder="EG. MIAMI" style="padding: 10px 15px;border-radius: 5px; border: none; ">
             </div>
-        </div>
+
+            <div class="entity">
+                <span class="libelle">Départ</span><br>
+                <input type="date" id="date_to" class="date_to" placeholder="Départ" style="padding: 10px 15px;border-radius: 5px; border: none;"/>
+                <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+            </div>
+
+            <div  class="entity" id="entity-submit">
+                <input type="submit" id="submit" class="submit" value="Book now" style="padding: 7.5px 12.5px; border: none; border-radius: 3.5px; background: #17a2b8; color: white "/>
+            </div>
+
+        </form>
+        <style>
+            form
+            {
+                font-family: Poppins;
+                background: rgb(0,0,0,0.5);
+                margin: 5% auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                padding: 35px 15px;
+                border: none;
+                border-radius: 3.5px;
+            }
+            .entity{
+                padding: 7.5px 15px;
+            }
+            .libelle{color: #fff;}
+            #entity-submit{display: flex; justify-content: space-around; flex-direction: row; margin-top: 32px;}
+            @media all and (max-width:1200px) {
+                .entity{
+                    width: 85%;
+                    margin: auto;
+                }
+                input[type="text"]
+                {
+                    width: 100%;
+                }
+                form{
+                    width: 550px;
+                }
+            }
+            @media all and (max-width:950px) {
+
+                form
+                {
+                    width: 300px;
+                    margin: 2% auto;
+                }
+            }
+        </style>
     </div>
     <!-- //container -->
 </div>
