@@ -282,20 +282,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="modal-body">
                     <form action="#" method="post">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Username</label>
-                            <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-rname" required="">
+                            <label for="recipient-name" class="col-form-label">Nom</label>
+                            <input type="text" class="form-control" placeholder=" " name="nom" id="nom" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Prénom</label>
+                            <input type="text" class="form-control" placeholder=" " name="prenom" id="prenom" required="">
                         </div>
                         <div class="form-group">
                             <label for="recipient-email" class="col-form-label">Email</label>
-                            <input type="email" class="form-control" placeholder=" " name="Email" id="recipient-email" required="">
+                            <input type="email" class="form-control" placeholder=" " name="mail" id="mail" required="">
                         </div>
                         <div class="form-group">
-                            <label for="password1" class="col-form-label">Password</label>
-                            <input type="password" class="form-control" placeholder=" " name="Password" id="password1" required="">
+                            <label for="password1" class="col-form-label">Mot de passe</label>
+                            <input type="password" class="form-control" placeholder=" " name="password" id="password" required="">
                         </div>
                         <div class="form-group">
-                            <label for="password2" class="col-form-label">Confirm Password</label>
-                            <input type="password" class="form-control" placeholder=" " name="Confirm Password" id="password2" required="">
+                            <label for="password2" class="col-form-label">Confirmation</label>
+                            <input type="password" class="form-control" placeholder=" " name="cpassword" id="cpassword" required="">
                         </div>
                         <div class="sub-w3l">
                             <div class="sub-agile">
