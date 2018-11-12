@@ -2,10 +2,10 @@
 
 class Database
 {
-    private $host = "boutiquemsmmag.mysql.db";
-    private $user = "boutiquemsmmag";
-    private $pass = "qa8SZ485Vp";
-    private $table = "boutiquemsmmag";
+    private $host = "marieteam.mysql.db";
+    private $user = "root";
+    private $pass = "";
+    private $table = "client";
 
     public static $pdo = null;
 
