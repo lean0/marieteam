@@ -244,7 +244,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-form-label">Password</label>
-                            <input type="password" class="form-control" placeholder=" " name="Password" id="password" required="">
+                            <input type="loginpassword" class="form-control" placeholder=" " name="loginpassword" id="loginpassword" required="">
                         </div>
                         <div class="right-w3l">
                             <input type="submit" class="form-control serv_bottom" value="Login">
@@ -279,14 +279,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
+
+
+
                 <div class="modal-body">
-                    <form action="#" method="post">
+                    <form action="createuser.php" method="post">
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nom</label>
                             <input type="text" class="form-control" placeholder=" " name="nom" id="nom" required="">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Prénom</label>
+                            <label for="recipient-name" class="col-form-label">Prenom</label>
                             <input type="text" class="form-control" placeholder=" " name="prenom" id="prenom" required="">
                         </div>
                         <div class="form-group">
@@ -299,7 +303,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                         <div class="form-group">
                             <label for="password2" class="col-form-label">Confirmation</label>
-                            <input type="password" class="form-control" placeholder=" " name="cpassword" id="cpassword" required="">
+                            <input type="cpassword" class="form-control" placeholder=" " name="cpassword" id="cpassword" required="">
                         </div>
                         <div class="sub-w3l">
                             <div class="sub-agile">
@@ -313,6 +317,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                     </form>
                 </div>
+
+
+
+
             </div>
         </div>
     </div>

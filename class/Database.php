@@ -2,9 +2,9 @@
 
 class Database
 {
-    private $host = "localhost/phpmyadmin";
-    private $user = "admin";
-    private $pass = "admin";
+    private $host = "localhost";
+    private $user = "root";
+    private $pass = "";
     private $table = "client";
 
     public static $pdo = null;
