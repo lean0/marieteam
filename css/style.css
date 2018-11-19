@@ -368,6 +368,10 @@ li.breadcrumb-item a {
 	margin-top: 25px;
 	margin-bottom: 10px;
 }
+select
+{
+	background-color: #fff;
+}
 
 @media all and (max-width:1200px) {
 	.entity{
