@@ -14,7 +14,7 @@
 
 
             <div class="modal-body">
-                <form action="createuser.php" method="post">
+                <form action="../MariteTeamm/createuser.php" method="post">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Nom</label>
                         <input type="text" value="<?=@$_POST['nom'] ?>" class="form-control" placeholder=" " name="nom" id="nom" required="">
