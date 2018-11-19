@@ -62,12 +62,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 
 <!-- about -->
-<section class="welcome py-5">
-    <div class="container py-md-4 mt-md-3">
-        <div class="w3ls-titles text-center">
-            <div class="alert alert-success" role="alert">
-                <strong></strong> L'utilisateur a bien était crée !</a>.
-            </div>
+
+<section class="welcome">
+    <div class="container py-md-4 mt-md-1">
+        <div class="alert alert-success" role="alert" style="text-align: center">
+            <h4 class="alert-heading">Succès !</h4>
+            <p>Soyez le bienvenue dans la communauté des amoureux de l'eaux </p>
+            <p class="mb-0">MarieTeam vous garantie les meilleurs tarifs pour vos itineraires</p>
         </div></div>
 </section>
 <!-- //about -->
