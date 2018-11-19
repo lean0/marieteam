@@ -5,7 +5,7 @@ class Database
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
-    private $table = "client";
+    private $table = "marieteam";
 
     public static $pdo = null;
 

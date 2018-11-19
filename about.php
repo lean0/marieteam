@@ -287,19 +287,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <form action="createuser.php" method="post">
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nom</label>
-                            <input type="text" class="form-control" placeholder=" " name="nom" id="nom" required="">
+                            <input type="text" value="<?=@$_POST['nom'] ?>" class="form-control" placeholder=" " name="nom" id="nom" required="">
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Prenom</label>
-                            <input type="text" class="form-control" placeholder=" " name="prenom" id="prenom" required="">
+                            <input type="text" value="<?=@$_POST['prenom'] ?>"  class="form-control" placeholder=" " name="prenom" id="prenom" required="">
                         </div>
                         <div class="form-group">
                             <label for="recipient-email" class="col-form-label">Email</label>
-                            <input type="email" class="form-control" placeholder=" " name="mail" id="mail" required="">
+                            <input type="email" value="<?=@$_POST['mail'] ?>"  class="form-control" placeholder=" " name="mail" id="mail" required="">
                         </div>
                         <div class="form-group">
                             <label for="password1" class="col-form-label">Mot de passe</label>
-                            <input type="password" class="form-control" placeholder=" " name="password" id="password" required="">
+                            <input type="password"  value="<?=@$_POST['password'] ?>" class="form-control" placeholder=" " name="password" id="password" required="">
                         </div>
                         <div class="form-group">
                             <label for="password2" class="col-form-label">Confirmation</label>

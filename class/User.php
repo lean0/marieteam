@@ -1,20 +1,12 @@
 <?php
-
+require_once "Database.php";
 class User
 {
-
-private $name;
-private $email;
-private $password;
-private $nom;
-private $prenom;
-
     public function createUser($nom, $prenom, $email, $password){
         $PH = password_hash($password, PASSWORD_DEFAULT);
-        $time = time();
 
-        $req = Database::connect()->prepare("INSERT INTO client (nom, prenom, email, password_hashed, dateInscription) VALUE (?,?,?,?,?)");
-        $req->execute([$nom, $prenom, $email, $PH, $time]);
+        $req = Database::connect()->prepare("INSERT INTO client (nom, prenom, mail, password) VALUE (?,?,?,?)");
+        $req->execute([$nom, $prenom, $email, $PH]);
     }
 
 
