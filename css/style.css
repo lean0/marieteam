@@ -356,6 +356,12 @@ li.breadcrumb-item a {
 .entity{
 	padding: 7.5px 15px;
 }
+.entity input{
+    padding: 10px 15px;border-radius: 5px; border: none;
+}
+.entity select{
+    padding: 10px 15px;border-radius: 5px; border: none;width: 210px;background: white;
+}
 .libelle
 {
 	color: #fff;
@@ -368,7 +374,7 @@ li.breadcrumb-item a {
 	margin-top: 25px;
 	margin-bottom: 10px;
 }
-select
+#inputState
 {
 	background-color: #fff;
 }
@@ -384,9 +390,15 @@ select
 	}
 
 	#trip_form{
-		width: 550px;
+		width: 400px;
 		padding: 25px 15px;
 	}
+    input.date_to{
+        width: 100%;
+    }
+    .entity select{
+        width: 100%;
+    }
 }
 @media all and (max-width:950px) {
 
