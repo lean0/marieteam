@@ -34,10 +34,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- banner -->
     <div class="inner-banner">
         <!-- header -->
-        <header>
-            <?php
-            require("tpl/header.php");
-            ?>
+
+        <?php
+        require("tpl/header.php");
+
+        ?>
         <!-- //header -->
     </div>
     <!-- //banner -->
@@ -223,6 +224,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <footer>
     <?php
     require("tpl/footer.php");
+    require ('session/login.php');
+    require ('session/register.php');
     ?>
     <!-- //footer -->
 </footer>
