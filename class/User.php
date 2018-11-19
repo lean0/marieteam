@@ -2,11 +2,11 @@
 require_once "Database.php";
 class User
 {
-    public function createUser($nom, $prenom, $email, $password){
+    public function createUser($nom, $prenom, $mail, $password){
         $PH = password_hash($password, PASSWORD_DEFAULT);
 
         $req = Database::connect()->prepare("INSERT INTO client (nom, prenom, mail, password) VALUE (?,?,?,?)");
-        $req->execute([$nom, $prenom, $email, $PH]);
+        $req->execute([$nom, $prenom, $mail, $PH]);
     }
 
 
