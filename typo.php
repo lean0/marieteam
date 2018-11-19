@@ -290,8 +290,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <?php
     require("tpl/footer.php");
 
-    include 'session/login.php';
-    include 'session/register.php';
+    require ( 'session/login.php');
+    require ( 'session/register.php');
     ?>
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/form-validation.js"></script>
