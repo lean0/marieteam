@@ -25,7 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
     <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Teko" rel="stylesheet">
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
     <!-- //Custom Theme files -->
@@ -42,7 +42,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     require("tpl/header.php");
     ?>
     <!-- //header -->
-    <div class="container" style=" margin-top: 120px;display: flex;flex-direction: row; justify-content: space-around;padding: 0; ">
+    <div class="container-form">
 
         <!-- banner-text -->
         <form id="trip_form">
@@ -58,10 +58,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <input type="text" id="date_from" class="place" placeholder="EG. MIAMI" style="padding: 10px 15px;border-radius: 5px; border: none; ">
             </div>
 
-            <div class="entity">
-                <span class="libelle">Départ</span><br>
-                <input type="date" id="date_to" class="date_to" placeholder="Départ" style="padding: 10px 15px;border-radius: 5px; border: none;"/>
-                <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+            <div style="display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap">
+                <div style=" padding: 7.5px 15px;" >
+                    <span class="libelle">Départ</span><br>
+                    <input type="date" id="date_to" class="date_to" placeholder="Départ" style="padding: 10px 15px;border-radius: 5px; border: none;"/>
+                    <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+                </div>
+                <div style=" padding: 7.5px 15px;">
+                    <span class="libelle">Type</span><br>
+                    <select id="inputState" class="form-control" style="padding: 10px 15px;border-radius: 5px; border: none;">
+                        <option selected>Personne</option>
+                        <option>Produit</option>
+                    </select>
+                </div>
             </div>
 
             <div  class="entity" id="entity-submit">
@@ -69,47 +78,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
 
         </form>
-        <style>
-            #trip_form
-            {
-                font-family: Poppins;
-                background: rgb(0,0,0,0.5);
-                margin: 5% auto;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                flex-wrap: wrap;
-                padding: 35px 15px;
-                border: none;
-                border-radius: 3.5px;
-            }
-            .entity{
-                padding: 7.5px 15px;
-            }
-            .libelle{color: #fff;}
-            #entity-submit{display: flex; justify-content: space-around; flex-direction: row; margin-top: 32px;}
-            @media all and (max-width:1200px) {
-                .entity{
-                    width: 85%;
-                    margin: auto;
-                }
-                .place
-                {
-                    width: 100%;
-                }
-                #trip_form{
-                    width: 550px;
-                }
-            }
-            @media all and (max-width:950px) {
-
-                #trip_form
-                {
-                    width: 300px;
-                    margin: 2% auto;
-                }
-            }
-        </style>
     </div>
     <!-- //container -->
 </div>

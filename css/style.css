@@ -331,6 +331,96 @@ li.breadcrumb-item a {
     padding: 120px 37vw 0vw 0vw;
     box-sizing: border-box;
 }
+
+/*
+	FORM SELECTION D'ITINERAIRE
+*/
+
+.container-form{
+	margin-top: 120px;display: flex;flex-direction: row; justify-content: space-around;padding: 0;
+}
+#trip_form
+{
+	font-family: 'Teko', sans-serif;
+	font-size: 18px;
+	background: rgb(0,0,0,0.5);
+	margin: 2.5% auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 35px 15px;
+	border: none;
+	border-radius: 3.5px;
+}
+.entity{
+	padding: 7.5px 15px;
+}
+.libelle
+{
+	color: #fff;
+}
+#entity-submit
+{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+@media all and (max-width:1200px) {
+	.entity{
+		width: 85%;
+		margin: auto;
+	}
+	.place
+	{
+		width: 100%;
+	}
+
+	#trip_form{
+		width: 550px;
+		padding: 25px 15px;
+	}
+}
+@media all and (max-width:950px) {
+
+	#trip_form
+	{
+		width: 300px;
+		margin: 2% auto;
+	}
+}
+@media all and (max-height:735px)
+{
+	.container-form{
+		margin-top: 72px;
+	}
+	#trip_form{
+		padding: 20px 15px;
+	}
+	#entity-submit
+	{
+		margin: auto;
+	}
+}
+
+/*END*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-- text Slider --*/
 
 #slider {
@@ -1827,5 +1917,6 @@ h3.title {
     font-size: 30px;
 }
 }
+
 
 /* -- //Responsive code -- */
