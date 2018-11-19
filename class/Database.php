@@ -5,29 +5,13 @@ class Database
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
-    private $table = "marieteam";
+    private $table = "client";
 
-    public static $pdo = null;
-
-    public function __construct()
-    {
-        try {
-            self::$pdo = new \PDO('mysql:charset=utf8;host=' . $this->host . ';dbname=' . $this->table, $this->user, $this->pass, [
-                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
-                \PDO::ATTR_PERSISTENT => true,
-                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8'
-            ]);
-            return self::$pdo;
-        } catch (\PDOException $e) {
-             die('Erreur lors de la connexion &agrave; la base de donn&eacute;es: ' . $e->getMessage());
-            die();
-        }
-    }
 
     public static function connect()
     {
-        return self::$pdo;
+        $pdo = new PDO('mysql:host=localhost;dbname=marieteam', 'root', '');
+        return $pdo;
     }
 
     public static function tabColonnesForTable($name) {
