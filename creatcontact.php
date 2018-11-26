@@ -65,8 +65,8 @@ require("global.php");
     <div class="container py-md-4 mt-md-1">
         <div class="alert alert-success" role="alert" style="text-align: center">
             <h4 class="alert-heading">Succès !</h4>
-            <p>Soyez le bienvenue dans la communauté des amoureux de l'eaux </p>
-            <p class="mb-0">MarieTeam vous garantie les meilleurs tarifs pour vos itineraires</p>
+            <p>Votre demande de contacte a bien était envoyer !</p>
+            <p class="mb-0">N'hésitez pas l'équipe MarieTeam vous souhaite une agrèable journée.</p>
         </div></div>
 </section>
 <!-- //about -->
