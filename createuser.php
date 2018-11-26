@@ -53,7 +53,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         $PH = password_hash($password, PASSWORD_DEFAULT);
         $pdo = new PDO('mysql:host=localhost;dbname=marieteam', 'root', '');
 
-        $req = $pdo->prepare('INSERT INTO client (nom, prenom, mail, password_hashed, dateInscription) VALUE (?,?,?,?,?)');
+        $req = $pdo->prepare('INSERT INTO client (nom, prenom, mail, password, dateInscription) VALUE (?,?,?,?,?)');
         $req->execute([$nom, $prenom, $mail, $PH, $dateinscription]);
 
 
