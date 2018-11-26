@@ -71,21 +71,7 @@ require("global.php");
 </section>
 <!-- //about -->
 <!-- banner bottom -->
-<div class="banner-bottom py-5">
-    <div class="container py-xl-3 py-lg-3">
-        <div class="row">
-            <div class="col-md-9 banner-left-bottom-w3ls">
-                <h3 class="text-white my-3">N'hésitez plus, réservez maintenant ! </h3>
 
-            </div>
-            <div class="col-md-3 button">
-                <a href="about.php " class="w3ls-button-agile">Réserver
-                    <i class="fas fa-hand-point-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- //banner bottom -->
 
 
