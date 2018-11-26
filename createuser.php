@@ -51,7 +51,7 @@ require("global.php");
         $dateinscription = time();
 
         $PH = password_hash($password, PASSWORD_DEFAULT);
-        $req = $db->connection()->prepare('INSERT INTO client (nom, prenom, mail, password_hashed, dateInscription) VALUE (?,?,?,?,?)');
+        $req = $db->connection()->prepare('INSERT INTO client (nom, prenom, mail, password, dateInscription) VALUE (?,?,?,?,?)');
         $req->execute([$nom, $prenom, $mail, $PH, $dateinscription]);
 
 

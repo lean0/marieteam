@@ -60,8 +60,7 @@ require("global.php");
 </div>
 
 <!-- about -->
-
-<section class="welcome">
+    <section class="welcome">
     <div class="container py-md-4 mt-md-1">
         <div class="alert alert-success" role="alert" style="text-align: center">
             <h4 class="alert-heading">Succès !</h4>
@@ -69,6 +68,7 @@ require("global.php");
             <p class="mb-0">N'hésitez pas l'équipe MarieTeam vous souhaite une agrèable journée.</p>
         </div></div>
 </section>
+
 <!-- //about -->
 <!-- banner bottom -->
 
