@@ -1,33 +1,6 @@
 <footer>
-    <section class="footer footer_w3layouts_section_1its py-5">
-        <div class="container py-md-4">
-            <div class="row footer-top">
-                <div class="col-lg-4 col-md-6 col-sm-6 footer-grid_section_1its_w3">
-                    <div class="footer-title">
-                        <h3>À propos</h3>
-                    </div>
-                    <div class="footer-text">
-                        <p>MarieTeam est une compagnie de transports maritimes assurant la desserte d'îles du littoral français.
-                            Nous assurons le transport de voyageurs, ainsi que le transport de marchandises.
-                            Parmis les îles desservies, se trouve par exemple Belle-Île-en-mer, Houat, Île de Groix, Ouessant, Molène, Sein, Bréhat, Batz, Aix, et bien plus encore ! </p>
-
-
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-3 footer-grid_section_1its_w3">
-                    <div class="footer-title">
-                        <h3>Liens Utiles</h3>
-                    </div>
-                    <ul class="links">
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="about.html">À Propos</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="gallery.html">Galerie</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+    <section class="footer footer_w3layouts_section_1its py-4">
+        <div class="d-flex justify-content-around">
                 <div class="col-lg-5 col-md-12 col-sm-12 footer-grid_section_1its_w3">
                     <div class="footer-title">
                         <h3>Abonnez vous</h3>
@@ -47,15 +20,7 @@
                         <li><a href="#"><i class="fab fa-linkedin-in"></i></i></a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="row mt-md-5">
-                <div class="col-md-4 phn_w3l">
-                    <h6 class="text-btm text-white">Téléphone :  +33622457859</h6>
-                </div>
-                <div class="col-md-4 ema-w3l">
-                    <h6 class="text-btm text-white">Email : <a href="mailto:info@example.com">MarieTeaminfo@info.com</a></h6>
-                </div>
-            </div>
+
         </div>
     </section>
 </footer>
