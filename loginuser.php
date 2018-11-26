@@ -6,7 +6,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
 
     $mail = $_POST['mail'];
     $password = $_POST['password'];
-    
+
     $req = $db->connection()->prepare('SELECT mail,password FROM client WHERE mail LIKE ?');
     $req->execute([$mail]);
     $rows = $req->rowCount();
@@ -14,19 +14,19 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
     if ($rows == 1) {
 
         $pcheck = $data['password'];
-        echo "User exist </br>";
-        print "Mail: " .  $data['mail'] . "</br>";
 
         if (password_verify($password, $pcheck)) {
-            echo "Je respectes les femmes";
+            $_SESSION['login'] = $data['mail'];
+            header('Location: index.php');
+            exit;
         }
         else {
-            echo "Mot de passe incorrecte";
+            //Alerte Bootstrap PASSWORD
         }
     }
     else {
 
-        echo "User doesn't exist";
+        //Alerte Bootstrap USER
 
     }
 
