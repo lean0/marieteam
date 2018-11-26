@@ -64,22 +64,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
         <div class="row py-md-5 py-sm-3">
             <div class="col-md-6">
-                <form id="contact-form" name="myForm" class="form" action="#" onsubmit="return validateForm()" method="POST">
+                <form method="POST" action="creatcontact.php">
                     <div class="form-group">
                         <label class="form-label" id="nameLabel" for="name"></label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom" tabindex="1">
+                        <input type="text"  value="<?=@$_POST['Nom'] ?>" class="form-control" id="Nom" name="Nom" placeholder="Nom" tabindex="1">
                     </div>
                     <div class="form-group">
                         <label class="form-label" id="emailLabel" for="email"></label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" tabindex="2">
+                        <input type="email" value="<?=@$_POST['Email'] ?>" class="form-control" id="Email" name="Email" placeholder="Email" tabindex="2">
                     </div>
                     <div class="form-group">
                         <label class="form-label" id="subjectLabel" for="subject"></label>
-                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Objet" tabindex="3">
+                        <input type="text" value="<?=@$_POST['Objet'] ?>" class="form-control" id="Objet" name="Objet" placeholder="Objet" tabindex="3">
                     </div>
                     <div class="form-group">
                         <label class="form-label" id="messageLabel" for="message"></label>
-                        <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Votre message" tabindex="4"></textarea>
+                        <textarea rows="6" value="<?=@$_POST['Message'] ?>" cols="60" name="Message" class="form-control" id="Message" placeholder="Votre message" tabindex="4"></textarea>
                     </div>
                     <div class="text-center mt-5">
                         <button type="submit" class="serv_bottom btn btn-border btn-lg w-100">Envoyer</button>
@@ -91,6 +91,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
         </div>
     </div>
+
+
     <!-- //contact -->
 
    <!--footer -->
@@ -125,7 +127,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- smooth-scrolling-of-move-up -->
     <script>
         $(document).ready(function () {
-            /*
+
             var defaults = {
                 containerID: 'toTop', // fading element id
                 containerHoverID: 'toTopHover', // fading element hover id
