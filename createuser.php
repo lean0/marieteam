@@ -37,11 +37,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <?php
     require("tpl/header.php");
-
+    require("class/Database.php");
     ?>
     <?php
-
-
+    $db = new Database();
 
     if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['password'])) {
         $nom = $_POST['nom'];
@@ -51,9 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         $dateinscription = time();
 
         $PH = password_hash($password, PASSWORD_DEFAULT);
-        $pdo = new PDO('mysql:host=localhost;dbname=marieteam', 'root', '');
-
-        $req = $pdo->prepare('INSERT INTO client (nom, prenom, mail, password, dateInscription) VALUE (?,?,?,?,?)');
+        $req = $db->connection()->prepare('INSERT INTO client (nom, prenom, mail, password_hashed, dateInscription) VALUE (?,?,?,?,?)');
         $req->execute([$nom, $prenom, $mail, $PH, $dateinscription]);
 
 
@@ -63,22 +60,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     ?>
     <!-- //header -->
 </div>
-<!-- //banner -->
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.php">Home</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">About Us</li>
-    </ol>
-</nav>
+
 <!-- about -->
-<section class="welcome py-5">
-    <div class="container py-md-4 mt-md-3">
-        <div class="w3ls-titles text-center">
-            <div class="alert alert-success" role="alert">
-                <strong></strong> L'utilisateur a bien était crée !</a>.
-            </div>
+
+<section class="welcome">
+    <div class="container py-md-4 mt-md-1">
+        <div class="alert alert-success" role="alert" style="text-align: center">
+            <h4 class="alert-heading">Succès !</h4>
+            <p>Soyez le bienvenue dans la communauté des amoureux de l'eaux </p>
+            <p class="mb-0">MarieTeam vous garantie les meilleurs tarifs pour vos itineraires</p>
         </div></div>
 </section>
 <!-- //about -->

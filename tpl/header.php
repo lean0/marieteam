@@ -32,8 +32,8 @@
                         </li>
                         <li class="nav-item active dropdown mr-lg-3">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                menu déroulant
+                               aria-expanded="false" style="color: white">
+                                menu
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="services.php">Service</a>

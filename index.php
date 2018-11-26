@@ -50,27 +50,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="entity">
                 <span class="libelle">aller</span>
                 <br>
-                <input type="text" id="date_from" class="place" placeholder="EG. HAWAII" style="padding: 10px 15px; border-radius: 5px; border: none;">
+                <input type="text" id="date_from" class="place" placeholder="EG. HAWAII">
             </div>
 
             <div class="entity">
                 <span class="libelle">arrivé</span><br>
-                <input type="text" id="date_from" class="place" placeholder="EG. MIAMI" style="padding: 10px 15px;border-radius: 5px; border: none; ">
+                <input type="text" id="date_from" class="place" placeholder="EG. MIAMI">
             </div>
 
-            <div style="display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap">
-                <div style=" padding: 7.5px 15px;" >
+            <div class="entity">
                     <span class="libelle">Départ</span><br>
-                    <input type="date" id="date_to" class="date_to" placeholder="Départ" style="padding: 10px 15px;border-radius: 5px; border: none;"/>
+                    <input type="date" id="date_to" class="date_to" placeholder="Départ"/>
                     <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
-                </div>
-                <div style=" padding: 7.5px 15px;">
-                    <span class="libelle">Type</span><br>
-                    <select id="inputState" class="form-control" style="padding: 10px 15px;border-radius: 5px; border: none;">
+            </div>
+            <div class="entity">
+                <span class="libelle">Type</span><br>
+                    <select id="inputState" class="form-control">
                         <option selected>Personne</option>
                         <option>Produit</option>
                     </select>
-                </div>
             </div>
 
             <div  class="entity" id="entity-submit">

@@ -341,8 +341,8 @@ li.breadcrumb-item a {
 }
 #trip_form
 {
-	font-family: 'Teko', sans-serif;
-	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
 	background: rgb(0,0,0,0.5);
 	margin: 2.5% auto;
 	display: flex;
@@ -356,6 +356,12 @@ li.breadcrumb-item a {
 .entity{
 	padding: 7.5px 15px;
 }
+.entity input{
+    padding: 10px 15px;border-radius: 5px; border: none;
+}
+.entity select{
+    padding: 10px 15px;border-radius: 5px; border: none;width: 210px;background: white;
+}
 .libelle
 {
 	color: #fff;
@@ -367,6 +373,10 @@ li.breadcrumb-item a {
 	flex-direction: row;
 	margin-top: 25px;
 	margin-bottom: 10px;
+}
+#inputState
+{
+	background-color: #fff;
 }
 
 @media all and (max-width:1200px) {
@@ -380,9 +390,15 @@ li.breadcrumb-item a {
 	}
 
 	#trip_form{
-		width: 550px;
+		width: 400px;
 		padding: 25px 15px;
 	}
+    input.date_to{
+        width: 100%;
+    }
+    .entity select{
+        width: 100%;
+    }
 }
 @media all and (max-width:950px) {
 
