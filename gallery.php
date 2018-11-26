@@ -194,7 +194,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 scrollSpeed: 1200,
                 easingType: 'linear' 
             };
-            */
+             */
 
             $().UItoTop({
                 easingType: 'easeOutQuart'

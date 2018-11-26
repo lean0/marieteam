@@ -38,7 +38,6 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="services.php">Service</a>
                                 <a class="dropdown-item" href="gallery.php">Gallerie</a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="typo.php">Typography</a>
                             </div>
                         </li>

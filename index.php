@@ -87,7 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <span class="btmspn">
 					<i class="fas fa-bus"></i>
 				</span>
-            <p class="mt-2 mx-auto"> Decription des services</p>
+            <p class="mt-2 mx-auto"> Description des services</p>
         </div>
         <div class="agileits-services-row row py-lg-5 pb-5 text-center">
             <div class="col-lg-3 col-md-6">

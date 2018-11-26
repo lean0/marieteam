@@ -39,6 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         require("tpl/header.php");
 
         ?>
+
         <!-- //header -->
     </div>
     <!-- //banner -->
