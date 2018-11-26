@@ -36,7 +36,9 @@ require("global.php");
 <body>
 <!-- banner -->
 <div class="inner-banner">
-    <!-- header -->
+</div>
+
+<!-- header -->
 
     <?php
     require("tpl/header.php");
@@ -50,28 +52,49 @@ require("global.php");
         $password = $_POST['password'];
         $dateinscription = time();
 
-        $PH = password_hash($password, PASSWORD_DEFAULT);
-        $req = $db->connection()->prepare('INSERT INTO client (nom, prenom, mail, password, dateInscription) VALUE (?,?,?,?,?)');
-        $req->execute([$nom, $prenom, $mail, $PH, $dateinscription]);
+        $req2 = $db->connection()->prepare('SELECT mail FROM client WHERE mail LIKE ?');
+        $req2->execute([$mail]);
+        $rows = $req2->rowCount();
+        if($rows == 1){
+            ?>
+            <section class="welcome">
+                <div class="container py-md-4 mt-md-1">
+                    <div class="alert alert-danger" role="alert" style="text-align: center">
+                        <h4 class="alert-heading">Echec !</h4>
+                        <p>L'utilisateur n'a pas était crée </p>
+                        <p class="mb-0">L'adresse mail est déjà lié a un autre compte utilisateur</p>
+                    </div></div>
+            </section>
+            <?php
 
+        }
+
+
+   else{
+            $PH = password_hash($password, PASSWORD_DEFAULT);
+            $req = $db->connection()->prepare('INSERT INTO client (nom, prenom, mail, password, dateInscription) VALUE (?,?,?,?,?)');
+            $req->execute([$nom, $prenom, $mail, $PH, $dateinscription]);
+            ?>
+            <section class="welcome">
+                <div class="container py-md-4 mt-md-1">
+                    <div class="alert alert-success" role="alert" style="text-align: center">
+                        <h4 class="alert-heading">Succès !</h4>
+                        <p>Soyez le bienvenue dans la communauté des amoureux de l'eaux </p>
+                        <p class="mb-0">MarieTeam vous garantie les meilleurs tarifs pour vos itineraires</p>
+                    </div></div>
+            </section>
+<?php
+        }
 
 
 
     }
     ?>
     <!-- //header -->
-</div>
 
 <!-- about -->
 
-<section class="welcome">
-    <div class="container py-md-4 mt-md-1">
-        <div class="alert alert-success" role="alert" style="text-align: center">
-            <h4 class="alert-heading">Succès !</h4>
-            <p>Soyez le bienvenue dans la communauté des amoureux de l'eaux </p>
-            <p class="mb-0">MarieTeam vous garantie les meilleurs tarifs pour vos itineraires</p>
-        </div></div>
-</section>
+
 <!-- //about -->
 <!-- banner bottom -->
 <div class="banner-bottom py-5">
