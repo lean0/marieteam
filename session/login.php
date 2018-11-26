@@ -10,14 +10,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="#" method="post">
+                <form action="loginuser.php" method="post">
                     <div class="form-group">
                         <label for="recipient-email" class="col-form-label">Email</label>
-                        <input type="email" class="form-control" placeholder=" " name="mail" id="mail" required="">
+                        <input type="email" value="<?=@$_POST['mail'] ?>" class="form-control" placeholder=" " name="mail" id="mail" required="">
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-form-label">Mot de passe</label>
-                        <input type="password" class="form-control" placeholder=" " name="password" id="password" required="">
+                        <input type="password" value="<?=@$_POST['password'] ?>" class="form-control" placeholder=" " name="password" id="password" required="">
                     </div>
                     <div class="right-w3l">
                         <input type="submit" class="form-control serv_bottom" value="Se connecter">

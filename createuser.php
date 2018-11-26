@@ -3,6 +3,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+require("global.php");
+?>
 <html lang="zxx">
 <head>
     <title>Voyage</title>
@@ -33,14 +36,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 <!-- banner -->
 <div class="inner-banner">
-    <!-- header -->
+</div>
+
+<!-- header -->
 
     <?php
     require("tpl/header.php");
-    require("class/Database.php");
     ?>
     <?php
-    $db = new Database();
 
     if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['password'])) {
         $nom = $_POST['nom'];
@@ -49,28 +52,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         $password = $_POST['password'];
         $dateinscription = time();
 
-        $PH = password_hash($password, PASSWORD_DEFAULT);
-        $req = $db->connection()->prepare('INSERT INTO client (nom, prenom, mail, password_hashed, dateInscription) VALUE (?,?,?,?,?)');
-        $req->execute([$nom, $prenom, $mail, $PH, $dateinscription]);
+        $req2 = $db->connection()->prepare('SELECT mail FROM client WHERE mail LIKE ?');
+        $req2->execute([$mail]);
+        $rows = $req2->rowCount();
+        if($rows == 1){
+            ?>
+            <section class="welcome">
+                <div class="container py-md-4 mt-md-1">
+                    <div class="alert alert-danger" role="alert" style="text-align: center">
+                        <h4 class="alert-heading">Echec !</h4>
+                        <p>L'utilisateur n'a pas était crée </p>
+                        <p class="mb-0">L'adresse mail est déjà lié a un autre compte utilisateur</p>
+                    </div></div>
+            </section>
+            <?php
 
+        }
+
+
+   else{
+            $PH = password_hash($password, PASSWORD_DEFAULT);
+            $req = $db->connection()->prepare('INSERT INTO client (nom, prenom, mail, password, dateInscription) VALUE (?,?,?,?,?)');
+            $req->execute([$nom, $prenom, $mail, $PH, $dateinscription]);
+            ?>
+            <section class="welcome">
+                <div class="container py-md-4 mt-md-1">
+                    <div class="alert alert-success" role="alert" style="text-align: center">
+                        <h4 class="alert-heading">Succès !</h4>
+                        <p>Soyez le bienvenue dans la communauté des amoureux de l'eaux </p>
+                        <p class="mb-0">MarieTeam vous garantie les meilleurs tarifs pour vos itineraires</p>
+                    </div></div>
+            </section>
+<?php
+        }
 
 
 
     }
     ?>
     <!-- //header -->
-</div>
 
 <!-- about -->
 
-<section class="welcome">
-    <div class="container py-md-4 mt-md-1">
-        <div class="alert alert-success" role="alert" style="text-align: center">
-            <h4 class="alert-heading">Succès !</h4>
-            <p>Soyez le bienvenue dans la communauté des amoureux de l'eaux </p>
-            <p class="mb-0">MarieTeam vous garantie les meilleurs tarifs pour vos itineraires</p>
-        </div></div>
-</section>
+
 <!-- //about -->
 <!-- banner bottom -->
 <div class="banner-bottom py-5">

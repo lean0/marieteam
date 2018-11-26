@@ -151,74 +151,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</section>
 	<!-- our services -->
-	<section class="wthree-row w3-about  py-5">
-		<div class="container py-md-4 mt-md-3">
-			<div class="w3ls-titles text-center mb-5">
-				<h3 class="title"><span class="hdng">Nos </span>Traversée</h3>
-				<span class="btmspn">
-					<i class="fas fa-ship"></i>
-				</span>
-			</div>
-
-
-			<div class="card-deck mt-md-5 pt-4">
-				<div class="card">
-					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
-					<div class="card-body w3ls-card">
-						<h5 class="card-title">Belle-Ile-en-Mer</h5>
-						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
-						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
-						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
-					<div class="card-body w3ls-card">
-						<h5 class="card-title">Belle-Ile-en-Mer</h5>
-						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
-						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
-						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
-					<div class="card-body w3ls-card">
-						<h5 class="card-title">Belle-Ile-en-Mer</h5>
-						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
-						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
-						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
-					<div class="card-body w3ls-card">
-						<h5 class="card-title">Belle-Ile-en-Mer</h5>
-						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
-						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
-						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/g1.jpg" class="img-fluid" alt="Card image cap">
-					<div class="card-body w3ls-card">
-						<h5 class="card-title">Belle-Ile-en-Mer</h5>
-						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Quiberon -> Le Palais</p>
-						<p class="card-text mb-3"><i class="fas fa-ship"></i>8.3 milles</p>
-						<a href="#" class="btn btn-primary">XXX$ /1pers</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/g6.jpg" class="img-fluid" alt="Card image cap">
-					<div class="card-body w3ls-card">
-						<h5 class="card-title">South Africa</h5>
-						<p class="card-text mb-3"><i class="fas fa-map-marker pr-2"></i>Namibia / Durban</p>
-						<p class="card-text mb-3"><i class="far fa-clock pr-2"></i>3 days - 2 nights</p>
-						<a href="#" class="btn btn-primary">$580</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <div class="container text-center py-4">
+        <a class="btn btn-primary w-50" href="services.php" role="button">Nos destinations</a>
+    </div>
 	<!-- //about-team -->
 
    <!--footer -->

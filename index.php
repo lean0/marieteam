@@ -89,7 +89,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</span>
             <p class="mt-2 mx-auto"> Description des services</p>
         </div>
-        <div class="agileits-services-row row py-lg-5 pb-5 text-center">
+        <div class="d-flex justify-content-around text-center">
             <div class="col-lg-3 col-md-6">
                 <div class="agileits-services-grids">
                     <i class="fas fa-ship"></i>

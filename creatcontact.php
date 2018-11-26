@@ -3,6 +3,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+require("global.php");
+?>
 <html lang="zxx">
 <head>
     <title>Voyage</title>
@@ -36,6 +39,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- header -->
 
     <?php
+    require("tpl/header.php");
+    ?>
+    <?php
 
 
     if(isset($_POST['Nom']) && isset($_POST['Email']) && isset($_POST['Objet']) && isset($_POST['Message'])) {
@@ -45,50 +51,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         $Message = $_POST['Message'];
 
 
-        $pdo = new PDO('mysql:host=localhost;dbname=marieteam', 'root', '');
-
-        $req = $pdo->prepare('INSERT INTO contact (Nom, Objet, Message, Email) VALUE (?,?,?,?)');
+        $req = $db->connection()->prepare('INSERT INTO contact (Nom, Objet, Message, Email) VALUE (?,?,?,?)');
         $req->execute([$Nom, $Objet, $Message, $Email]);
     }
 
     ?>
-   <!-- //header
+    <!-- //header -->
 </div>
-<!-- //banner -->
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.php">Home</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">About Us</li>
-    </ol>
-</nav>
+
 <!-- about -->
-<section class="welcome py-5">
-    <div class="container py-md-4 mt-md-3">
-        <div class="w3ls-titles text-center">
-            <div class="alert alert-success" role="alert">
-                <strong></strong> Nous avons bien reçu votre demande de contact !</a>.
-            </div>
+    <section class="welcome">
+    <div class="container py-md-4 mt-md-1">
+        <div class="alert alert-success" role="alert" style="text-align: center">
+            <h4 class="alert-heading">Succès !</h4>
+            <p>Votre demande de contacte a bien était envoyer !</p>
+            <p class="mb-0">N'hésitez pas l'équipe MarieTeam vous souhaite une agrèable journée.</p>
         </div></div>
 </section>
+
 <!-- //about -->
 <!-- banner bottom -->
-<div class="banner-bottom py-5">
-    <div class="container py-xl-3 py-lg-3">
-        <div class="row">
-            <div class="col-md-9 banner-left-bottom-w3ls">
-                <h3 class="text-white my-3">N'hésitez plus, réservez maintenant ! </h3>
 
-            </div>
-            <div class="col-md-3 button">
-                <a href="about.php " class="w3ls-button-agile">Réserver
-                    <i class="fas fa-hand-point-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- //banner bottom -->
 
 
@@ -163,7 +146,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </script>
 <script src="js/SmoothScroll.min.js"></script>
 <!-- Bootstrap core JavaScript
-================================================== -
+================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/bootstrap.js"></script>
 </body>
