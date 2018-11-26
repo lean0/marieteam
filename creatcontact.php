@@ -3,6 +3,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+require("global.php");
+?>
 <html lang="zxx">
 <head>
     <title>Voyage</title>
@@ -45,9 +48,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         $Message = $_POST['Message'];
 
 
-        $pdo = new PDO('mysql:host=localhost;dbname=marieteam', 'root', '');
-
-        $req = $pdo->prepare('INSERT INTO contact (Nom, Objet, Message, Email) VALUE (?,?,?,?)');
+        $req = $db->connection()->prepare('INSERT INTO contact (Nom, Objet, Message, Email) VALUE (?,?,?,?)');
         $req->execute([$Nom, $Objet, $Message, $Email]);
     }
 

@@ -3,6 +3,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+require("global.php");
+?>
 <html lang="zxx">
 <head>
     <title>Voyage</title>
@@ -37,10 +40,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <?php
     require("tpl/header.php");
-    require("class/Database.php");
     ?>
     <?php
-    $db = new Database();
 
     if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['password'])) {
         $nom = $_POST['nom'];
