@@ -19,49 +19,43 @@
                 <li class="active">
                     <a href="dashboard.php">
                         <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
+                        <p>Tableau de bord</p>
                     </a>
                 </li>
                 <li>
                     <a href="user.php">
                         <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                        <p>Clients</p>
                     </a>
                 </li>
                 <li>
                     <a href="table.php">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <p>Bateaux</p>
                     </a>
                 </li>
                 <li>
                     <a href="typography.php">
                         <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                        <p>Capitaines</p>
                     </a>
                 </li>
                 <li>
                     <a href="icons.php">
                         <i class="pe-7s-science"></i>
-                        <p>Icons</p>
+                        <p>Voyages</p>
                     </a>
                 </li>
                 <li>
                     <a href="maps.php">
                         <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
+                        <p>Carte</p>
                     </a>
                 </li>
                 <li>
                     <a href="notifications.php">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
-                    </a>
-                </li>
-                <li class="active-pro">
-                    <a href="upgrade.php">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
                     </a>
                 </li>
             </ul>
