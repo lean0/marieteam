@@ -46,23 +46,28 @@
                             <a class="nav-link" href="contact.php">Contactez-nous</a>
                         </li>
                         <?php
-                            require("global.php");
                             if (isset($_SESSION['login']))
                             {
                                 ?>
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <div class="dropdown show">
+                                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-user"></i>
                                             <?php
                                                 echo $_SESSION['nom'];
                                             ?>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Historique</a></li>
-                                            <li><a href="#">Mon compte</a></li>
-                                            <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
-                                        </ul>
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="#">
+                                                Historique
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                Mon compte
+                                            </a>
+                                            <a class="dropdown-item" href="session/logout.php">
+                                                <i class="fas fa-sign-out-alt"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 <?php
                             }
