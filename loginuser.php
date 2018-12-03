@@ -18,7 +18,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
         if (password_verify($password, $pcheck)) {
             $_SESSION['login'] = $data['mail'];
             header('Location: index.php');
-            exit;
+
         }
         else {
             //Alerte Bootstrap PASSWORD
