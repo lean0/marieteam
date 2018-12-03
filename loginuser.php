@@ -17,11 +17,11 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
         $pnom = $data['nom'];
 
         if (password_verify($password, $pcheck)) {
-            session_start();
             $_SESSION['login'] = $_POST['mail'];
             $_SESSION['pwd'] = $_POST['password'];
             $_SESSION['nom'] = $pnom ;
             header('Location: index.php');
+
 
         } else {
             //Alerte Bootstrap PASSWORD

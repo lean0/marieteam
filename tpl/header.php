@@ -46,17 +46,38 @@
                             <a class="nav-link" href="contact.php">Contactez-nous</a>
                         </li>
                         <?php
+                            require("global.php");
                             if (isset($_SESSION['login']))
                             {
                                 ?>
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <i class="fas fa-user"></i>
+                                            <?php
+                                                echo $_SESSION['nom'];
+                                            ?>
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Historique</a></li>
+                                            <li><a href="#">Mon compte</a></li>
+                                            <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+                                        </ul>
+                                    </div>
                                 <?php
                             }
-                      ?>
-                        <li>
-                            <button type="button" class="btn serv_bottom ml-lg-5 w3ls-btn text-white" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
-                                Connexion
-                            </button>
-                        </li>
+                            else
+                            {
+                                ?>
+                                    <li>
+                                        <button type="button" class="btn serv_bottom ml-lg-5 w3ls-btn text-white" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
+                                            Connexion
+                                        </button>
+                                    </li>
+                                <?php
+
+                            }
+                        ?>
 
                     </ul>
                 </div>
