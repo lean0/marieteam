@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <title>Expedition A Travel Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+    <title>Marie Team</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="keywords" content="Expedition Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -72,7 +72,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
 
             <div  class="entity" id="entity-submit">
-                <input type="submit" id="submit" class="submit" value="Book now" style="padding: 7.5px 12.5px; border: none; border-radius: 3.5px; background: #17a2b8; color: white "/>
+                <input type="submit" id="submit" class="submit" value="Reservez" style="padding: 7.5px 12.5px; border: none; border-radius: 3.5px; background: #17a2b8; color: white "/>
             </div>
 
         </form>
