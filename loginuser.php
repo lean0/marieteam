@@ -18,7 +18,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
         if (password_verify($password, $pcheck)) {
             $_SESSION['login'] = $data['mail'];
             header('Location: index.php');
-            exit;
+
         }
         else {
             //Alerte Bootstrap PASSWORD
@@ -29,6 +29,16 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
         //Alerte Bootstrap USER
 
     }
-
-
+    if ($mail == $_POST['mail'] && $password == $_POST['password']) {
+        session_start ();
+        $_SESSION['login'] = $_POST['mail'];
+        $_SESSION['pwd'] = $_POST['password'];
+        //header ('location: index.php');
+    }
+    else {
+        echo '<body onLoad="alert(\'Membre non reconnu...\')">';
+    }
+}
+else {
+    echo 'Les variables du formulaire ne sont pas déclarées.';
 }
