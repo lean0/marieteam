@@ -306,7 +306,7 @@
         	demo.initChartist();
 
         	$.notify({
-            	icon: 'pe-7s-gift',
+            	icon: 'pe-7s-anchor',
             	message: "Bienvenue <b>Panel Administration de MarieTeam</b>"
 
             },{
