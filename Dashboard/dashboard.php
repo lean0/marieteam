@@ -5,9 +5,6 @@
  require("tpl/navbar.php");
 ?>
 <body>
-
-
-
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
