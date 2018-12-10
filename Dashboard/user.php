@@ -140,7 +140,7 @@ require("tpl/navbar.php");
                                         <th> <?=$data['nom']?> </th>
                                         <th> <?=$data['prenom'] ?></th>
                                         <th> <?=$data['mail'] ?></th>
-                                        <th> <?=$data['dateInscription'] ?></th>
+                                        <th> <?=date('m/d/Y', $data['dateInscription']) ?></th>
                                         </tr>
                                     <?php
                                     }
