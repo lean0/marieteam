@@ -4,10 +4,24 @@
 require("tpl/header.php");
 require("tpl/navbar.php");
 require("../global.php");
+
+if ($_GET['success'] == 1)
+{
+    ?>
+    <div class="alert alert-success" id="success-alert">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <strong>Success! </strong>
+        Ajout Capitaine
+    </div>
+    <script>
+        $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+            $("#success-alert").slideUp(500);
+        });
+    </script>
+    <?php
+}
 ?>
 <body>
-
-
 
     <div class="main-panel">
 		<nav class="navbar navbar-default navbar-fixed">
