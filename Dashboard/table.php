@@ -168,7 +168,10 @@ require("tpl/navbar.php");
                                 ?>
                                 </div>
                                 </tbody>
+
                             </table>
+                    </div>
+                    <div class="card">
                             <h4 class="title">Ajouter un bateau</h4>
                                 <form action="createbateau.php" method="post">
                                     <div class="form-group">
@@ -188,6 +191,7 @@ require("tpl/navbar.php");
                                     </div>
                                 </form>
                     </div>
+
                 </div>
             </div>
         </div>
