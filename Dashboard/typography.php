@@ -4,21 +4,15 @@
 require("tpl/header.php");
 require("tpl/navbar.php");
 require("../global.php");
-
-if ($_GET['success'] == 1)
-{
-    ?>
-    <div class="alert alert-success" id="success-alert">
-        <button type="button" class="close" data-dismiss="alert">x</button>
-        <strong>Success! </strong>
-        Ajout Capitaine
-    </div>
-    <script>
-        $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-            $("#success-alert").slideUp(500);
-        });
-    </script>
-    <?php
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
+        echo '<body onload="demo.showSucess(\'top\',\'right\')">';
+    }
+    else {
+        if ($_GET['success'] == 0) {
+            echo '<body onload="demo.showError(\'top\',\'right\')">';
+        }
+    }
 }
 ?>
 <body>
@@ -150,7 +144,7 @@ if ($_GET['success'] == 1)
                                             } );
                                         </script>
                                         <?php
-
+                                        $isDbEmpty = 0;
                                         $req = $db->connection()->prepare('SELECT * FROM capitaine');
                                         $req->execute();
                                         $rows = $req->rowCount();
@@ -178,7 +172,7 @@ if ($_GET['success'] == 1)
                                                     <th> <?=$data['idCapitaine']?>  </th>
                                                     <th> <?=$data['nomCapitaine']?> </th>
                                                     <th><?=$data['prenomCapitaine']?></th>
-                                                    <th><?=$data['dateDebut']?></th>
+                                                    <th><?=date('m/d/Y', $data['dateDebut']) ?></th>
                                                     <th><?=$data['emailCapitaine']?></th>
                                                     <th><?=$data['telephoneCapitaine']?></th>
 
@@ -187,7 +181,7 @@ if ($_GET['success'] == 1)
                                             }
                                         }
                                         else{
-                                            echo "no user found";
+                                            echo '<body onload="demo.showEmptyDB(\'top\',\'right\')">';
                                         }
 
 

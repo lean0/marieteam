@@ -19,7 +19,8 @@ require("../global.php");
         $req = $db->connection()->prepare('INSERT INTO capitaine (nomCapitaine, prenomCapitaine, dateDebut, emailCapitaine, telephoneCapitaine) VALUE (?,?,?,?,?)');
         $req->execute([$nomcapitaine, $prenomCapitaine, $datetoday, $emailCapitaine, $telephoneCapitaine]);
 
-
         header('Location: typography.php?success=1');
     }
- ?>
+    else {
+        header('Location: typography.php?success=0');
+    }

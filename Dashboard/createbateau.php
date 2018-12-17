@@ -10,7 +10,7 @@ require("../global.php");
 
         $req = $db->connection()->prepare('INSERT INTO bateau (nom, typeBateau, capaciteBateau) VALUE (?,?,?)');
         $req->execute([$nom, $type, $capa]);
-        $success=1;
+
 
         header('Location: table.php?success=1');
 
@@ -19,8 +19,8 @@ require("../global.php");
     else {
 
 
-        header('Location: table.php');
-        $_SESSION['success'] = 0;
+        header('Location: table.php?success=0');
+
 
     }
 

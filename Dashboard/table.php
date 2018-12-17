@@ -6,6 +6,16 @@ require("../global.php");
 <?php
 require("tpl/header.php");
 require("tpl/navbar.php");
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
+        echo '<body onload="demo.showSucess(\'top\',\'right\')">';
+    }
+    else {
+        if ($_GET['success'] == 0) {
+            echo '<body onload="demo.showError(\'top\',\'right\')">';
+        }
+    }
+}
 ?>
 <style>
     table, th, td {
@@ -13,41 +23,6 @@ require("tpl/navbar.php");
         border-collapse: collapse;
     }
 </style>
-<script type="text/javascript">
-    function notifyBateau() {
-        $(document).ready(function () {
-
-            demo.initChartist();
-
-            $.notify({
-                icon: 'pe-7s-gift',
-                message: "Bienvenue <b>Panel Administration de MarieTeam</b>"
-
-            }, {
-                type: 'info',
-                timer: 4000
-            });
-
-        });
-    }
-</script>
-<?php
-    if ($_GET['success'] == 1)
-    {
-        ?>
-            <div class="alert alert-success" id="success-alert">
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <strong>Success! </strong>
-                Ajout Bateau
-            </div>
-            <script>
-                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-                    $("#success-alert").slideUp(500);
-                });
-            </script>
-        <?php
-    }
-?>
 <body>
 <div class="main-panel">
     <nav class="navbar navbar-default navbar-fixed">
