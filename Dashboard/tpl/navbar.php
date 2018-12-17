@@ -59,13 +59,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="TOSET.php">
+                    <a href="lesiles.php">
                         <i class="pe-7s-anchor"></i>
                         <p>Île</p>
                     </a>
                 </li>
                 <li>
-                    <a href="TOSET.php">
+                    <a href="liaison.php">
                         <i class="pe-7s-helm"></i>
                         <p>Liaison</p>
                     </a>
