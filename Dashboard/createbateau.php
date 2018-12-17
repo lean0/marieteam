@@ -12,9 +12,8 @@ require("../global.php");
         $req->execute([$nom, $type, $capa]);
         $success=1;
 
-        header('Location: table.php');
-        ?>
-        <?php
+        header('Location: table.php?success=1');
+
 
     }
     else {

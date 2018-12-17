@@ -18,17 +18,8 @@ require("../global.php");
 
         $req = $db->connection()->prepare('INSERT INTO capitaine (nomCapitaine, prenomCapitaine, dateDebut, emailCapitaine, telephoneCapitaine) VALUE (?,?,?,?,?)');
         $req->execute([$nomcapitaine, $prenomCapitaine, $datetoday, $emailCapitaine, $telephoneCapitaine]);
-        ?>
-            <div class="alert alert-success" id="success-alert">
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <strong>Success! </strong>
-                Ajout Capitaine
-            </div>
-            <script>
-                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-                        $("#success-alert").slideUp(500);
-                    });
-            </script>
-        <?php
+
+
+        header('Location: typography.php?success=1');
     }
  ?>
