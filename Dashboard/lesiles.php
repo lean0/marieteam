@@ -112,7 +112,22 @@ require("tpl/navbar.php");
                         <div class="header">
                             <h4 class="title">Liste des Iles</h4>
                         </div>
-
+                        <div class="card">
+                            <h4 class="title">Ajouter une Ile</h4>
+                            <form action="createile.php" method="post">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Nom</label>
+                                    <input type="text" value="<?=@$_POST['nomIle'] ?>" class="form-control" placeholder=" " name="nomIle" id="nomIle" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Nom du Port</label>
+                                    <input type="text" value="<?=@$_POST['nomPort'] ?>" class="form-control" placeholder=" " name="nomPort" id="nomPort" required="">
+                                </div>
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control serv_bottom" value="Ajouter"  onclick="demo.showError('top','right')">
+                                </div>
+                            </form>
+                        </div>
 
 
 
@@ -161,22 +176,6 @@ require("tpl/navbar.php");
                                 ?>
                                 </tbody>
                             </table>
-                            <div class="card">
-                                <h4 class="title">Ajouter une Ile</h4>
-                                <form action="createile.php" method="post">
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Nom</label>
-                                        <input type="text" value="<?=@$_POST['nomIle'] ?>" class="form-control" placeholder=" " name="nomIle" id="nomIle" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Nom du Port</label>
-                                        <input type="text" value="<?=@$_POST['nomPort'] ?>" class="form-control" placeholder=" " name="nomPort" id="nomPort" required="">
-                                    </div>
-                                    <div class="right-w3l">
-                                        <input type="submit" class="form-control serv_bottom" value="Ajouter"  onclick="demo.showError('top','right')">
-                                    </div>
-                                </form>
-                            </div>
                     </div>
                 </div>
             </div>

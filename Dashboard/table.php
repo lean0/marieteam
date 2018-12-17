@@ -110,6 +110,26 @@ if (isset($_GET['success'])) {
                 <div class="col-md-8">
                     <div class="card">
                         <div class="header">
+                            <div class="card">
+                                <h4 class="title">Ajouter un bateau</h4>
+                                <form action="createbateau.php" method="post">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nom</label>
+                                        <input type="text" value="<?=@$_POST['nom'] ?>" class="form-control" placeholder=" " name="nom" id="nom" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Type</label>
+                                        <input type="text" value="<?=@$_POST['typeBateau'] ?>"  class="form-control" placeholder=" " name="typeBateau" id="typeBateau" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-email" class="col-form-label">Capacité</label>
+                                        <input type="text" value="<?=@$_POST['capaciteBateau'] ?>"  class="form-control" placeholder=" " name="capaciteBateau" id="mail" required="">
+                                    </div>
+                                    <div class="right-w3l">
+                                        <input type="submit" class="form-control serv_bottom" value="Ajouter">
+                                    </div>
+                                </form>
+                            </div>
                             <h4 class="title">Liste des comptes</h4>
                         </div>
 
@@ -163,27 +183,6 @@ if (isset($_GET['success'])) {
 
                             </table>
                     </div>
-                    <div class="card">
-                            <h4 class="title">Ajouter un bateau</h4>
-                                <form action="createbateau.php" method="post">
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Nom</label>
-                                        <input type="text" value="<?=@$_POST['nom'] ?>" class="form-control" placeholder=" " name="nom" id="nom" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Type</label>
-                                        <input type="text" value="<?=@$_POST['typeBateau'] ?>"  class="form-control" placeholder=" " name="typeBateau" id="typeBateau" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-email" class="col-form-label">Capacité</label>
-                                        <input type="text" value="<?=@$_POST['capaciteBateau'] ?>"  class="form-control" placeholder=" " name="capaciteBateau" id="mail" required="">
-                                    </div>
-                                    <div class="right-w3l">
-                                        <input type="submit" class="form-control serv_bottom" value="Ajouter">
-                                    </div>
-                                </form>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -192,43 +191,15 @@ if (isset($_GET['success'])) {
 </div>
 </div>
 </div>
-<footer class="footer">
-    <div class="container-fluid">
-        <nav class="pull-left">
-            <ul>
-                <li>
-                    <a href="#">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Company
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Portfolio
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Blog
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <p class="copyright pull-right">
-            &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-        </p>
-    </div>
-</footer>
 
 </div>
 </div>
 
-
+<?php
+require_once('tpl/footer.php');
+?>
 </body>
+
 
 <!--   Core JS Files   -->
 <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>

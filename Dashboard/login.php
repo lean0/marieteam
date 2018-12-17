@@ -52,7 +52,7 @@
         input
         {
             width: 100%;
-            padding: 7.5px 0px;
+            padding: 7.5px 5px;
             border: none;
             border-radius: 3px;
         }
