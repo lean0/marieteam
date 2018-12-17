@@ -242,12 +242,28 @@ demo = {
         marker.setMap(map);
     },
 
-	showNotification: function(from, align){
-    	color = Math.floor((Math.random() * 4) + 1);
+	showNotification: function(from, align) {
+        color = Math.floor((Math.random() * 4) + 1);
 
-    	$.notify({
-        	icon: "pe-7s-gift",
-        	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+        $.notify({
+            icon: "pe-7s-gift",
+            message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+
+        }, {
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    },
+    showSucess: function(from, align){
+        color = 2;
+
+        $.notify({
+            icon: "pe-7s-paper-plane",
+            message: "<b>Ligne ajoutée avec succès</b>"
 
         },{
             type: type[color],
@@ -257,7 +273,39 @@ demo = {
                 align: align
             }
         });
-	}
+    },
+    showError: function(from, align){
+        color = 4;
+
+        $.notify({
+            icon: "pe-7s-close",
+            message: "<b>Erreur</b>"
+
+        },{
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    },
+    showEmptyDB: function(from, align){
+        color = 3;
+
+        $.notify({
+            icon: "pe-7s-server",
+            message: "<b>BDD Vide</b>"
+
+        },{
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    }
 
 
 }

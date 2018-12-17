@@ -119,6 +119,7 @@ require("tpl/navbar.php");
                                 <tr>
                                     <th>ID</th>
                                     <th>Nom</th>
+                                    <th>Nom du port</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -131,6 +132,7 @@ require("tpl/navbar.php");
                                         <tr>
                                             <th> <?=$data['idIle']?>  </th>
                                             <th> <?=$data['nom']?> </th>
+                                            <th> <?=$data['nomPort']?> </th>
                                         </tr>
                                         <?php
                                     }
@@ -147,6 +149,13 @@ require("tpl/navbar.php");
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Nom</label>
                                         <input type="text" value="<?=@$_POST['nomIle'] ?>" class="form-control" placeholder=" " name="nomIle" id="nomIle" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nom du Port</label>
+                                        <input type="text" value="<?=@$_POST['nomPort'] ?>" class="form-control" placeholder=" " name="nomPort" id="nomPort" required="">
+                                    </div>
+                                    <div class="right-w3l">
+                                        <input type="submit" class="form-control serv_bottom" value="Ajouter"  onclick="demo.showError('top','right')">
                                     </div>
                                 </form>
                             </div>
