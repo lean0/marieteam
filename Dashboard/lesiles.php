@@ -6,6 +6,18 @@ require("../global.php");
 <?php
 require("tpl/header.php");
 require("tpl/navbar.php");
+    if (isset($_GET['success'])) {
+        if ($_GET['success'] == 1) {
+            echo '<body onload="demo.showSucess(\'top\',\'right\')">';
+        }
+        else {
+            if ($_GET['success'] == 0) {
+                echo '<body onload="demo.showError(\'top\',\'right\')">';
+            }
+        }
+    }
+
+
 ?>
 <style>
     table, th, td {
@@ -102,21 +114,24 @@ require("tpl/navbar.php");
                         </div>
 
 
-                            <table id="tabuser" class="table table-striped table-bordered" style="width:100%">
+
+
+                            <table id="tabuser" class="table table-striped table-bordered"style="width:100%">
+
                                 <script>
                                     $(document).ready(function() {
                                         $('#tabuser').DataTable();
                                     } );
                                 </script>
                                 <?php
-
+                                $isDbEmpty = 0;
                                 $req = $db->connection()->prepare('SELECT * FROM iledeservie');
                                 $req->execute();
                                 $rows = $req->rowCount();
 
                                 ?>
                                 <thead>
-                                <tr>
+                                <tr >
                                     <th>ID</th>
                                     <th>Nom</th>
                                     <th>Nom du port</th>
@@ -138,7 +153,10 @@ require("tpl/navbar.php");
                                     }
                                 }
                                 else{
-                                    echo "no island found";
+                                    $isDbEmpty = 1;
+                                }
+                                if ($isDbEmpty == 1) {
+                                    echo '<body onload="demo.showEmptyDB(\'top\',\'right\')">';
                                 }
                                 ?>
                                 </tbody>
@@ -164,7 +182,6 @@ require("tpl/navbar.php");
             </div>
         </div>
     </div>
-
 </div>
 </div>
 </div>
