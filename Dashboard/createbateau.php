@@ -14,7 +14,24 @@ require("../global.php");
 
         header('Location: table.php');
 
+?>
+        <script type="text/javascript">
+            $(document).ready(function(){
 
+                demo.initChartist();
+
+                $.notify({
+            	icon: 'pe-7s-anchor',
+            	message: "Success <b>Ajout Bateau</b>"
+
+            },{
+                    type: 'info',
+                timer: 4000
+            });
+
+    	});
+	</script>
+<?php
     }
     else {
 
