@@ -58,6 +58,18 @@
                         <p>Notifications</p>
                     </a>
                 </li>
+                <li>
+                    <a href="TOSET.php">
+                        <i class="pe-7s-anchor"></i>
+                        <p>Île</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="TOSET.php">
+                        <i class="pe-7s-helm"></i>
+                        <p>Liaison</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
