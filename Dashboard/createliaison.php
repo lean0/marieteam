@@ -15,5 +15,8 @@ if(isset($_POST['selectPortDepart']) && isset($_POST['selectPortArriver']) && is
 
 
 }
+else {
+    header('Location: liaison.php?success=0');
+}
 
 
