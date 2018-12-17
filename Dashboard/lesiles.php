@@ -6,6 +6,18 @@ require("../global.php");
 <?php
 require("tpl/header.php");
 require("tpl/navbar.php");
+    if (isset($_GET['success'])) {
+        if ($_GET['success'] == 1) {
+            echo '<body onload="demo.showSucess(\'top\',\'right\')">';
+        }
+        else {
+            if ($_GET['success'] == 0) {
+                echo '<body onload="demo.showError(\'top\',\'right\')">';
+            }
+        }
+    }
+
+
 ?>
 <style>
     table, th, td {
@@ -102,23 +114,27 @@ require("tpl/navbar.php");
                         </div>
 
 
-                            <table id="tabuser" class="table table-striped table-bordered" style="width:100%">
+
+
+                            <table id="tabuser" class="table table-striped table-bordered"style="width:100%">
+
                                 <script>
                                     $(document).ready(function() {
                                         $('#tabuser').DataTable();
                                     } );
                                 </script>
                                 <?php
-
+                                $isDbEmpty = 0;
                                 $req = $db->connection()->prepare('SELECT * FROM iledeservie');
                                 $req->execute();
                                 $rows = $req->rowCount();
 
                                 ?>
                                 <thead>
-                                <tr>
+                                <tr >
                                     <th>ID</th>
                                     <th>Nom</th>
+                                    <th>Nom du port</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -131,12 +147,16 @@ require("tpl/navbar.php");
                                         <tr>
                                             <th> <?=$data['idIle']?>  </th>
                                             <th> <?=$data['nom']?> </th>
+                                            <th> <?=$data['nomPort']?> </th>
                                         </tr>
                                         <?php
                                     }
                                 }
                                 else{
-                                    echo "no island found";
+                                    $isDbEmpty = 1;
+                                }
+                                if ($isDbEmpty == 1) {
+                                    echo '<body onload="demo.showEmptyDB(\'top\',\'right\')">';
                                 }
                                 ?>
                                 </tbody>
@@ -148,6 +168,13 @@ require("tpl/navbar.php");
                                         <label for="recipient-name" class="col-form-label">Nom</label>
                                         <input type="text" value="<?=@$_POST['nomIle'] ?>" class="form-control" placeholder=" " name="nomIle" id="nomIle" required="">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nom du Port</label>
+                                        <input type="text" value="<?=@$_POST['nomPort'] ?>" class="form-control" placeholder=" " name="nomPort" id="nomPort" required="">
+                                    </div>
+                                    <div class="right-w3l">
+                                        <input type="submit" class="form-control serv_bottom" value="Ajouter"  onclick="demo.showError('top','right')">
+                                    </div>
                                 </form>
                             </div>
                     </div>
@@ -155,7 +182,6 @@ require("tpl/navbar.php");
             </div>
         </div>
     </div>
-
 </div>
 </div>
 </div>
