@@ -13,25 +13,19 @@ require("../global.php");
         $success=1;
 
         header('Location: table.php');
+        ?>
+            <div class="alert alert-success" id="success-alert">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <strong>Success! </strong>
+                Product have added to your wishlist.
+            </div>
+            <script>
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+                    $("#success-alert").slideUp(500);
+                });
+            </script>
+        <?php
 
-?>
-        <script type="text/javascript">
-            $(document).ready(function(){
-
-                demo.initChartist();
-
-                $.notify({
-            	icon: 'pe-7s-anchor',
-            	message: "Success <b>Ajout Bateau</b>"
-
-            },{
-                    type: 'info',
-                timer: 4000
-            });
-
-    	});
-	</script>
-<?php
     }
     else {
 
