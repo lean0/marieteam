@@ -18,26 +18,6 @@ require("../global.php");
 
         $req = $db->connection()->prepare('INSERT INTO capitaine (nomCapitaine, prenomCapitaine, dateDebut, emailCapitaine, telephoneCapitaine) VALUE (?,?,?,?,?)');
         $req->execute([$nomcapitaine, $prenomCapitaine, $datetoday, $emailCapitaine, $telephoneCapitaine]);
-        $success = 1;
-        ?>
-
-        <script type="text/javascript">
-            $(document).ready(function(){
-
-                demo.initChartist();
-
-                $.notify({
-                    icon: 'pe-7s-anchor',
-                    message: "Success <b>Ajout MarieTeam</b>"
-
-                },{
-                    type: 'info',
-                    timer: 4000
-                });
-
-            });
-        </script>
-        <?php
 
     }
 
