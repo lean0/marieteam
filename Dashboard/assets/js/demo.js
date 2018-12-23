@@ -290,6 +290,38 @@ demo = {
             }
         });
     },
+    showErrorid: function(from, align){
+        color = 4;
+
+        $.notify({
+            icon: "pe-7s-close",
+            message: "<b>Erreur l'utilisateur saisie n'existe pas</b>"
+
+        },{
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    },
+    showErrorPassword: function(from, align){
+        color = 4;
+
+        $.notify({
+            icon: "pe-7s-close",
+            message: "<b>Erreur le mot de passe saisie est invalide</b>"
+
+        },{
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    },
     showEmptyDB: function(from, align){
         color = 3;
 

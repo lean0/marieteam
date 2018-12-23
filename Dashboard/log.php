@@ -28,7 +28,7 @@ if(isset($_POST['idAdmin']) && isset($_POST['password'])) {
             header('Location: login.php?success=0');
         }
     } else {
-        header('Location: login.php?success=0');
+        header('Location: login.php?success=1');
     }
 }
 

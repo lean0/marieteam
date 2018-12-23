@@ -6,10 +6,14 @@
     require("../global.php");
 
     if (isset($_GET['success'])) {
-        if ($_GET['success'] == 0) {
-            echo '<body onload="demo.showError(\'top\',\'right\')">';
+        if ($_GET['success'] == 1) {
+            echo '<body onload="demo.showErrorid(\'top\',\'right\')">';
+        }
+        elseif ($_GET['success'] == 0){
+            echo '<body onload="demo.showErrorPassword(\'top\',\'right\')">';
         }
     }
+
     ?>
     <style>
         body {
@@ -27,7 +31,7 @@
 
     <div>
         <label for="password">mot de passe</label>
-        <input type="text" value="<?=@$_POST['password'] ?>" name="password" id="password" required>
+        <input type="password" value="<?=@$_POST['password'] ?>" name="password" id="password" required>
     </div>
 
         <input type="submit" value="Validez">

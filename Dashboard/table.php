@@ -56,7 +56,7 @@ if (isset($_GET['success'])) {
                                     </div>
                                 </form>
                             </div>
-                            <h4 class="title">Liste des comptes</h4>
+                            <h4 class="title">Liste des bateaux</h4>
                         </div>
 
 
