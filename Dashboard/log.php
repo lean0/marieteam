@@ -25,12 +25,10 @@ if(isset($_POST['idAdmin']) && isset($_POST['password'])) {
 
 
         } else {
-            //Alerte Bootstrap PASSWORD
+            header('Location: login.php?success=0');
         }
     } else {
-
-        //Alerte Bootstrap USER
-
+        header('Location: login.php?success=0');
     }
 }
 
