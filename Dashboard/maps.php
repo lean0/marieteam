@@ -3,6 +3,8 @@
 <?php
 require("tpl/header.php");
 require("tpl/navbar.php");
+require("../global.php");
+
 ?>
 
 

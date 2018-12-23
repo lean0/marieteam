@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 require("tpl/header.php");
+require("../global.php");
 require("tpl/navbar.php");
 ?>
 <body>

@@ -3,6 +3,7 @@
 <?php
  require("tpl/header.php");
  require("tpl/navbar.php");
+require("../global.php");
 ?>
 <body>
     <div class="main-panel">
@@ -75,7 +76,7 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="logout.php">
                                 <p>Log out</p>
                             </a>
                         </li>

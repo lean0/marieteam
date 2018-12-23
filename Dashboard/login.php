@@ -3,6 +3,8 @@
 <html lang="en">
 <head>
     <?php require('tpl/header.php');
+    require("../global.php");
+
     ?>
     <style>
         body {
@@ -12,15 +14,15 @@
 </head>
 <body>
 
-<form>
+<form action="log.php" method="post">
     <div>
         <label for="idAdmin">Login</label>
         <input type="text" value="<?=@$_POST['idAdmin'] ?>" placeholder=" " name="idAdmin" id="idAdmin" required>
     </div>
 
     <div>
-        <label for="uniquePassword">mot de passe</label>
-        <input type="password" value="<?=@$_POST['uniquePassword'] ?>" name="uniquePassword" id="uniquePassword" required>
+        <label for="password">mot de passe</label>
+        <input type="text" value="<?=@$_POST['password'] ?>" name="password" id="password" required>
     </div>
 
         <input type="submit" value="Validez">
