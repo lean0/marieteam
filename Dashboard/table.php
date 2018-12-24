@@ -60,10 +60,10 @@ if (isset($_GET['success'])) {
                         </div>
 
 
-                            <table id="tabuser" class="table table-striped table-bordered" style="width:100%">
+                            <table class="table table-striped table-bordered" id="test" style="width:100%">
                                 <script>
                                     $(document).ready(function() {
-                                        $('#tabuser').DataTable();
+                                        $('#test').DataTable();
                                     } );
                                 </script>
                                 <div class="Tableau">
@@ -147,4 +147,6 @@ require_once('tpl/footer.php');
 <script src="assets/js/demo.js"></script>
 
 </html>
-<?php } ?>
+<?php } else {
+    header('Location: login.php?success=2');
+}?>

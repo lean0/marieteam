@@ -147,4 +147,6 @@ require("tpl/navbar.php");
 <script src="assets/js/demo.js"></script>
 
 </html>
-<?php } ?>
+<?php } else {
+    header('Location: login.php?success=2');
+} ?>

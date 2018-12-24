@@ -243,4 +243,6 @@ if (isset($_SESSION['login'])){
 	</script>
 
 </html>
-<?php } ?>
+<?php } else {
+    header('Location: login.php?success=2');
+}?>

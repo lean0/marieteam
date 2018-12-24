@@ -127,4 +127,6 @@ require("tpl/navbar.php");
 
 
 </html>
-<?php } ?>
+<?php } else {
+    header('Location: login.php?success=2');
+}?>

@@ -144,4 +144,6 @@ if (isset($_GET['success'])) {
 
 
 </html>
-<?php } ?>
+<?php }else {
+    header('Location: login.php?success=2');
+} ?>

@@ -322,6 +322,22 @@ demo = {
             }
         });
     },
+    showdeco: function(from, align){
+        color = 3;
+
+        $.notify({
+            icon: "pe-7s-server",
+            message: "<b>Vous avez était deconnecter</b>"
+
+        },{
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    },
     showEmptyDB: function(from, align){
         color = 3;
 

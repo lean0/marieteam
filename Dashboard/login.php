@@ -12,6 +12,10 @@
         elseif ($_GET['success'] == 0){
             echo '<body onload="demo.showErrorPassword(\'top\',\'right\')">';
         }
+        elseif ($_GET['success'] == 2){
+            echo '<body onload="demo.showdeco(\'top\',\'right\')">';
+
+        }
     }
 
     ?>
