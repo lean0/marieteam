@@ -57,7 +57,7 @@ require("tpl/navbar.php");
 
 
                 <div class="col-md-8">
-                    <div class="card">
+
                         <div class="header">
                             <h4 class="title">Liste des Iles</h4>
                         </div>
@@ -106,7 +106,7 @@ require("tpl/navbar.php");
                                 ?>
                                 </tbody>
                             </table>
-                    </div>
+
                 </div>
             </div>
         </div>

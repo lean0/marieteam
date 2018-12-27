@@ -1,4 +1,6 @@
 <div class="wrapper">
+    <?php
+    ?>
     <div class="sidebar" data-color="azure" data-image="assets/img/sidebar-5.jpg">
 
         <!--
@@ -53,12 +55,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="notifications.php">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-                <li>
                     <a href="lesiles.php">
                         <i class="pe-7s-anchor"></i>
                         <p>Île</p>
@@ -71,9 +67,26 @@
                     </a>
                 </li>
                 <li>
+                    <a href="notif.php">
+                        <i class="pe-7s-bell"></i>
+                        <?php
+                        $req2 = $db->connection()->prepare('SELECT * FROM notifications');
+                        $req2->execute();
+                        $rows = $req2->rowCount();
+                        if ($rows < 100) {
+                            echo "<p>Notification (" .$rows. ")</p>";
+                        }
+                        else {
+                            echo "<p>Notification (99+)</p>";
+                        }
+
+                        ?>
+                    </a>
+                </li>
+                <li>
                     <a href="admin.php">
                         <i class="pe-7s-user"></i>
-                        <p>admin</p>
+                        <p>Admin</p>
                     </a>
                 </li>
             </ul>

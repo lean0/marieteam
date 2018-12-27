@@ -36,7 +36,7 @@ if (isset($_GET['success'])) {
                 <div class="col-md-8">
                     <div class="card">
                         <div class="header">
-                            <div class="card">
+
                                 <h4 class="title">Ajouter un bateau</h4>
                                 <form action="createbateau.php" method="post">
                                     <div class="form-group">
@@ -51,14 +51,13 @@ if (isset($_GET['success'])) {
                                         <label for="recipient-email" class="col-form-label">Capacité</label>
                                         <input type="text" value="<?=@$_POST['capaciteBateau'] ?>"  class="form-control" placeholder=" " name="capaciteBateau" id="mail" required="">
                                     </div>
-                                    <div class="right-w3l">
-                                        <input type="submit" class="form-control serv_bottom" value="Ajouter">
-                                    </div>
+                                    <br class="right-w3l">
+                                        <input type="submit" class="form-control serv_bottom" value="Ajouter"></br>
                                 </form>
-                            </div>
-                            <h4 class="title">Liste des bateaux</h4>
-                        </div>
+                                    </div>
 
+                        </div>
+                    <h4 class="title">Liste des bateaux</h4>
 
                             <table class="table table-striped table-bordered" id="test" style="width:100%">
                                 <script>

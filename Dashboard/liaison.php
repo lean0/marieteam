@@ -32,6 +32,7 @@ $rw = $req->rowCount();
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="card">
                     <div class="form-group">
                         <form action="createliaison.php" method="post">
 
@@ -79,12 +80,13 @@ $rw = $req->rowCount();
                         </form>
                     </div>
                 </div>
+                </div>
             </div>
 
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="card">
+
                             <div class="header">
                                 <h4 class="title">Liste des liaisons</h4>
                             </div>
@@ -140,7 +142,7 @@ $rw = $req->rowCount();
                                 </table>
 
                             </form>
-                        </div>
+
                     </div>
                 </div>
             </div>
