@@ -53,9 +53,8 @@ if (isset($_GET['success'])) {
                                     </div>
                                     <br class="right-w3l">
                                         <input type="submit" class="form-control serv_bottom" value="Ajouter"></br>
-                                    </div>
                                 </form>
-
+                                    </div>
 
                         </div>
                     <h4 class="title">Liste des bateaux</h4>
