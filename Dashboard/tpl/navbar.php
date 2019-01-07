@@ -38,13 +38,13 @@
                 </li>
                 <li>
                     <a href="capitaine.php">
-                        <i class="pe-7s-news-paper"></i>
+                        <i class="pe-7s-id"></i>
                         <p>Capitaines</p>
                     </a>
                 </li>
                 <li>
                     <a href="icons.php">
-                        <i class="pe-7s-science"></i>
+                        <i class="pe-7s-map-2"></i>
                         <p>Voyages</p>
                     </a>
                 </li>
