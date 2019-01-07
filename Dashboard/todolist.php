@@ -64,6 +64,7 @@ if (isset($_GET['success'])) {
 
                                 </div>
                                 </tbody>
+                            </table>
                     </div>
 
                             </table>
