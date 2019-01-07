@@ -6,7 +6,7 @@ if(isset($_POST['idAdmin']) && isset($_POST['password'])) {
     $id = $_POST['idAdmin'];
     $password = $_POST['password'];
 
-    $req = $db->connection()->prepare('SELECT * FROM admin WHERE idAdmin LIKE ?');
+    $req = $db->connection()->prepare('SELECT * FROM admin WHERE nomAdmin LIKE ?');
     $req->execute([$id]);
     $rows = $req->rowCount();
     $data = $req->fetch();

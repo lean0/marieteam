@@ -26,10 +26,6 @@
                             <b class="caret"></b>
                         </p>
                     </a>
-
-
-
-
                     <ul class="dropdown-menu">
                         <?php
                         $reqN = $db->connection()->prepare('SELECT * FROM notifications');
@@ -54,15 +50,8 @@
                         <?php
                         }
                         ?>
-
-
                     </ul>
                 </li>
-
-
-
-
-
                 <li>
                     <a href="">
                         <i class="fa fa-search"></i>
@@ -72,11 +61,24 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+
+
+
+
                 <li>
+
+
+
+
                     <a href="">
-                        <p>Account</p>
+                        <p><?=$_SESSION['login']?></p>
                     </a>
                 </li>
+
+
+
+
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <p>
