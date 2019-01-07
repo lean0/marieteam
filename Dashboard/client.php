@@ -24,7 +24,7 @@ require("tpl/navbar.php");
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8">
-
+                        <div class="card">
                             <div class="header">
                                 <h4 class="title">Liste des comptes</h4>
                             </div>
@@ -80,6 +80,7 @@ require("tpl/navbar.php");
                                 </table>
 
                             </form>
+                        </div>
                     </div>
                 </div>
             </div>
