@@ -26,10 +26,10 @@ if (isset($_SESSION['login'])) {
         $req2->execute([$nomQui, $Libelle]);
 
 
-        header('Location: typography.php?success=1');
+        header('Location: capitaine.php?success=1');
     }
     else {
-        header('Location: typography.php?success=0');
+        header('Location: capitaine.php?success=0');
     }
 } else {
     header('Location: login.php?success=2');

@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="typography.php">
+                    <a href="capitaine.php">
                         <i class="pe-7s-news-paper"></i>
                         <p>Capitaines</p>
                     </a>
