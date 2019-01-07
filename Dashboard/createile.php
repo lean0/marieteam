@@ -7,7 +7,7 @@ if(isset($_POST['nomIle'])) {
     $nomPort = $_POST['nomPort'];
 
     $nomQui = $_SESSION['login'];
-    $Libelle = "ILE : " . $nomcIle . " crée";
+    $Libelle = "ILE : " . $nomcIle . " créée";
 
     $req = $db->connection()->prepare('INSERT INTO iledeservie (nom, nomPort) VALUE (?,?)');
     $req->execute([$nomIle, $nomPort]);

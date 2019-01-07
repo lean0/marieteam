@@ -8,7 +8,7 @@ if(isset($_POST['selectPortDepart']) && isset($_POST['selectPortArriver']) && is
     $distance = $_POST['distance'];
 
     $nomQui = $_SESSION['login'];
-    $Libelle = "LIAISON : " . $SPD . "->" . $SPA . " crée";
+    $Libelle = "LIAISON : " . $SPD . "->" . $SPA . " créée";
 
 
     $req = $db->connection()->prepare('INSERT INTO liaison (portDepart, portArriver, distance) VALUE (?,?,?)');

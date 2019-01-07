@@ -49,7 +49,7 @@ if (isset($_SESSION['login'])){
                                 ?>
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
+
                                     <th>Nom</th>
                                     <th>Description</th>
                                     <th>Delete</th>
@@ -64,7 +64,7 @@ if (isset($_SESSION['login'])){
                                         $idtodl = $data['id'];
                                         ?>
                                         <tr>
-                                            <th width="2%"><?=$idtodl?> </th>
+
                                             <th width="15%"><?=$data['nomQui']?></th>
                                             <th><?=$data['Libelle']?></th>
                                             <th width="10%">

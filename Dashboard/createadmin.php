@@ -6,7 +6,7 @@ if (isset($_SESSION['login'])) {
         $ps = $_POST['password'];
         $dateIn = time();
         $nomQui = $_SESSION['login'];
-        $Libelle = "ADMIN : " . $nom . " crée";
+        $Libelle = "ADMIN : " . $nom . " créé";
 
 
         $PH = password_hash($ps, PASSWORD_DEFAULT);

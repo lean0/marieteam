@@ -17,7 +17,7 @@ if (isset($_SESSION['login'])) {
         $datetoday = time();
 
         $nomQui = $_SESSION['login'];
-        $Libelle = "CAPITAINE : " . $nomcapitaine . " crée";
+        $Libelle = "CAPITAINE : " . $nomcapitaine . " créé";
 
         $req = $db->connection()->prepare('INSERT INTO capitaine (nomCapitaine, prenomCapitaine, dateDebut, emailCapitaine, telephoneCapitaine) VALUE (?,?,?,?,?)');
         $req->execute([$nomcapitaine, $prenomCapitaine, $datetoday, $emailCapitaine, $telephoneCapitaine]);

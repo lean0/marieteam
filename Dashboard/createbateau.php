@@ -9,7 +9,7 @@ if (isset($_SESSION['login'])) {
         $capa = $_POST['capaciteBateau'];
 
         $nomQui = $_SESSION['login'];
-        $Libelle = "BATEAU : " . $nom . " crée";
+        $Libelle = "BATEAU : " . $nom . " créé";
 
 
         $req = $db->connection()->prepare('INSERT INTO bateau (nom, typeBateau, capaciteBateau) VALUE (?,?,?)');

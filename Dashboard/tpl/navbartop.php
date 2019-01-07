@@ -31,11 +31,31 @@
 
 
                     <ul class="dropdown-menu">
-                        <li><a href="#">Notification 1</a></li>
-                        <li><a href="#">Notification 2</a></li>
-                        <li><a href="#">Notification 3</a></li>
-                        <li><a href="#">Notification 4</a></li>
-                        <li><a href="#">Another notification</a></li>
+                        <?php
+                        $reqN = $db->connection()->prepare('SELECT * FROM notifications');
+                        $reqN->execute();
+                        $rowsN = $reqN->rowCount();
+                        $notifCounter = 0;
+                        if ($rowsN != 0) {
+                            for ($i = 1; $i <= $rowsN; $i++) {
+                                $dataN = $reqN->fetch();
+                                $idNotif = $dataN['id'];
+                                $notifCounter++;
+                                if ($notifCounter <= 5) {
+                                    ?>
+                                    <li><a href="notif.php"><?= $dataN['Libelle'] ?></a></li>
+                                    <?php
+                                }
+                            }
+                        }
+                        else {
+                        ?>
+                        <li><a href="notif.php">Pas de nouveautées..</a></li>
+                        <?php
+                        }
+                        ?>
+
+
                     </ul>
                 </li>
 
