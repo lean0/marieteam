@@ -39,7 +39,7 @@
                                 $notifCounter++;
                                 if ($notifCounter <= 5) {
                                     ?>
-                                    <li><a href="notif.php"><?= $dataN['Libelle'] ?></a></li>
+                                    <li><a href="notif.php"><?=$dataN['Libelle']?> (<?=$dataN['nomQui']?>)</a></li>
                                     <?php
                                 }
                             }

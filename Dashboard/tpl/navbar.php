@@ -89,6 +89,12 @@
                         <p>Admin</p>
                     </a>
                 </li>
+                <li>
+                    <a href="todolist.php">
+                        <i class="pe-7s-plus"></i>
+                        <p>TODO List</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

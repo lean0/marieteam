@@ -81,7 +81,7 @@ if (isset($_GET['success'])) {
                                             $data = $req->fetch();
                                             ?>
                                             <tr>
-                                                <th> <?=$data['idAdmin']?>  </th>
+                                                <th width="2%"> <?=$data['idAdmin']?> </th>
                                                 <th> <?=$data['nomAdmin']?> </th>
                                             <?php
                                         }
