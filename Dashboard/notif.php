@@ -78,7 +78,7 @@ if (isset($_SESSION['login'])){
                                     }
                                 }
                                 else{
-                                    echo "0 notif";
+                                    echo "Pas de nouvelles notifications";
                                 }
 
 

@@ -290,6 +290,22 @@ demo = {
             }
         });
     },
+    showErrorExist: function(from, align){
+        color = 4;
+
+        $.notify({
+            icon: "pe-7s-close",
+            message: "<b>Nom déjà utilisé.</b>"
+
+        },{
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    },
     showErrorid: function(from, align){
         color = 4;
 

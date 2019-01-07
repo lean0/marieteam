@@ -12,7 +12,7 @@ if (isset($_GET['success'])) {
     }
     else {
         if ($_GET['success'] == 0) {
-            echo '<body onload="demo.showError(\'top\',\'right\')">';
+            echo '<body onload="demo.showErrorExist(\'top\',\'right\')">';
         }
     }
 }
