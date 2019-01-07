@@ -58,10 +58,6 @@ if (isset($_GET['success'])) {
                                         <tr>
                                         <th>Réorganiser la hiérarchie des fichiers (Mettre les createxxx.php dans un dossier appart, de même xxxdel.php, etc)</th>
                                         </tr>
-                                        <tr>
-                                            <th>Rename les fichiers correctement (ex : rename table.php en bateau.php, etc)</th>
-                                        </tr>
-
                                 </div>
                                 </tbody>
                             </table>

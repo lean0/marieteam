@@ -25,13 +25,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="user.php">
+                    <a href="client.php">
                         <i class="pe-7s-user"></i>
                         <p>Clients</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.php">
+                    <a href="bateau.php">
                         <i class="pe-7s-note2"></i>
                         <p>Bateaux</p>
                     </a>
@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="icons.php">
+                    <a href="voyage.php">
                         <i class="pe-7s-map-2"></i>
                         <p>Voyages</p>
                     </a>
