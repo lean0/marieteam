@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e646e7d6-cb34-49f5-83bb-6cc4c7978426" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/editclient.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/editusersql.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dashboard/deletebateau.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dashboard/editbateau.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dashboard/editbateausql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/bateau.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/bateau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/todolist.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/todolist.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,26 +20,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dashboard/client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="60" column="62" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="60" selection-end-column="62" />
+            <state relative-caret-position="391">
+              <caret line="68" column="124" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="124" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dashboard/createbateau.php">
+        <entry file="file://$PROJECT_DIR$/Dashboard/bateau.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="493">
+              <caret line="95" column="88" selection-start-line="95" selection-start-column="88" selection-end-line="95" selection-end-column="88" />
+              <folding>
+                <element signature="e#4434#4460#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Dashboard/deletebateau.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dashboard/editbateau.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dashboard/editbateausql.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dashboard/todolist.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="61" column="86" selection-start-line="61" selection-start-column="86" selection-end-line="61" selection-end-column="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dashboard/editusersql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="118" selection-start-line="23" selection-start-column="118" selection-end-line="23" selection-end-column="118" />
+            <state relative-caret-position="629">
+              <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -46,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dashboard/editclient.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="204">
               <caret line="36" column="95" lean-forward="true" selection-start-line="36" selection-start-column="95" selection-end-line="36" selection-end-column="95" />
             </state>
           </provider>
@@ -63,10 +103,15 @@
         <option value="$PROJECT_DIR$/tpl/header.php" />
         <option value="$PROJECT_DIR$/Dashboard/edit/editclient.php" />
         <option value="$PROJECT_DIR$/Dashboard/tpl/header.php" />
-        <option value="$PROJECT_DIR$/Dashboard/client.php" />
         <option value="$PROJECT_DIR$/Dashboard/tpl/navbar.php" />
         <option value="$PROJECT_DIR$/Dashboard/editclient.php" />
         <option value="$PROJECT_DIR$/Dashboard/editusersql.php" />
+        <option value="$PROJECT_DIR$/Dashboard/client.php" />
+        <option value="$PROJECT_DIR$/Dashboard/editbateau.php" />
+        <option value="$PROJECT_DIR$/Dashboard/editbateausql.php" />
+        <option value="$PROJECT_DIR$/Dashboard/todolist.php" />
+        <option value="$PROJECT_DIR$/Dashboard/bateau.php" />
+        <option value="$PROJECT_DIR$/Dashboard/deletebateau.php" />
       </list>
     </option>
   </component>
@@ -162,19 +207,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552291042151</updated>
-      <workItem from="1552291043308" duration="6774000" />
+      <workItem from="1552291043308" duration="8150000" />
     </task>
+    <task id="LOCAL-00001" summary="[CRUD] + Client modif">
+      <created>1552297993890</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1552297993890</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6774000" />
+    <option name="totallyTimeSpent" value="8150000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.018337408" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17114915" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -196,6 +249,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[CRUD] + Client modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="[CRUD] + Client modif" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Dashboard/createadmin.php">
@@ -265,13 +322,6 @@
         <state relative-caret-position="-1258" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dashboard/client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="60" column="62" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="60" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dashboard/createbateau.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -279,17 +329,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Dashboard/editusersql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dashboard/client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="68" column="124" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dashboard/todolist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="61" column="86" selection-start-line="61" selection-start-column="86" selection-end-line="61" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dashboard/editbateausql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dashboard/editclient.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="204">
           <caret line="36" column="95" lean-forward="true" selection-start-line="36" selection-start-column="95" selection-end-line="36" selection-end-column="95" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dashboard/editusersql.php">
+    <entry file="file://$PROJECT_DIR$/Dashboard/bateau.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="118" selection-start-line="23" selection-start-column="118" selection-end-line="23" selection-end-column="118" />
+        <state relative-caret-position="493">
+          <caret line="95" column="88" selection-start-line="95" selection-start-column="88" selection-end-line="95" selection-end-column="88" />
+          <folding>
+            <element signature="e#4434#4460#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dashboard/editbateau.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dashboard/deletebateau.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
