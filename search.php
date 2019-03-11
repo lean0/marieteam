@@ -55,7 +55,7 @@ if (isset($_GET) && !empty($_GET))
     </nav>
     <!-- Corps -->
 
-    <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 20px">
+    <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 20px; display: flex; justify-content: space-around; flex-direction: column">
         <?php
         $cond = array();
         $filtre = '';
@@ -73,22 +73,31 @@ if (isset($_GET) && !empty($_GET))
             $filtre .= " WHERE " . implode(' AND ', $cond);
         }
 
-        $req = 'SELECT * FROM traverse'.$filtre;
-        echo $req;
+        $req = $db->connection()->prepare('SELECT * FROM traverse'.$filtre);
+        $req->execute();
+        $rows = $req->rowCount();
 
-        $res = $db->query($req);
-        while ($trajet = $res->fetch())
+        if ($rows != 0)
+        {
+            for ($i = 1; $i <= $rows; $i++)
+            {
+                $trajet = $req->fetch();
+                ?>
+                <div class="line"> blablabla <?= $trajet['id']; ?> </div>
+                <?php
+            }
+        }
+        else
         {
             ?>
-                <div class="line">line 1</div>
+            <div class="line"> Aucun trajet n'est disponible </div>
+
+            <a style="text-align: center; padding: 10px 15px; margin: 10px auto; border-radius: 2px; background-color: #705456;  color: white; cursor:pointer;">
+                Nouvelle recherche!
+            </a>
             <?php
         }
         ?>
-        <div class="line">line 1</div>
-        <div class="line">line 2</div>
-        <div class="line">line 3</div>
-        <div class="line">line 4</div>
-        <div class="line">line 5</div>
     </div>
     <style>
         .line {
