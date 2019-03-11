@@ -1,22 +1,22 @@
 <?php
 
 require("../global.php");
-if(isset($_POST['idtodel'])) {
+if($_GET['id'] != "*" ) {
 
-   $idtodl = $_POST['idtodel'];
-
-   $req = $db->connection()->prepare('DELETE FROM notifications WHERE id =:idtodl');
-    $req->execute(array( ":idtodl" => $_POST['idtodel'] ));
-
-
+    $req = $db->connection()->prepare('DELETE FROM notifications WHERE id =:idtodl');
+    $req->execute(array( ":idtodl" => $_GET['id'] ));
     header('Location: notif.php?success=1');
-
-
+}
+else if ($_GET['id'] = "*")
+{
+    $req = $db->connection()->prepare('DELETE FROM notifications');
+    $req->execute();
+    header('Location: notif.php?success=1');
 }
 else {
 
 
-   header('Location: notif.php?success=0');
+    header('Location: notif.php?success=0');
 
 
 }
