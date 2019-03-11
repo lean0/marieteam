@@ -50,6 +50,7 @@ require("tpl/navbar.php");
                                             <th>Prénom</th>
                                             <th>Mail</th>
                                             <th>Date d'inscription</th>
+                                            <th>edit</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -65,6 +66,7 @@ require("tpl/navbar.php");
                                         <th> <?=$data['prenom'] ?></th>
                                         <th> <?=$data['mail'] ?></th>
                                         <th> <?=date('m/d/Y', $data['dateInscription']) ?></th>
+                                        <th> <?="<a href='editclient.php?id=" . $data["idClient"] . "'>Modifier</a>" ?></th>
                                         </tr>
                                     <?php
                                     }

@@ -53,7 +53,9 @@
                                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-user"></i>
                                             <?php
-                                                echo $_SESSION['nom'];
+                                                if (isset($_SERRSION)) {
+                                                    echo $_SESSION['nom'];
+                                                }
                                             ?>
                                         </a>
 
