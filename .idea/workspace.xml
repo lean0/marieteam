@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9ade71c-23d2-4e49-b5b3-630b91258739" name="Default Changelist" comment="ds">
-      <change afterPath="$PROJECT_DIR$/Dashboard/createsecteur.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/createvoyage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/secteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/bateau.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/bateau.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/createliaison.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/createliaison.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/liaison.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/liaison.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/tpl/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/tpl/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/voyage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/voyage.php" afterDir="false" />
+    <list default="true" id="d9ade71c-23d2-4e49-b5b3-630b91258739" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dashboard/voyage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            <state relative-caret-position="812">
+              <caret line="117" column="42" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="42" />
               <folding>
                 <element signature="e#6232#6250#0#HTML" expanded="true" />
               </folding>
@@ -231,25 +224,40 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552290114951</updated>
-      <workItem from="1552290119504" duration="6800000" />
+      <workItem from="1552290119504" duration="7751000" />
     </task>
+    <task id="LOCAL-00001" summary="ds">
+      <created>1552299251139</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1552299251139</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ds">
+      <created>1552299442959</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552299442959</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6800000" />
+    <option name="totallyTimeSpent" value="7751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" weight="0.3295964" />
       <window_info anchor="bottom" id="Terminal" weight="0.3295964" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.3295964" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -360,8 +368,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dashboard/voyage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state relative-caret-position="812">
+          <caret line="117" column="42" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="42" />
           <folding>
             <element signature="e#6232#6250#0#HTML" expanded="true" />
           </folding>
