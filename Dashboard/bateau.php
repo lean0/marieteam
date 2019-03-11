@@ -115,12 +115,6 @@ if (isset($_GET['success'])) {
         </div>
     </div>
 
-</div>
-</div>
-</div>
-
-</div>
-</div>
 
 <?php
 require_once('tpl/footer.php');

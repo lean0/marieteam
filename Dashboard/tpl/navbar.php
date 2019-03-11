@@ -95,6 +95,12 @@
                         <p>TODO List</p>
                     </a>
                 </li>
+                <li>
+                    <a href="secteur.php">
+                        <i class="pe-7s-angle-up-circle"></i>
+                        <p>Secteur</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
