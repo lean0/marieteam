@@ -78,6 +78,7 @@ if (isset($_GET['success'])) {
                                     <th>Nom</th>
                                     <th>Type</th>
                                     <th>Capacité</th>
+                                    <th>edit</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -92,6 +93,7 @@ if (isset($_GET['success'])) {
                                             <th> <?=$data['nom']?> </th>
                                             <th> <?=$data['typeBateau'] ?></th>
                                             <th> <?=$data['capaciteBateau'] ?></th>
+                                            <th style="text-align: center"; width="10%";> <?="<a href='editbateau.php?id=" . $data["idBateau"] . "'>Modifier</a>" ?> | <?="<a href='deletebateau.php?id=" . $data["idBateau"] . "'>Suppr</a>" ?></th>
                                         </tr>
                                         <?php
                                     }
@@ -115,12 +117,6 @@ if (isset($_GET['success'])) {
         </div>
     </div>
 
-</div>
-</div>
-</div>
-
-</div>
-</div>
 
 <?php
 require_once('tpl/footer.php');
