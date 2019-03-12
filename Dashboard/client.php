@@ -7,6 +7,16 @@ if (isset($_SESSION['login'])){
 <?php
 require("tpl/header.php");
 require("tpl/navbar.php");
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
+        echo '<body onload="demo.showSucess(\'top\',\'right\')">';
+    }
+    else {
+        if ($_GET['success'] == 0) {
+            echo '<body onload="demo.showError(\'top\',\'right\')">';
+        }
+    }
+}
 ?>
 <style>
     table, th, td {
@@ -50,6 +60,7 @@ require("tpl/navbar.php");
                                             <th>Prénom</th>
                                             <th>Mail</th>
                                             <th>Date d'inscription</th>
+                                            <th>edit</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -65,6 +76,7 @@ require("tpl/navbar.php");
                                         <th> <?=$data['prenom'] ?></th>
                                         <th> <?=$data['mail'] ?></th>
                                         <th> <?=date('m/d/Y', $data['dateInscription']) ?></th>
+                                        <th> <?="<a href='editclient.php?id=" . $data["idClient"] . "'>Modifier</a>" ?></th>
                                         </tr>
                                     <?php
                                     }

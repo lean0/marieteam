@@ -50,7 +50,7 @@ if (isset($_SESSION['login'])){
 
                                     <th>Nom</th>
                                     <th>Description</th>
-                                    <th>Delete</th>
+                                    <th><?="<a href='notifdel.php?id=*'>DEL ALL</a>" ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -66,10 +66,7 @@ if (isset($_SESSION['login'])){
                                             <th width="15%"><?=$data['nomQui']?></th>
                                             <th><?=$data['Libelle']?></th>
                                             <th width="10%">
-                                                <form action="notifdel.php" method="post">
-                                                    <!-- trover un moyen de mettre autre chose comme texte dans le btn -->
-                                                <input type="submit" class="form-control serv_bottom" value="<?=$idtodl?>" name="idtodel">
-                                                </form>
+                                                    <?="<a href='notifdel.php?id=" . $data["id"] . "'>Suppr</a>" ?>
                                             </th>
                                         </tr>
                                         <?php

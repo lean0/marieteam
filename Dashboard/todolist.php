@@ -52,11 +52,14 @@ if (isset($_GET['success'])) {
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <tr>
+                                    <th>Faire la système de tarification</th>
+                                </tr>
                                         <tr>
-                                            <th>Trouver un moyen d'afficher autre chose dans un bouton de notif.php que sa value</th>
+                                            <th>Réorganiser la hiérarchie des fichiers (Mettre les createxxx.php dans un dossier appart, de même xxxdel.php, etc)</th>
                                         </tr>
                                         <tr>
-                                        <th>Réorganiser la hiérarchie des fichiers (Mettre les createxxx.php dans un dossier appart, de même xxxdel.php, etc)</th>
+                                            <th>Faire en sorte que Bilel boss</th>
                                         </tr>
                                 </div>
                                 </tbody>
