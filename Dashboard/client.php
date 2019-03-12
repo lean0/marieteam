@@ -28,8 +28,6 @@ if (isset($_GET['success'])) {
     <div class="main-panel">
         <?php require ('tpl/navbartop.php');?>
 
-
-
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
