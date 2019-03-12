@@ -53,7 +53,7 @@ if (isset($_GET['success'])) {
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th>Faire la système de tarification</th>
+                                    <th>Bilel</th>
                                 </tr>
                                         <tr>
                                             <th>Réorganiser la hiérarchie des fichiers (Mettre les createxxx.php dans un dossier appart, de même xxxdel.php, etc)</th>
@@ -61,6 +61,24 @@ if (isset($_GET['success'])) {
                                         <tr>
                                             <th>Faire en sorte que Bilel boss</th>
                                         </tr>
+                                    <tr>
+                                        <th>Léandre</th>
+                                    </tr>
+                                        <tr>
+                                            <th>S'occuper du contenue du site web principale en récupérant des infos depuis la bdd en affichage</th>
+                                        </tr>
+                                     <tr>
+                                         <th>Redha</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Système de tarification</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Clément</th>
+                                    </tr>
+                                    <tr>
+                                        <th> Système de recherche des itinéraire sur le site principale depuis la bdd </th>
+                                    </tr>
                                 </div>
                                 </tbody>
                             </table>
