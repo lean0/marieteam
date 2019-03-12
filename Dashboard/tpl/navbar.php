@@ -25,6 +25,23 @@
                     </a>
                 </li>
                 <li>
+                    <a href="notif.php">
+                        <i class="pe-7s-bell"></i>
+                        <?php
+                        $req2 = $db->connection()->prepare('SELECT * FROM notifications');
+                        $req2->execute();
+                        $rows = $req2->rowCount();
+                        if ($rows < 100) {
+                            echo "<p>Notification (" .$rows. ")</p>";
+                        }
+                        else {
+                            echo "<p>Notification (99+)</p>";
+                        }
+
+                        ?>
+                    </a>
+                </li>
+                <li>
                     <a href="client.php">
                         <i class="pe-7s-user"></i>
                         <p>Clients</p>
@@ -64,23 +81,6 @@
                     <a href="liaison.php">
                         <i class="pe-7s-helm"></i>
                         <p>Liaison</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notif.php">
-                        <i class="pe-7s-bell"></i>
-                        <?php
-                        $req2 = $db->connection()->prepare('SELECT * FROM notifications');
-                        $req2->execute();
-                        $rows = $req2->rowCount();
-                        if ($rows < 100) {
-                            echo "<p>Notification (" .$rows. ")</p>";
-                        }
-                        else {
-                            echo "<p>Notification (99+)</p>";
-                        }
-
-                        ?>
                     </a>
                 </li>
                 <li>
