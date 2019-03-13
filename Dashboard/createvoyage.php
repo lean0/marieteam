@@ -10,14 +10,16 @@ if (isset($_SESSION['login'])) {
         $bateau = $_POST['bateau'];
         $capitaine = $_POST['capitaine'];
         $liaison = $_POST['liaison'];
-
+        $idbat = $bateau[0];
+        $idcap = $capitaine[0];
+        $idl = $liaison[0];
 
         $nomQui = $_SESSION['login'];
         $Libelle = "Voyage : " . $nomVoyage . " créé";
 
+            $req = $db->connection()->prepare('INSERT INTO traverse (nomTraverse, date, heureDepart, heureArrive, idBateau, idCapitaine, idLiaison) VALUE (?,?,?,?,?,?,?)');
+            $req->execute([$nomVoyage, $date, $hdp, $hda, $idbat, $idcap, $idl]);
 
-        $req = $db->connection()->prepare('INSERT INTO traverse (nomTraverse, date, heureDepart, heureArrive, idBateau, idCapitaine, idLiaison) VALUE (?,?,?,?,?,?,?)');
-        $req->execute([$nomVoyage, $date, $hdp, $hda, $bateau, $capitaine, $liaison]);
 
         $req2 = $db->connection()->prepare('INSERT INTO notifications (nomQui, Libelle) VALUE (?,?)');
         $req2->execute([$nomQui, $Libelle]);

@@ -33,11 +33,11 @@ require("tpl/navbar.php");
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-email" class="col-form-label">Heure Depart</label>
-                                    <input type="text" value="<?=@$_POST['heuredepart'] ?>"  class="form-control" placeholder=" " name="heuredepart" id="heuredepart" required="">
+                                    <input type="number" value="<?=@$_POST['heuredepart'] ?>"  class="form-control" name="heuredepart" id="heuredepart" required="">
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-email" class="col-form-label">Heure Arriver</label>
-                                    <input type="text" value="<?=@$_POST['heurearrive'] ?>"  class="form-control" placeholder=" " name="heurearrive" id="heurearrive" required="">
+                                    <input type="number" value="<?=@$_POST['heurearrive'] ?>"  class="form-control" name="heurearrive" id="heurearrive" required="">
                                 </div>
                                 <?php
                                 $req = $db->connection()->prepare('SELECT idBateau, nom, capaciteBateau FROM bateau');
