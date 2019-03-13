@@ -17,13 +17,13 @@ if (isset($_SESSION['login'])) {
         $nomQui = $_SESSION['login'];
         $Libelle = "Voyage : " . $nomVoyage . " créé";
 
+
             $req = $db->connection()->prepare('INSERT INTO traverse (nomTraverse, date, heureDepart, heureArrive, idBateau, idCapitaine, idLiaison) VALUE (?,?,?,?,?,?,?)');
             $req->execute([$nomVoyage, $date, $hdp, $hda, $idbat, $idcap, $idl]);
 
 
         $req2 = $db->connection()->prepare('INSERT INTO notifications (nomQui, Libelle) VALUE (?,?)');
         $req2->execute([$nomQui, $Libelle]);
-
         header('Location: voyage.php?success=1');
 
 

@@ -7,6 +7,18 @@ require("tpl/header.php");
 require("tpl/navbar.php");
 
 ?>
+<?php
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
+        echo '<body onload="demo.showSucess(\'top\',\'right\')">';
+    }
+    else {
+        if ($_GET['success'] == 0) {
+            echo '<body onload="demo.showError(\'top\',\'right\')">';
+        }
+    }
+}
+?>
 <body>
 
 
