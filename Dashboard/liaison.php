@@ -72,6 +72,25 @@ $rw = $req->rowCount();
                                 <input type="number" value="<?=@$_POST['distance'] ?>"  class="form-control" placeholder=" " name="distance" id="distance" required="">
                             </div>
 
+                        <?php
+                        $req3 = $db->connection()->prepare('SELECT id, nomSecteur FROM secteur');
+                        $req3->execute();
+                        $rw3 = $req3->rowCount();
+                        ?>
+                        <div class="form-group">
+                            <label for="secteur" class="col-form-label">Secteur de la liaison</label>
+                            <select class="form-control" id="secteur" name="secteur" value="<?= $dt3['id'] ?>">
+                                <?php if($rw3 != 0) {
+                                    for ($f = 1; $f <= $rw3; $f++) {
+                                        $dt3 = $req3->fetch();
+                                        ?>
+                                        <option><?=$dt3['id']." ".$dt3['nomSecteur']?></option>
+                                    <?php } } ?>
+
+                            </select>
+                        </div>
+
+
                             <div class="form-group">
                             <div class="right-w3l">
                                 <input type="submit" class="form-control serv_bottom" value="Validez">
@@ -111,6 +130,7 @@ $rw = $req->rowCount();
                                         <th>Port Départ</th>
                                         <th>Port Arrivé</th>
                                         <th>Distance KM</th>
+                                        <th>Secteur</th>
 
                                     </tr>
                                     </thead>
@@ -126,6 +146,7 @@ $rw = $req->rowCount();
                                                 <th> <?=$data['portDepart']?> </th>
                                                 <th><?=$data['portArriver']?></th>
                                                 <th><?=$data['distance']?></th>
+                                                <th><?=$data['idSecteur'] ?></th>
 
                                             </tr>
                                             <?php

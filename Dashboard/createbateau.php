@@ -9,7 +9,7 @@ if (isset($_SESSION['login'])) {
         $capa = $_POST['capaciteBateau'];
 
         $nomQui = $_SESSION['login'];
-        $Libelle = "BATEAU : " . $nom . " crée";
+        $Libelle = "BATEAU : " . $nom . " créé";
 
 
         $req = $db->connection()->prepare('INSERT INTO bateau (nom, typeBateau, capaciteBateau) VALUE (?,?,?)');
@@ -18,14 +18,14 @@ if (isset($_SESSION['login'])) {
         $req2 = $db->connection()->prepare('INSERT INTO notifications (nomQui, Libelle) VALUE (?,?)');
         $req2->execute([$nomQui, $Libelle]);
 
-        header('Location: table.php?success=1');
+        header('Location: bateau.php?success=1');
 
 
     }
     else {
 
 
-        header('Location: table.php?success=0');
+        header('Location: bateau.php?success=0');
 
 
     }

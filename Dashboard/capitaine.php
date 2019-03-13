@@ -18,6 +18,12 @@ if (isset($_GET['success'])) {
     }
 }
 ?>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
 <body>
 
     <div class="main-panel">
@@ -28,7 +34,11 @@ if (isset($_GET['success'])) {
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-8">
+
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Ajouter un Capitaine</h4>
                         <div class="form-group">
                         <form action="createcapitaine.php" method="post">
                             <div class="form-group">
@@ -53,6 +63,8 @@ if (isset($_GET['success'])) {
                         </form>
                     </div>
                 </div>
+                </div>
+                    </div>
                 </div>
   <div class="form-group">
                     <div class="row">
@@ -141,7 +153,24 @@ if (isset($_GET['success'])) {
 
 </body>
 
+<!--   Core JS Files   -->
+<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
+<!--  Charts Plugin -->
+<script src="assets/js/chartist.min.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="assets/js/bootstrap-notify.js"></script>
+
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+<script src="assets/js/demo.js"></script>
 
 </html>
 <?php }else {

@@ -17,7 +17,7 @@ if (isset($_SESSION['login'])) {
         $datetoday = time();
 
         $nomQui = $_SESSION['login'];
-        $Libelle = "CAPITAINE : " . $nomcapitaine . " crée";
+        $Libelle = "CAPITAINE : " . $nomcapitaine . " créé";
 
         $req = $db->connection()->prepare('INSERT INTO capitaine (nomCapitaine, prenomCapitaine, dateDebut, emailCapitaine, telephoneCapitaine) VALUE (?,?,?,?,?)');
         $req->execute([$nomcapitaine, $prenomCapitaine, $datetoday, $emailCapitaine, $telephoneCapitaine]);
@@ -26,10 +26,10 @@ if (isset($_SESSION['login'])) {
         $req2->execute([$nomQui, $Libelle]);
 
 
-        header('Location: typography.php?success=1');
+        header('Location: capitaine.php?success=1');
     }
     else {
-        header('Location: typography.php?success=0');
+        header('Location: capitaine.php?success=0');
     }
 } else {
     header('Location: login.php?success=2');

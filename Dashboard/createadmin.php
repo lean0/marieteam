@@ -6,18 +6,25 @@ if (isset($_SESSION['login'])) {
         $ps = $_POST['password'];
         $dateIn = time();
         $nomQui = $_SESSION['login'];
-        $Libelle = "ADMIN : " . $nom . " crée";
-
+        $Libelle = "ADMIN : " . $nom . " créé";
 
         $PH = password_hash($ps, PASSWORD_DEFAULT);
-        $req = $db->connection()->prepare('INSERT INTO admin (nomAdmin, password, datedebut) VALUE (?,?,?)');
-        $req->execute([$nom, $PH, $dateIn]);
-
-        $req2 = $db->connection()->prepare('INSERT INTO notifications (nomQui, Libelle) VALUE (?,?)');
-        $req2->execute([$nomQui, $Libelle]);
 
 
-        header('Location: admin.php');
+        $req3 = $db->connection()->prepare('SELECT * FROM admin WHERE nomAdmin LIKE ?');
+        $req3->execute([$nom]);
+        $rows = $req3->rowCount();
+        if ($rows == 0) {
+            $req = $db->connection()->prepare('INSERT INTO admin (nomAdmin, password, datedebut) VALUE (?,?,?)');
+            $req->execute([$nom, $PH, $dateIn]);
+
+            $req2 = $db->connection()->prepare('INSERT INTO notifications (nomQui, Libelle) VALUE (?,?)');
+            $req2->execute([$nomQui, $Libelle]);
+            header('Location: admin.php?success=1');
+        }
+        else {
+            header('Location: admin.php?success=0');
+        }
         ?>
         <?php
     }

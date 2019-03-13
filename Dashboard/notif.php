@@ -22,8 +22,6 @@ if (isset($_SESSION['login'])){
     <div class="main-panel">
         <?php require ('tpl/navbartop.php');?>
 
-
-
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -49,10 +47,10 @@ if (isset($_SESSION['login'])){
                                 ?>
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
+
                                     <th>Nom</th>
                                     <th>Description</th>
-                                    <th>Delete</th>
+                                    <th><?="<a href='notifdel.php?id=*'>DEL ALL</a>" ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -64,21 +62,18 @@ if (isset($_SESSION['login'])){
                                         $idtodl = $data['id'];
                                         ?>
                                         <tr>
-                                            <th width="2%"><?=$idtodl?> </th>
+
                                             <th width="15%"><?=$data['nomQui']?></th>
                                             <th><?=$data['Libelle']?></th>
                                             <th width="10%">
-                                                <form action="notifdel.php" method="post">
-                                                    <!-- trover un moyen de mettre autre chose comme texte dans le btn -->
-                                                <input type="submit" class="form-control serv_bottom" value="<?=$idtodl?>" name="idtodel">
-                                                </form>
+                                                    <?="<a href='notifdel.php?id=" . $data["id"] . "'>Suppr</a>" ?>
                                             </th>
                                         </tr>
                                         <?php
                                     }
                                 }
                                 else{
-                                    echo "0 notif";
+                                    echo "Pas de nouvelles notifications";
                                 }
 
 

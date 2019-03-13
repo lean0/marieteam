@@ -36,7 +36,6 @@ if (isset($_GET['success'])) {
                 <div class="col-md-8">
                     <div class="card">
                         <div class="header">
-
                                 <h4 class="title">Ajouter un bateau</h4>
                                 <form action="createbateau.php" method="post">
                                     <div class="form-group">
@@ -55,8 +54,9 @@ if (isset($_GET['success'])) {
                                         <input type="submit" class="form-control serv_bottom" value="Ajouter"></br>
                                 </form>
                                     </div>
-
                         </div>
+                    <div class="card">
+                        <div class="header">
                     <h4 class="title">Liste des bateaux</h4>
 
                             <table class="table table-striped table-bordered" id="test" style="width:100%">
@@ -78,6 +78,7 @@ if (isset($_GET['success'])) {
                                     <th>Nom</th>
                                     <th>Type</th>
                                     <th>Capacité</th>
+                                    <th>edit</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -92,6 +93,7 @@ if (isset($_GET['success'])) {
                                             <th> <?=$data['nom']?> </th>
                                             <th> <?=$data['typeBateau'] ?></th>
                                             <th> <?=$data['capaciteBateau'] ?></th>
+                                            <th style="text-align: center"; width="10%";> <?="<a href='editbateau.php?id=" . $data["idBateau"] . "'>Modifier</a>" ?> | <?="<a href='deletebateau.php?id=" . $data["idBateau"] . "'>Suppr</a>" ?></th>
                                         </tr>
                                         <?php
                                     }
@@ -108,17 +110,13 @@ if (isset($_GET['success'])) {
 
                             </table>
                     </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
     </div>
 
-</div>
-</div>
-</div>
-
-</div>
-</div>
 
 <?php
 require_once('tpl/footer.php');

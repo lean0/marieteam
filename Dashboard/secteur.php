@@ -29,14 +29,10 @@ if (isset($_GET['success'])) {
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <form action="createadmin.php" method="post">
+                        <form action="createsecteur.php" method="post">
                             <div class="form-group">
-                                <label for="nomAdmin" class="col-form-label">nom du salarié</label>
-                                <input type="text" value="<?=@$_POST['nomAdmin'] ?>"  class="form-control" placeholder=" " name="nomAdmin" id="nomAdmin" required="">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="col-form-label">mot de passe</label>
-                                <input type="password" value="<?=@$_POST['password'] ?>"  class="form-control" placeholder=" " name="password" id="password" required="">
+                                <label for="secteur" class="col-form-label">Secteur</label>
+                                <input type="text" value="<?=@$_POST['nomSecteur'] ?>"  class="form-control" placeholder=" " name="secteur" id="secteur" required="">
                             </div>
                             <div class="right-w3l">
                                 <input type="submit" class="form-control serv_bottom" value="Validez">
@@ -62,37 +58,37 @@ if (isset($_GET['success'])) {
                                     </script>
                                     <?php
                                     $isDbEmpty = 0;
-                                    $req = $db->connection()->prepare('SELECT * FROM admin');
+                                    $req = $db->connection()->prepare('SELECT * FROM secteur');
                                     $req->execute();
                                     $rows = $req->rowCount();
 
                                     ?>
                                     <thead>
                                     <tr>
-                                        <th>ID compte</th>
-                                        <th>Nom salarié</th>
+                                        <th>ID secteur</th>
+                                        <th>Nom secteur</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php
                                     //print_r($data);
                                     if ($rows != 0) {
-                                        for ($i = 1; $i <= $rows; $i++) {
-                                            $data = $req->fetch();
-                                            ?>
-                                            <tr>
-                                                <th width="2%"> <?=$data['idAdmin']?> </th>
-                                                <th> <?=$data['nomAdmin']?> </th>
-                                            <?php
-                                        }
-                                    }
-                                    else{
-                                        echo '<body onload="demo.showEmptyDB(\'top\',\'right\')">';
-                                    }
-
-
-
+                                    for ($i = 1; $i <= $rows; $i++) {
+                                    $data = $req->fetch();
                                     ?>
+                                    <tr>
+                                        <th width="2%"> <?=$data['id']?> </th>
+                                        <th> <?=$data['NomSecteur']?> </th>
+                                        <?php
+                                        }
+                                        }
+                                        else{
+                                            echo '<body onload="demo.showEmptyDB(\'top\',\'right\')">';
+                                        }
+
+
+
+                                        ?>
                                     </tbody>
                                 </table>
 
