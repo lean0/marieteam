@@ -54,9 +54,72 @@ require("global.php");
         <li class="breadcrumb-item active" aria-current="page">Recherche</li>
     </ol>
 </nav>
+
 <!-- Corps -->
 
-<div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 20px">
+<div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%">
+
+
+    <!--TEMPLATE-->
+
+    <div class="lieu">
+        Lille blabla > V2 Auchan
+    </div>
+
+    <div class="ligne">
+        <div style=" padding-right: 10px; margin: auto">
+            0115 ---------------------> 1020
+        </div>
+        <div style="padding: 15px 20px;margin: auto; border: 0.75px solid black">
+            bouton
+        </div>
+    </div>
+    <div class="ligne">
+        <div style=" padding-right: 10px; margin: auto">
+            0115 ---------------------> 1020
+        </div>
+        <div style="padding: 15px 20px;margin: auto; border: 0.75px solid black">
+            bouton
+        </div>
+    </div>
+
+    <style>
+        .ligne {
+            margin: 5px 0;
+            background: #dadfdd;
+            width: 100%;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            min-height: 115px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+            text-align: center
+        }
+        .lieu {
+            /*margin: top right bottom left;*/
+            margin: 5px 0;
+            background: #dadfdd;
+            max-width: 350px;
+            border-radius: 2px;
+            border: none;
+            padding: 25px 27.5px;
+            color: black;
+            height: 115px;
+            line-height: 75px;
+        }
+    </style>
+    <!--FIN TEMPLATE-->
+
+
+
+
+
+
+
     <table>
         <?php
         $cond = array();
@@ -127,17 +190,21 @@ require("global.php");
         ?>
     </table>
 </div>
+
+
+<div class="line">1</div>
 <style>
     .line {
-        padding: 10px;
         margin: 5px auto;
         background: #dadfdd;
         width: 95%;
         border-radius: 2px;
         border: none;
-        color: white;
-        height: 150px;
-        line-height: 150px;
+        color: black;
+        min-height: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
         text-align: center
     }
 </style>
