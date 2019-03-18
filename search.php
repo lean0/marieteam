@@ -70,7 +70,7 @@ Debut Template
 
     <div class="ligne">
         <div class="duree">
-            0115 ---------------------> 1020
+            0115 --------------------> 1020
         </div>
         <div class='prix'>
             bouton
@@ -78,7 +78,7 @@ Debut Template
     </div>
     <div class="ligne">
         <div class="duree">
-            0115 ---------------------> 1020
+            0115 --------------------> 1020
         </div>
         <div class="prix">
             bouton
