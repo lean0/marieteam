@@ -70,7 +70,7 @@ Debut Template
 
     <div class="ligne">
         <div class="duree">
-            0115 --------------------> 1020
+            01:15 --------------------> 10:20
         </div>
         <div class='prix'>
             bouton
@@ -78,7 +78,7 @@ Debut Template
     </div>
     <div class="ligne">
         <div class="duree">
-            0115 --------------------> 1020
+            01:15 --------------------> 16:20
         </div>
         <div class="prix">
             bouton
@@ -295,7 +295,7 @@ Fin Du Template
     });
 </script>
 <!-- //end-smooth-scrolling -->
-<!-- smooth-scrolling-of-move-up -->
+<!-- smooth-scrolling-of-move-up 6544-->
 <script>
     $(document).ready(function () {
         /*
