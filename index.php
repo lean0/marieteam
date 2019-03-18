@@ -51,14 +51,39 @@ require("global.php");
         <form id="trip_form">
 
             <div class="entity">
-                <span class="libelle">aller</span>
+                <span class="libelle">Aller</span>
                 <br>
-                <input type="text" id="date_from" class="place" placeholder="EG. HAWAII">
+                <select id="inputState">
+                    <?php
+                    $req = $db->connection()->prepare('SELECT * FROM iledeservie');
+                    $req->execute();
+                    $rows = $req->rowCount();
+                    for ($i = 1; $i <= $rows; $i++) {
+                        $data = $req->fetch();
+                        ?>
+                        <option value="<?= $data['idIle'] ?>"><?= $data['nom'] ?></option>
+                        <?php
+                    }
+                    ?>
+                </select>
             </div>
 
             <div class="entity">
-                <span class="libelle">arrivé</span><br>
-                <input type="text" id="date_from" class="place" placeholder="EG. MIAMI">
+                <span class="libelle">Retour</span>
+                <br>
+                <select id="inputState">
+                    <?php
+                    $req = $db->connection()->prepare('SELECT * FROM iledeservie');
+                    $req->execute();
+                    $rows = $req->rowCount();
+                    for ($i = 1; $i <= $rows; $i++) {
+                        $data = $req->fetch();
+                        ?>
+                        <option value="<?= $data['idIle'] ?>"><?= $data['nom'] ?></option>
+                        <?php
+                    }
+                    ?>
+                </select>
             </div>
 
             <div class="entity">
