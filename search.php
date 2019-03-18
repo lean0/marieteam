@@ -55,35 +55,42 @@ require("global.php");
     </ol>
 </nav>
 
-<!-- Corps -->
-
-<div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%">
 
 
     <!--TEMPLATE-->
+Debut Template
+
+<div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
+
+    <!--TEMPLATE LE TRAJET-->
 
     <div class="lieu">
         Lille blabla > V2 Auchan
     </div>
 
     <div class="ligne">
-        <div style=" padding-right: 10px; margin: auto">
+        <div class="duree">
             0115 ---------------------> 1020
         </div>
-        <div style="padding: 15px 20px;margin: auto; border: 0.75px solid black">
+        <div class='prix'>
             bouton
         </div>
     </div>
     <div class="ligne">
-        <div style=" padding-right: 10px; margin: auto">
+        <div class="duree">
             0115 ---------------------> 1020
         </div>
-        <div style="padding: 15px 20px;margin: auto; border: 0.75px solid black">
+        <div class="prix">
             bouton
         </div>
     </div>
+</div>
 
     <style>
+        *
+        {
+            transition: all 0.35s ease-in-out;
+        }
         .ligne {
             margin: 5px 0;
             background: #dadfdd;
@@ -95,21 +102,46 @@ require("global.php");
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 10px;
+            justify-content: space-between;
+            padding: 10px 20px;
             text-align: center
         }
         .lieu {
             /*margin: top right bottom left;*/
             margin: 5px 0;
             background: #dadfdd;
-            max-width: 350px;
+            max-width: 450px;
             border-radius: 2px;
             border: none;
             padding: 25px 27.5px;
             color: black;
             height: 115px;
             line-height: 75px;
+        }
+        .duree
+        {
+            padding-right: 10px;
+            margin: auto 10px
+        }
+            .prix
+            {
+                padding: 10px 15px;
+                margin: auto 10px;
+                border: 0.75px solid black
+            }
+
+        @media all and (max-width: 750px)
+        {
+            .duree
+            {
+                padding-right: 10px;
+                margin: auto 5px
+            }
+            .prix
+            {
+                padding: 5px 7.5px;
+                margin: auto 5px;
+            }
         }
     </style>
     <!--FIN TEMPLATE-->
@@ -118,8 +150,14 @@ require("global.php");
 
 
 
+Fin Du Template
 
 
+
+
+<!-- Corps -->
+
+<div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%">
     <table>
         <?php
         $cond = array();
