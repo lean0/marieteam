@@ -95,6 +95,12 @@
                         <p>Secteur</p>
                     </a>
                 </li>
+                <li>
+                    <a href="Tarification.php">
+                        <i class="pe-7s-diamond"></i>
+                        <p>Tarification</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
