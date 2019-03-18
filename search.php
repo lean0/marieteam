@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET) && !empty($_GET))
-{
+//if (isset($_GET) && !empty($_GET))
+//{
 require("global.php");
 
     ?>
@@ -55,37 +55,58 @@ require("global.php");
         </ol>
     </nav>
 
-
-
-        <!--TEMPLATE-->
-    Debut Template
-
+    <!--TEMPLATE-->
     <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
+<?php
+$cond = array();
+$filtre = '';
+$portAller = $_POST['selectedStart'];
+$portRetour = $_POST['selectedEnd'];
+$dateDepart = $_POST['dateDepart'];
 
-        <!--TEMPLATE LE TRAJET-->
+$reqFiltre = 'SELECT * FROM liaison WHERE portDepart = :pDep AND portArriver = :pAriv';
+$resFiltre = $db->connection()->prepare($reqFiltre);
+$resFiltre->execute(array([
+        'pDep' => $portAller,
+        'pAriv' => $portRetour
+]));
 
+
+$req = 'SELECT * FROM traverse WHERE date = :dateDep AND  ';
+$res = $db->connection()->prepare($req);
+$res->execute();
+$rows = $res->rowCount();
+
+
+?>
+        <!--PORT ALLER -> PORT ARRIVER-->
         <div class="lieu">
-            Lille blabla > V2 Auchan
+            <?= $portAller ?> → <?= $portRetour ?>
         </div>
-
-        <div class="ligne">
-            <div class="duree">
-                01:15 --------------------> 10:20
+<?php
+if ($rows != 0) {
+    for ($i = 1; $i <= $rows; $i++) {
+        $data = $res->fetch();
+        $reqTrav = 'SELECT * FROM liaison WHERE idLiaison = :liaison';
+        $resTrav = $db->connection()->prepare($reqTrav);
+        $resTrav->execute(array(
+            'liaison' => $data['idLiaison']
+        ));
+        $dataLi = $resTrav->fetch();
+        ?>
+            <div class="ligne">
+                <div class="duree">
+                    <?= $data['heureDepart'] ?> --------------------> <?= $data['heureArrive'] ?>
+                </div>
+                <div class='prix'>
+                    bouton
+                </div>
             </div>
-            <div class='prix'>
-                bouton
-            </div>
-        </div>
-        <div class="ligne">
-            <div class="duree">
-                01:15 --------------------> 16:20
-            </div>
-            <div class="prix">
-                bouton
-            </div>
-        </div>
+        <?php
+    }
+}
+    ?>
     </div>
-
         <style>
             *
             {
@@ -144,13 +165,7 @@ require("global.php");
                 }
             }
         </style>
-        <!--FIN TEMPLATE-->
 
-
-
-
-
-    Fin Du Template
 
 
 
@@ -159,73 +174,7 @@ require("global.php");
 
     <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%">
         <table>
-            <?php
-            $cond = array();
-            $filtre = '';
 
-            foreach ($_GET as $key => $value) {
-                if ($key == "id") {
-                    $cond[] = $key . "= " . $value;
-                } else {
-                    $cond[] = $key . "='" . $value . "'";
-                }
-            }
-
-            if (count($cond) > 0)
-            {
-                $filtre .= " WHERE " . implode(' AND ', $cond);
-            }
-
-            $req = 'SELECT * FROM traverse'.$filtre;
-
-            $res = $db->connection()->prepare($req);
-            $res->execute();
-            $rows = $res->rowCount();
-
-            if ($rows != 0) {
-                for ($i = 1; $i <= $rows; $i++) {
-                    $data = $res->fetch();
-                    $reqTrav = 'SELECT * FROM liaison WHERE idLiaison = :liaison';
-                    $resTrav = $db->connection()->prepare($reqTrav);
-                    $resTrav->execute(array(
-                        'liaison' => $data['idLiaison']
-                    ));
-                    $dataLi = $resTrav->fetch();
-                    ?>
-                    <!--       CSS A FIX         -->
-                    <div class="row">
-                        <div class="col">
-                            <div class="line">
-                                <div class="row">
-                                    <table>
-                                        <tr>
-                                            <th>De</th>
-                                            <th><?=$dataLi['portDepart']?></th>
-                                        </tr>
-                                        <tr>
-                                            <th>À</th>
-                                            <th><?=$dataLi['portArriver']?></th>
-                                        </tr>
-                                    </table>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col">
-                                            <p>durée</p>
-                                            <!--Flèche à changer en qq chose de plus beau :3-->
-                                            <p><?=$data['heureDepart']?> --> <?=$data['heureArrive']?></p>
-                                        </div>
-                                        <div class="col">
-                                            <button type="button">PRIX€</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                }
-            }
-            ?>
         </table>
     </div>
 
@@ -321,10 +270,10 @@ require("global.php");
     </body>
     </html>
     <?php
-}
-else
-{
-    header('Location:index.php');
-    exit();
-}
+//}
+//else
+//{
+//    header('Location:index.php');
+//    exit();
+//}
 ?>

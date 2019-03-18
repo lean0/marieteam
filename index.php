@@ -48,12 +48,13 @@ require("global.php");
     <div class="container-form">
 
         <!-- banner-text -->
-        <form id="trip_form">
+        <form id="trip_form" method="post" action="search.php">
 
             <div class="entity">
                 <span class="libelle">Aller</span>
                 <br>
-                <select id="inputState">
+                <select id="inputState" name="inputAller" onchange="document.getElementById('selectedStart').value=this.options[this.selectedIndex].text">
+                    <option value="">-- Départ --</option>
                     <?php
                     $req = $db->connection()->prepare('SELECT * FROM iledeservie');
                     $req->execute();
@@ -65,13 +66,15 @@ require("global.php");
                         <?php
                     }
                     ?>
+                    <input type="hidden" name="selectedStart" id="selectedStart" value="" />
                 </select>
             </div>
 
             <div class="entity">
                 <span class="libelle">Retour</span>
                 <br>
-                <select id="inputState">
+                <select id="inputState" name="inputRetour" onchange="document.getElementById('selectedEnd').value=this.options[this.selectedIndex].text">
+                    <option value="">-- Arriver --</option>
                     <?php
                     $req = $db->connection()->prepare('SELECT * FROM iledeservie');
                     $req->execute();
@@ -83,20 +86,21 @@ require("global.php");
                         <?php
                     }
                     ?>
+                    <input type="hidden" name="selectedEnd" id="selectedEnd" value="" />
                 </select>
             </div>
 
             <div class="entity">
-                    <span class="libelle">Départ</span><br>
-                    <input type="date" id="date_to" class="date_to" placeholder="Départ"/>
-                    <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
+                <span class="libelle">Départ</span><br>
+                <input type="date" id="date_to" class="date_to" name="dateDepart" placeholder="Départ"/>
+                <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
             </div>
             <div class="entity">
                 <span class="libelle">Type</span><br>
-                    <select id="inputState" class="form-control">
-                        <option selected>Personne</option>
-                        <option>Produit</option>
-                    </select>
+                <select id="inputState" class="form-control">
+                    <option selected>Personne</option>
+                    <option>Produit</option>
+                </select>
             </div>
 
             <div  class="entity" id="entity-submit">
@@ -404,11 +408,11 @@ require("global.php");
 <!-- //branches -->
 <!--footer -->
 <?php
-    require("tpl/footer.php");
-     //footer
+require("tpl/footer.php");
+//footer
 
-    require ('session/login.php');
-    require ( 'session/register.php');
+require ('session/login.php');
+require ( 'session/register.php');
 ?>
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>
