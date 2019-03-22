@@ -3,7 +3,7 @@
 //{
 require("global.php");
 
-    ?>
+?>
 
     <html lang="zxx">
     <head>
@@ -57,114 +57,124 @@ require("global.php");
 
     <!--TEMPLATE-->
     <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
-<?php
-$cond = array();
-$filtre = '';
-$portAller = $_POST['selectedStart'];
-$portRetour = $_POST['selectedEnd'];
-$dateDepart = $_POST['dateDepart'];
 
-$reqFiltre = 'SELECT * FROM liaison WHERE portDepart = :pDep AND portArriver = :pAriv';
-$resFiltre = $db->connection()->prepare($reqFiltre);
-$resFiltre->execute(array([
-        'pDep' => $portAller,
-        'pAriv' => $portRetour
-]));
-
-
-$req = 'SELECT * FROM traverse WHERE date = :dateDep AND  ';
-$res = $db->connection()->prepare($req);
-$res->execute();
-$rows = $res->rowCount();
-
-
-?>
+        <?php
+        $cond = array();
+        $filtre = '';
+        $portAller = $_POST['selectedStart'];
+        $portRetour = $_POST['selectedEnd'];
+        $dateDepart = $_POST['dateDepart'];
+        ?>
         <!--PORT ALLER -> PORT ARRIVER-->
         <div class="lieu">
             <?= $portAller ?> → <?= $portRetour ?>
         </div>
-<?php
-if ($rows != 0) {
-    for ($i = 1; $i <= $rows; $i++) {
-        $data = $res->fetch();
-        $reqTrav = 'SELECT * FROM liaison WHERE idLiaison = :liaison';
-        $resTrav = $db->connection()->prepare($reqTrav);
-        $resTrav->execute(array(
-            'liaison' => $data['idLiaison']
-        ));
-        $dataLi = $resTrav->fetch();
-        ?>
-            <div class="ligne">
-                <div class="duree">
-                    <?= $data['heureDepart'] ?> --------------------> <?= $data['heureArrive'] ?>
-                </div>
-                <div class='prix'>
-                    bouton
-                </div>
-            </div>
         <?php
-    }
-}
-    ?>
+        //Récup toutes les liason avec les ports correspondants//
+
+        $reqFiltre = 'SELECT * FROM liaison WHERE portDepart = "'.$portAller.'" AND portArriver = "'.$portRetour.'"';
+        $resFiltre = $db->connection()->prepare($reqFiltre);
+        $resFiltre->execute();
+        $rowsFiltre = $resFiltre->rowCount();
+
+
+        if ($rowsFiltre != 0) {
+            //Récup l'idLiaison des lignes avec les portes correspondants pour ensuite comparer avec la date//
+            for ($i = 1; $i <= $rowsFiltre; $i++) {
+                $dataFiltre = $resFiltre->fetch();
+                $correctRow = $dataFiltre['idLiaison'];
+                $req = 'SELECT * FROM traverse WHERE date ="'.$dateDepart.'" AND  idLiaison ="'.$correctRow.'"';
+                $res = $db->connection()->prepare($req);
+//                $res->execute(array([
+//                    'dateDep' => $dateDepart,
+//                    'idLiaison' => $correctRow
+//                ]));
+                $res->execute();
+                $rows = $res->rowCount();
+                echo "<br>";
+                //Si toutes les conditions sont validées, afficher l'offre//
+                if ($rows == 1) {
+                    $reqTrav = 'SELECT * FROM liaison WHERE idLiaison ="'.$correctRow.'"';
+                    $resTrav = $db->connection()->prepare($reqTrav);
+//                    $resTrav->execute(array(
+//                        'liaison' => $correctRow
+//                    ));
+                    $resTrav->execute();
+                    $data = $res->fetch();
+                    $dataLi = $resTrav->fetch();
+                    ?>
+                    <div class="ligne">
+                        <div class="duree">
+                            <?= $data['heureDepart'] ?> --------------------> <?= $data['heureArrive'] ?>
+                        </div>
+                        <div class='prix'>
+                            bouton
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+        }
+        ?>
     </div>
-        <style>
-            *
-            {
-                transition: all 0.35s ease-in-out;
-            }
-            .ligne {
-                margin: 5px 0;
-                background: #dadfdd;
-                width: 100%;
-                border-radius: 2px;
-                border: none;
-                color: black;
-                min-height: 115px;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                padding: 10px 20px;
-                text-align: center
-            }
-            .lieu {
-                /*margin: top right bottom left;*/
-                margin: 5px 0;
-                background: #dadfdd;
-                max-width: 450px;
-                border-radius: 2px;
-                border: none;
-                padding: 25px 27.5px;
-                color: black;
-                height: 115px;
-                line-height: 75px;
-            }
+    <style>
+        *
+        {
+            transition: all 0.35s ease-in-out;
+        }
+        .ligne {
+            margin: 5px 0;
+            background: #dadfdd;
+            width: 100%;
+            border-radius: 2px;
+            border: none;
+            color: black;
+            min-height: 115px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px 20px;
+            text-align: center
+        }
+        .lieu {
+            /*margin: top right bottom left;*/
+            margin: 5px 0;
+            background: #dadfdd;
+            max-width: 450px;
+            border-radius: 2px;
+            border: none;
+            padding: 25px 27.5px;
+            color: black;
+            height: 115px;
+            line-height: 75px;
+        }
+        .duree
+        {
+            padding-right: 10px;
+            margin: auto 10px
+        }
+        .prix
+        {
+            padding: 10px 15px;
+            margin: auto 10px;
+            border: 0.75px solid black
+        }
+
+        @media all and (max-width: 750px)
+        {
             .duree
             {
                 padding-right: 10px;
-                margin: auto 10px
+                margin: auto 5px
             }
-                .prix
-                {
-                    padding: 10px 15px;
-                    margin: auto 10px;
-                    border: 0.75px solid black
-                }
-
-            @media all and (max-width: 750px)
+            .prix
             {
-                .duree
-                {
-                    padding-right: 10px;
-                    margin: auto 5px
-                }
-                .prix
-                {
-                    padding: 5px 7.5px;
-                    margin: auto 5px;
-                }
+                padding: 5px 7.5px;
+                margin: auto 5px;
             }
-        </style>
+        }
+    </style>
 
 
 
@@ -269,7 +279,7 @@ if ($rows != 0) {
     <script src="js/bootstrap.js"></script>
     </body>
     </html>
-    <?php
+<?php
 //}
 //else
 //{
