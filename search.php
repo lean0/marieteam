@@ -108,7 +108,7 @@ require("global.php");
                             <?= $data['heureDepart'] ?> --------------------> <?= $data['heureArrive'] ?>
                         </div>
                         <div class='prix'>
-                            bouton
+                            Réserver
                         </div>
                     </div>
                     <?php
