@@ -63,7 +63,7 @@ require("global.php");
             <div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Souvenir</h3>
 				<span class="btmspn">
-					<i class="fas fa-bus"></i>
+					<i class="fas fa-ship"></i>
 				</span>
 				<p class="mt-2 mx-auto">
                     Quelques unes de souvenir de nos clients lors de leurs expeditions!

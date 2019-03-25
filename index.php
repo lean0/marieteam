@@ -31,6 +31,7 @@ require("global.php");
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Teko" rel="stylesheet">
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -48,12 +49,12 @@ require("global.php");
     <div class="container-form">
 
         <!-- banner-text -->
-        <form id="trip_form">
+        <form action="search.php" method="get" id="trip_form">
 
             <div class="entity">
                 <span class="libelle">Aller</span>
                 <br>
-                <select id="inputState">
+                <select id="inputState" name="aller">
                     <?php
                     $req = $db->connection()->prepare('SELECT * FROM iledeservie');
                     $req->execute();
@@ -71,7 +72,7 @@ require("global.php");
             <div class="entity">
                 <span class="libelle">Retour</span>
                 <br>
-                <select id="inputState">
+                <select id="inputState" name="dest">
                     <?php
                     $req = $db->connection()->prepare('SELECT * FROM iledeservie');
                     $req->execute();
@@ -88,12 +89,12 @@ require("global.php");
 
             <div class="entity">
                     <span class="libelle">Départ</span><br>
-                    <input type="date" id="date_to" class="date_to" placeholder="Départ"/>
+                    <input type="date" id="date_to" class="date_to" placeholder="Départ" name="date_to"/>
                     <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
             </div>
             <div class="entity">
                 <span class="libelle">Type</span><br>
-                    <select id="inputState" class="form-control">
+                    <select id="inputState" class="form-control" name="type">
                         <option selected>Personne</option>
                         <option>Produit</option>
                     </select>
@@ -113,15 +114,15 @@ require("global.php");
         <div class="w3ls-titles text-center mb-5">
             <h3 class="title"><span class="hdng">Nos </span>Services</h3>
             <span class="btmspn">
-					<i class="fas fa-bus"></i>
+					<i class="fas fa-ship"></i>
 				</span>
             <p class="mt-2 mx-auto"> Description des services</p>
         </div>
         <div class="d-flex justify-content-around text-center">
             <div class="col-lg-3 col-md-6">
                 <div class="agileits-services-grids">
-                    <i class="fas fa-ship"></i>
-                    <h4>Ship
+                    <h4>
+                        Croisiere
                     </h4>
                     <span></span>
                     <p> Rejoignez nous pour la découverte du monde bleu </p>
@@ -131,8 +132,8 @@ require("global.php");
 
             <div class="col-lg-3 col-md-6">
                 <div class="agileits-services-grids">
-                    <i class="fas fa-ship"></i>
-                    <h4>Tool transport
+                    <h4>
+                        Marchandise
                     </h4>
                     <span></span>
                     <p> Nous envoyons vos colis comme jamais</p>
@@ -258,7 +259,7 @@ require("global.php");
         <div class="w3ls-titles text-center mb-5">
             <h3 class="title text-white"><span class="hdng">Services </span>Fact</h3>
             <span class="btmspn">
-					<i class="fas fa-bus"></i>
+					<i class="fas fa-ship"></i>
 				</span>
             <p class="mt-2 mx-auto text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur dolorum, voluptatum possimus temporibus vel ab, nesciunt quod!</p>
         </div>
@@ -272,7 +273,7 @@ require("global.php");
             </div>
             <div class="col-lg-3 col-md-6 stats_info counter_grid">
                 <div class="stats_info1">
-                    <i class="fas fa-fighter-jet"></i>
+                    <i class="fas fa-ship"></i>
                     <p class="counter">120</p>
                     <h4>Destinations Canon </h4>
                 </div>
@@ -302,7 +303,7 @@ require("global.php");
         <div class="w3ls-titles text-center mb-5">
             <h3 class="title"><span class="hdng">Nouvelles </span>destinations</h3>
             <span class="btmspn">
-					<i class="fas fa-bus"></i>
+					<i class="fas fa-ship"></i>
 				</span>
             <p class="mt-2 mx-auto">
                 Depuis Octobre, nous avons acqueri la possiiblité de desservir sur ses nouvelles destinations!

@@ -58,7 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			 <div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Typography</h3>
 				<span class="btmspn">
-					<i class="fas fa-bus"></i>
+					<i class="fas fa-ship"></i>
 				</span>
 				<p class="mt-2 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur dolorum, voluptatum possimus temporibus vel ab, nesciunt quod!</p>
 			</div>

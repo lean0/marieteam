@@ -1,6 +1,7 @@
 <?php
-if (isset($_GET) && !empty($_GET))
-{
+print_r($_GET);
+//if (isset($_GET) && !empty($_GET))
+//{
 require("global.php");
 
     ?>
@@ -65,7 +66,7 @@ require("global.php");
         <!--TEMPLATE LE TRAJET-->
 
         <div class="lieu">
-            Lille blabla > V2 Auchan
+            Lille blabla <i class="fas fa-angle-double-right"></i> V2 Auchan
         </div>
 
         <div class="ligne">
@@ -76,13 +77,8 @@ require("global.php");
                 bouton
             </div>
         </div>
-        <div class="ligne">
-            <div class="duree">
-                01:15 --------------------> 16:20
-            </div>
-            <div class="prix">
-                bouton
-            </div>
+        <div class="ligne" style="justify-content: space-around">
+            Aucun trajet disponible
         </div>
     </div>
 
@@ -93,16 +89,18 @@ require("global.php");
             }
             .ligne {
                 margin: 5px 0;
-                background: #dadfdd;
+                background: #282929;
                 width: 100%;
                 border-radius: 2px;
                 border: none;
                 color: black;
+                color: white;
                 min-height: 115px;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-between;
+                align-items: center;
                 padding: 10px 20px;
                 text-align: center
             }
@@ -127,7 +125,7 @@ require("global.php");
                 {
                     padding: 10px 15px;
                     margin: auto 10px;
-                    border: 0.75px solid black
+                    border: 0.75px solid white
                 }
 
             @media all and (max-width: 750px)
@@ -321,10 +319,10 @@ require("global.php");
     </body>
     </html>
     <?php
-}
-else
-{
-    header('Location:index.php');
-    exit();
-}
+//}
+//else
+//{
+//    header('Location:index.php');
+//    exit();
+//}
 ?>
