@@ -113,6 +113,14 @@ require("global.php");
                     </div>
                     <?php
                 }
+                elseif ($rows == 0)
+                {
+                    ?>
+                    <div class="ligne nul">
+                        Aucun trajet correspondant!
+                    </div>
+                    <?php
+                }
             }
         }
         ?>
@@ -136,6 +144,11 @@ require("global.php");
             justify-content: space-between;
             padding: 10px 20px;
             text-align: center
+        }
+        .nul
+        {
+            justify-content: space-around;
+            align-items: center;
         }
         .lieu {
             /*margin: top right bottom left;*/
