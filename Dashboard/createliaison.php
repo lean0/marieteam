@@ -8,7 +8,7 @@ if(isset($_POST['selectPortDepart']) && isset($_POST['selectPortArriver']) && is
     $distance = $_POST['distance'];
     $secteur = $_POST['secteur'];
 
-    $nomQui = $_SESSION['login'];
+    $nomQui = $_SESSION['loginAdmin'];
     $Libelle = "LIAISON : " . $SPD . "->" . $SPA . " créée";
 
 

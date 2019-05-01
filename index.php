@@ -203,8 +203,6 @@ require("global.php");
         </div>
     </div>
 </div>
-<!-- //blog grid
-<!-- blog grid
 <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
     <div class="card">
 

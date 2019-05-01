@@ -1,12 +1,12 @@
 <?php
 require("../global.php");
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['loginAdmin'])) {
     if (isset($_POST['nomUser']) && isset($_POST['prenomUser'])) {
         $id = $_POST['idUser'];
         $nom = $_POST['nomUser'];
         $prenom = $_POST['prenomUser'];
         $mail = $_POST['mailUser'];
-        $nomQui = $_SESSION['login'];
+        $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "USER : " . $nom . " modifié";
 
     if (isset($_POST['password'])) {

@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 require("../global.php");
-if (isset($_SESSION['login'])){
+if (isset($_SESSION['loginAdmin'])){
 
 require("tpl/header.php");
 require("tpl/navbar.php");

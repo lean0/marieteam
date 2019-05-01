@@ -1,9 +1,9 @@
 <?php
 require("../global.php");
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['loginAdmin'])) {
     if (isset($_POST['nomCatégorie'])){
 
-        $nomQui = $_SESSION['login'];
+        $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "ADMIN : " . $nomQui . " créé";
         $nomCat = $_POST['nomCatégorie'];
 
@@ -20,7 +20,7 @@ if (isset($_SESSION['login'])) {
      elseif(isset($_POST['nomTarification']) && isset($_POST['cat'])){
         $nomTarif = $_POST['nomTarification'];
         $cat = $_POST['cat'];
-        $nomQui = $_SESSION['login'];
+        $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "ADMIN : " . $nomQui . " créé";
         $idcat = $cat[0];
         $req = $db->connection()->prepare('INSERT INTO typetarif (libelle, idCategorie) VALUE (?,?)');

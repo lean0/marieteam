@@ -6,7 +6,7 @@ require("../global.php");
  * Date: 10/12/2018
  * Time: 09:56
  */
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['loginAdmin'])) {
 
 
     if(isset($_POST['nomCapitaine']) && isset($_POST['prenomCapitaine']) && isset($_POST['emailCapitaine']) && isset($_POST['telephoneCapitaine'])) {
@@ -16,7 +16,7 @@ if (isset($_SESSION['login'])) {
         $telephoneCapitaine = $_POST['telephoneCapitaine'];
         $datetoday = time();
 
-        $nomQui = $_SESSION['login'];
+        $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "CAPITAINE : " . $nomcapitaine . " créé";
 
         $req = $db->connection()->prepare('INSERT INTO capitaine (nomCapitaine, prenomCapitaine, dateDebut, emailCapitaine, telephoneCapitaine) VALUE (?,?,?,?,?)');

@@ -1,11 +1,11 @@
 <?php
 require("../global.php");
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['loginAdmin'])) {
     if (isset($_POST['nomAdmin']) && isset($_POST['password'])) {
         $nom = $_POST['nomAdmin'];
         $ps = $_POST['password'];
         $dateIn = time();
-        $nomQui = $_SESSION['login'];
+        $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "ADMIN : " . $nom . " créé";
 
         $PH = password_hash($ps, PASSWORD_DEFAULT);

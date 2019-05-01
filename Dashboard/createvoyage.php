@@ -1,7 +1,7 @@
 <?php
 
 require("../global.php");
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['loginAdmin'])) {
     if(isset($_POST['nomVoyage']) && isset($_POST['date']) && isset($_POST['heuredepart'])) {
         $nomVoyage = $_POST['nomVoyage'];
         $date = $_POST['date'];
@@ -14,7 +14,7 @@ if (isset($_SESSION['login'])) {
         $idcap = $capitaine[0];
         $idl = $liaison[0];
 
-        $nomQui = $_SESSION['login'];
+        $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "Voyage : " . $nomVoyage . " créé";
 
 

@@ -60,7 +60,7 @@
 
 
                     <a href="">
-                        <p><?=$_SESSION['login']?></p>
+                        <p><?=$_SESSION['loginAdmin']?></p>
                     </a>
                 </li>
 

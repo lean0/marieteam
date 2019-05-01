@@ -1,11 +1,11 @@
 <?php
 
 require("../global.php");
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['loginAdmin'])) {
     if(isset($_POST['secteur'])) {
         $secteur = $_POST['secteur'];
 
-        $nomQui = $_SESSION['login'];
+        $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "Secteur : " . $secteur . " créé";
 
 

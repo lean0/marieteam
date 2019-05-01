@@ -1,6 +1,6 @@
 <?php
 require("../global.php");
-if (isset($_SESSION['login'])){
+if (isset($_SESSION['loginAdmin'])){
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,14 +1,14 @@
 <?php
 
 require("../global.php");
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['loginAdmin'])) {
     if(isset($_POST['nom']) && isset($_POST['typeBateau']) && isset($_POST['capaciteBateau'])) {
         echo $_POST['nom'];
         $nom = $_POST['nom'];
         $type = $_POST['typeBateau'];
         $capa = $_POST['capaciteBateau'];
 
-        $nomQui = $_SESSION['login'];
+        $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "BATEAU : " . $nom . " créé";
 
 

@@ -19,8 +19,8 @@ if(isset($_POST['idAdmin']) && isset($_POST['password'])) {
         if (password_verify($password, $pcheck)) {
 
 
-            $_SESSION['login'] = $_POST['idAdmin'];
-            $_SESSION['pwd'] = $_POST['password'];
+            $_SESSION['loginAdmin'] = $_POST['idAdmin'];
+            $_SESSION['pwdAdmin'] = $_POST['password'];
             header('Location: dashboard.php');
 
 
