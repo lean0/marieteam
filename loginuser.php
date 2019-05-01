@@ -7,7 +7,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
     $mail = $_POST['mail'];
     $password = $_POST['password'];
 
-    $req = $db->connection()->prepare('SELECT * FROM client WHERE mail LIKE ?');
+    $req = $db->connection()->prepare('SELECT idClient, nom, mail, password FROM client WHERE mail LIKE ?');
     $req->execute([$mail]);
     $rows = $req->rowCount();
     $data = $req->fetch();
@@ -15,9 +15,11 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
 
         $pcheck = $data['password'];
         $pnom = $data['nom'];
+        $idClient = $data['idClient'];
 
         if (password_verify($password, $pcheck)) {
 
+            $_SESSION['idClient'] = $idClient;
             $_SESSION['login'] = $_POST['mail'];
             $_SESSION['pwd'] = $_POST['password'];
             $_SESSION['nom'] = $pnom ;

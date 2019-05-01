@@ -53,22 +53,16 @@
                                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-user"></i>
                                             <?php
-                                                if (isset($_SESSION)) {
+                                                if (isset($_SESSION['login'])) {
                                                     echo $_SESSION['nom'];
                                                 }
                                             ?>
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="#">
-                                                Historique
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                Mon compte
-                                            </a>
-                                            <a class="dropdown-item" href="session/logout.php">
-                                                <i class="fas fa-sign-out-alt"></i>
-                                            </a>
+                                            <a class="dropdown-item" href="#">Historique</a>
+                                            <a class="dropdown-item" href="compte.php?key=<?=$_SESSION['idClient'];?>">Mon compte</a>
+                                            <a class="dropdown-item" href="session/logout.php"><i class="fas fa-sign-out-alt"></i></a>
                                         </div>
                                     </div>
                                 <?php
