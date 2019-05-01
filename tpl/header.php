@@ -46,6 +46,7 @@
                             <a class="nav-link" href="contact.php">Contactez-nous</a>
                         </li>
                         <?php
+                        
                             if (isset($_SESSION['login']))
                             {
                                 ?>
