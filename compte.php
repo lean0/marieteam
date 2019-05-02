@@ -21,149 +21,158 @@ if (isset($_SESSION['login'])){
 
         $idClient = $_GET['key'];
 
-        $req = $db->connection()->prepare('SELECT idClient, nom, prenom, mail, password FROM client WHERE idClient = ' . $idClient);
+        $req = $db->connection()->prepare('SELECT idClient, nom, prenom, mail, password, dateInscription, fidelite FROM client WHERE idClient = ' . $idClient);
         $req->execute();
-
         $data = $req->fetch();
-
-        $nomC = $data['nom'];
-        $prenomC = $data['prenom'];
-        $mailC = $data['mail'];
-        $passwordH = $data['password'];
-        $passwordL = strlen($passwordH);
-
         ?>
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="card">
-                                <div class="header">
-                                    <h4 class="title">Edit Profile</h4>
-                                </div>
-                                <div class="content">
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-md-5">
-                                                <div class="form-group">
-                                                    <label>Company (disabled)</label>
-                                                    <input type="text" class="form-control" disabled placeholder="Company" value="Creative Code Inc.">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label>Username</label>
-                                                    <input type="text" class="form-control" placeholder="Username" value="michael23">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Email address</label>
-                                                    <input type="email" class="form-control" placeholder="Email">
-                                                </div>
-                                            </div>
-                                        </div>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
 
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>First Name</label>
-                                                    <input type="text" class="form-control" placeholder="Company" value="Mike">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label>Last Name</label>
-                                                    <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>Address</label>
-                                                    <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>City</label>
-                                                    <input type="text" class="form-control" placeholder="City" value="Mike">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Country</label>
-                                                    <input type="text" class="form-control" placeholder="Country" value="Andrew">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label>Postal Code</label>
-                                                    <input type="number" class="form-control" placeholder="ZIP Code">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>About Me</label>
-                                                    <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
-                                        <div class="clearfix"></div>
-                                    </form>
-                                </div>
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Votre profile</h4>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-user">
-                                <div class="image">
-                                    <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
-                                </div>
-                                <div class="content">
-                                    <div class="author">
-                                        <a href="#">
-                                            <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>
-
-                                            <h4 class="title">Mike Andrew<br />
-                                                <small>michael24</small>
-                                            </h4>
-                                        </a>
+                            <div class="content">
+                                <form>
+                                    <p>Vos informations</p>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Nom</label>
+                                                <p><?=$data['nom']?></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Prénom</label>
+                                                <p><?=$data['prenom']?></p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="description text-center"> "Lamborghini Mercy <br>
-                                        Your chick she so thirsty <br>
-                                        I'm in that two seat Lambo"
-                                    </p>
-                                </div>
-                                <hr>
-                                <div class="text-center">
-                                    <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
-                                    <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
-                                    <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+                                    <!-- Nouvelle ligne -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <p><?=$data['mail']?></p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                </div>
+
+                                    <!-- Nouvelle ligne -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h4>MarieTeam</h4>
+                                            <div class="form-group">
+                                                <label>Inscrit depuis le</label>
+                                                <p><?=date('d/m/Y', $data['dateInscription']) ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <p>Vos points de fidélité : <?= $data["fidelite"]; ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <h4>Historique de réservation</h4>
+
+                                                <table id="tabuser" class="table table-striped table-bordered" style="width:100%">
+                                                    <tr>
+                                                        <td>a</td>
+                                                        <td>faire</td>
+                                                        <td>plus tard</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
 
+
+                        <div class="card">
+                            <div class="header">
+                                <?php
+                                if (isset($_GET['error']) && $_GET['error'] = 1) {
+                                    echo "<div class=\"alert alert-danger\" role=\"alert\">";
+                                    echo "<strong>Attention !</strong> Les motes de passes de sont pas identiques.";
+                                    echo "</div>";
+                                }
+                                ?>
+                                <h4 class="title">Modifier vos informations</h4>
+                            </div>
+                            <div class="content">
+                                <form action="session/editusersqlC.php?key=<?=$idClient?>" method="post">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Nom</label>
+                                                <input type="text" name="nomUser" class="form-control" value="<?=$data['nom']?>">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Prénom</label>
+                                                <input type="text" name="prenomUser" class="form-control" value="<?=$data['prenom']?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Nouvelle ligne -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="text" name="mailUser" class="form-control" value="<?=$data['mail']?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Nouvelle ligne -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><u>Mot de passe</u></p>
+                                            <div class="form-group">
+                                                <label>Nouveau mot de passe</label>
+                                                <input type="password" name="passwordC" class="form-control" placeholder="Nouveau mot de passe">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Confirmer le nouveau mot de passe</label>
+                                                <input type="password" class="form-control" name="passwordConfC" placeholder="Confirmer le nouveau mot de passe">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right">Modifier vos informations</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
-    <footer class="footer">
-        <div class="container-fluid">
-            <p class="copyright pull-right">
-                &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-            </p>
         </div>
-    </footer>
+        <footer class="footer">
+            <div class="container-fluid">
+                <p class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                </p>
+            </div>
+        </footer>
     </body>
     <script src="Dashboard/assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
     <script src="Dashboard/assets/js/bootstrap.min.js" type="text/javascript"></script>
