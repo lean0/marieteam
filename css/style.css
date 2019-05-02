@@ -931,16 +931,17 @@ h6.text-white {
     font-size: 14px;
 }
 a.w3ls-button-agile {
-    color: #fff;
+    color: #000000;
     padding: 14px 24px;
     letter-spacing: 1px;
     font-size: 14px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.75);
     display: inline-block;
     border: 1px solid rgba(255, 255, 255, 0.56);
     box-shadow: 2px 0px 5px 0px rgba(255, 255, 255, 0.22);
 }
 a.w3ls-button-agile:hover {
+	color: #fff;
     letter-spacing: 3px;
     background: #42c8f4;
     color: #fff !important;

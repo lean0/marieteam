@@ -35,15 +35,16 @@ require("global.php");
 </head>
 <body>
 <!-- banner -->
-<div class="inner-banner">
+<div class="banner" id="home" style="height: 24.5vh !important;">
+    <?php
+    require("tpl/header.php");
+    ?>
 </div>
 
 <!-- header -->
 
-    <?php
-    require("tpl/header.php");
-    ?>
-    <?php
+
+<?php
 
     if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['password'])) {
         $nom = $_POST['nom'];
@@ -58,7 +59,7 @@ require("global.php");
         if($rows == 1){
             ?>
             <section class="welcome">
-                <div class="container py-md-4 mt-md-1">
+                <div class="container py-md-5 mt-md-4">
                     <div class="alert alert-danger" role="alert" style="text-align: center">
                         <h4 class="alert-heading">Echec !</h4>
                         <p>L'utilisateur n'a pas était crée </p>
