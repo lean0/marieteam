@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password2" class="col-form-label">Confirmation</label>
-                        <input type="password" class="form-control" placeholder=" " name="cpassword" id="cpassword" required="">
+                        <input type="password" value="<?= @$_POST['cpassword'] ?>" class="form-control" placeholder=" " name="cpassword" id="cpassword" required="">
                     </div>
                     <div class="sub-w3l">
                         <div class="sub-agile">

@@ -46,32 +46,36 @@ require("global.php");
 
 <?php
 
-    if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['password'])) {
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $mail = $_POST['mail'];
-        $password = $_POST['password'];
-        $dateinscription = time();
+if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['password'])) {
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $mail = $_POST['mail'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $dateinscription = time();
 
-        $req2 = $db->connection()->prepare('SELECT mail FROM client WHERE mail LIKE ?');
-        $req2->execute([$mail]);
-        $rows = $req2->rowCount();
-        if($rows == 1){
-            ?>
-            <section class="welcome">
-                <div class="container py-md-5 mt-md-4">
-                    <div class="alert alert-danger" role="alert" style="text-align: center">
-                        <h4 class="alert-heading">Echec !</h4>
-                        <p>L'utilisateur n'a pas était crée </p>
-                        <p class="mb-0">L'adresse mail est déjà lié a un autre compte utilisateur</p>
-                    </div></div>
-            </section>
-            <?php
+    $req2 = $db->connection()->prepare('SELECT mail FROM client WHERE mail LIKE ?');
+    $req2->execute([$mail]);
 
-        }
+    //Si la requête retourne 1, il y a deja une ligne dans la BDD avec ce mail.
+    $rows = $req2->rowCount();
+    if($rows == 1){
+        ?>
+        <section class="welcome">
+            <div class="container py-md-5 mt-md-4">
+                <div class="alert alert-danger" role="alert" style="text-align: center">
+                    <h4 class="alert-heading">Echec !</h4>
+                    <p>L'utilisateur n'a pas était crée </p>
+                    <p class="mb-0">L'adresse mail est déjà lié a un autre compte utilisateur</p>
+                </div></div>
+        </section>
+        <?php
+    }
 
 
-   else{
+
+    else{
+        if ($password == $cpassword) {
             $PH = password_hash($password, PASSWORD_DEFAULT);
             $req = $db->connection()->prepare('INSERT INTO client (nom, prenom, mail, password, dateInscription) VALUE (?,?,?,?,?)');
             $req->execute([$nom, $prenom, $mail, $PH, $dateinscription]);
@@ -82,16 +86,33 @@ require("global.php");
                         <h4 class="alert-heading">Succès !</h4>
                         <p>Soyez le bienvenue dans la communauté des amoureux de l'eaux </p>
                         <p class="mb-0">MarieTeam vous garantie les meilleurs tarifs pour vos itineraires</p>
-                    </div></div>
+                    </div>
+                </div>
             </section>
-<?php
+            <?php
         }
-
-
-
+        //Si les mots de passe ne sont pas identiques, retourne sur index.php et affiche un message d'erreur
+        //grâce à la variable regerr.
+        else { ?>
+            <section class="welcome">
+            <div class="container py-md-5 mt-md-4">
+                <div class="alert alert-danger" role="alert" style="text-align: center">
+                    <h4 class="alert-heading">Echec !</h4>
+                    <p>L'utilisateur n'a pas était crée </p>
+                    <p class="mb-0">Les mots de passes ne correspondent pas. Veuillez réessayer.</p>
+                </div></div>
+        </section>
+       <?php }
     }
-    ?>
-    <!-- //header -->
+}
+?>
+
+
+
+
+
+
+<!-- //header -->
 
 <!-- about -->
 
