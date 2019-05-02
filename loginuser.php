@@ -27,12 +27,11 @@ if(isset($_POST['mail']) && isset($_POST['password'])) {
 
 
         } else {
-            //Alerte Bootstrap PASSWORD
+            //logerr=1 si le password est incorrect
+            header('Location: index.php?logerr=1');
         }
     } else {
-
-        //Alerte Bootstrap USER
-
+        header('Location: index.php?logerr=1');
     }
 }
 

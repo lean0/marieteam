@@ -42,6 +42,14 @@ require("global.php");
 <div class="banner" id="home">
     <!-- header -->
     <?php
+
+    if (isset($_GET['logerr']) && $_GET['logerr'] = 1) {
+        echo "<div class=\"alert alert-danger\" role=\"alert\">";
+        echo "<strong>Erreur :</strong> Le mot de passe est incorrecte et/ou le compte lié au mail n'existe pas.";
+        echo "</div>";
+    }
+
+
     require("tpl/header.php");
     ?>
     <!-- //header -->
