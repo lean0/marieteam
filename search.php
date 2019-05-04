@@ -79,49 +79,50 @@ require("global.php");
 
 
         if ($rowsFiltre != 0) {
-            //Récup l'idLiaison des lignes avec les portes correspondants pour ensuite comparer avec la date//
-            for ($i = 1; $i <= $rowsFiltre; $i++) {
+            //Récup l'idLiaison des lignes avec les ports correspondants pour ensuite comparer avec la date//
+            for ($i = 1;
+                 $i <= $rowsFiltre;
+                 $i++) {
                 $dataFiltre = $resFiltre->fetch();
                 $correctRow = $dataFiltre['idLiaison'];
-                $req = 'SELECT * FROM traverse WHERE date ="'.$dateDepart.'" AND  idLiaison ="'.$correctRow.'"';
+                $req = 'SELECT * FROM traverse WHERE date ="' . $dateDepart . '" AND  idLiaison ="' . $correctRow . '"';
                 $res = $db->connection()->prepare($req);
-//                $res->execute(array([
-//                    'dateDep' => $dateDepart,
-//                    'idLiaison' => $correctRow
-//                ]));
                 $res->execute();
                 $rows = $res->rowCount();
                 echo "<br>";
+
+
                 //Si toutes les conditions sont validées, afficher l'offre//
-                if ($rows == 1) {
-                    $reqTrav = 'SELECT * FROM liaison WHERE idLiaison ="'.$correctRow.'"';
+                if ($rows >= 1) {
+                    $reqTrav = 'SELECT * FROM liaison WHERE idLiaison ="' . $correctRow . '"';
                     $resTrav = $db->connection()->prepare($reqTrav);
-//                    $resTrav->execute(array(
-//                        'liaison' => $correctRow
-//                    ));
                     $resTrav->execute();
-                    $data = $res->fetch();
-                    $dataLi = $resTrav->fetch();
-                    ?>
-                    <div class="ligne">
-                        <div class="duree">
-                            <?= $data['heureDepart'] ?> --------------------> <?= $data['heureArrive'] ?>
+                    for ($y = 1; $y <= $rows; $y++) {
+                        $data = $res->fetch();
+                        $dataLi = $resTrav->fetch();
+                        ?>
+                        <div class="ligne">
+                            <div class="duree">
+                                <?= $data['heureDepart'] ?> --------------------> <?= $data['heureArrive'] ?>
+                                <p>Places disponibles : <?= $data['placeDispo'] ?></p>
+                            </div>
+                            <div class='prix'>
+                                <a href="reservation.php?key=<?= $_SESSION['idClient'] ?>&idt=<?= $data['idTraverse'] ?>"
+                                   style="margin-right: -30px; padding: 30px 12.5px; border: none; border-radius: 3.5px; background: #17a2b8; color: white ">
+                                    Réserver</a>
+                            </div>
                         </div>
-                        <div class='prix'>
-                            Réserver
-                        </div>
-                    </div>
-                    <?php
-                }
-                elseif ($rows == 0)
-                {
-                    ?>
-                    <div class="ligne nul">
-                        Aucun trajet correspondant!
-                    </div>
-                    <?php
+                        <?php
+                    }
                 }
             }
+        }
+        else {
+            ?>
+            <div class="ligne nul">
+                Aucun trajet correspondant !
+            </div>
+            <?php
         }
         ?>
     </div>
@@ -171,7 +172,7 @@ require("global.php");
         {
             padding: 10px 15px;
             margin: auto 10px;
-            border: 0.75px solid black
+            /*border: 0.75px solid black*/
         }
 
         @media all and (max-width: 750px)

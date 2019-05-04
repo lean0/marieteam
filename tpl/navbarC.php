@@ -18,7 +18,7 @@
                 <li>
                     <a href="editcompte.php">
                         <i class="pe-7s-note2"></i>
-                        <p>Mes informations</p>
+                        <p>Historique</p>
                     </a>
                 </li>
             </ul>

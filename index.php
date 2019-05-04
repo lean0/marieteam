@@ -105,18 +105,7 @@ require("global.php");
             <div class="entity">
                 <span class="libelle">Départ</span><br>
                 <input type="date" id="date_to" class="date_to" name="dateDepart" placeholder="Départ"/>
-                <!-- <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> -->
             </div>
-            <!--    Pas nécessaire
-            <div class="entity">
-                <span class="libelle">Type</span><br>
-                <select id="inputState" class="form-control">
-                    <option selected>Personne</option>
-                    <option>Produit</option>
-                </select>
-            </div>
-            -->
-
             <div  class="entity" id="entity-submit">
                 <input type="submit" id="submit" class="submit" value="Reservez" style="padding: 7.5px 12.5px; border: none; border-radius: 3.5px; background: #17a2b8; color: white "/>
             </div>

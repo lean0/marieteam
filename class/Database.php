@@ -2,7 +2,6 @@
 
 class Database
 {
-
     protected $dbh;
     public function __construct() {
 

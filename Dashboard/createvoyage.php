@@ -14,12 +14,19 @@ if (isset($_SESSION['loginAdmin'])) {
         $idcap = $capitaine[0];
         $idl = $liaison[0];
 
+        $reqplace = $db->connection()->prepare('SELECT capaciteBateau FROM bateau WHERE idBateau = '. $idbat);
+        $reqplace->execute();
+
+        $databt = $reqplace->fetch();
+
+        $placedispo = $databt['capaciteBateau'];
+
         $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "Voyage : " . $nomVoyage . " créé";
 
+        $req = $db->connection()->prepare('INSERT INTO traverse (nomTraverse, date, heureDepart, heureArrive, idBateau, idCapitaine, idLiaison, placeDispo) VALUE (?,?,?,?,?,?,?,?)');
+        $req->execute([$nomVoyage, $date, $hdp, $hda, $idbat, $idcap, $idl, $placedispo]);
 
-            $req = $db->connection()->prepare('INSERT INTO traverse (nomTraverse, date, heureDepart, heureArrive, idBateau, idCapitaine, idLiaison) VALUE (?,?,?,?,?,?,?)');
-            $req->execute([$nomVoyage, $date, $hdp, $hda, $idbat, $idcap, $idl]);
 
 
         $req2 = $db->connection()->prepare('INSERT INTO notifications (nomQui, Libelle) VALUE (?,?)');
