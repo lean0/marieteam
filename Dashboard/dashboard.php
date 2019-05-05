@@ -19,20 +19,29 @@ if (isset($_SESSION['loginAdmin'])){
 <body>
     <div class="main-panel">
     <?php require ('tpl/navbartop.php');
-    $req = $db->connection()->prepare("SELECT * FROM reservation WHERE libelleTarification = 'Ticket Enfant'");
+    $req = $db->connection()->prepare("SELECT * FROM reservation");
     $req->execute();
+    $data = $req->fetchAll();
     $rw = $req->rowCount();
-
-    $req2 = $db->connection()->prepare("SELECT * FROM reservation WHERE libelleTarification = 'Ticket adulte'");
-    $req2->execute();
-    $rw2 = $req2->rowCount();
-
-    $req3 = $db->connection()->prepare("SELECT * FROM reservation WHERE libelleTarification = 'Ticket Junior'");
-    $req3->execute();
-    $rw3 = $req3->rowCount();
-    $date = "depuis le début de l'utilisation du site marieteam";
-
-    $rwtotal = $rw+$rw2+$rw3;
+    $a = 0;
+    $b = 0;
+    $c = 0;
+    $d = 0;
+    $prixTotal = 0;
+    for($i = 0; $i<$rw; $i++){
+        if($data[$i]['libelleTarification'] == 'Ticket Enfant'){
+            $a++;
+        }
+        if($data[$i]['libelleTarification'] == 'Ticket adulte'){
+            $b++;
+        }
+        if($data[$i]['libelleTarification'] == 'Ticket Junior'){
+            $c++;
+        }
+    $d++;
+        $prixTotal += $data[$i]['prix'];
+    }
+    $total = $a + $b + $c;
 
     if(isset($_GET['a']) && isset($_GET['b']) && isset($_GET['c'])){
         ?>
@@ -85,7 +94,7 @@ if (isset($_SESSION['loginAdmin'])){
                     });
                 </script>
             </div>
-
+<label>Le chiffre d'affaire total de cette période est de <?=$_GET['pt']?></label>
         <?php
     }else{
     ?>
@@ -114,7 +123,7 @@ if (isset($_SESSION['loginAdmin'])){
         <div class="content" style="display: flex; flex-wrap: wrap-reverse; flex-direction: row;">
             <div class="stat">
                 <div style="text-align: center">
-                    <b><?= $rwtotal ?></b> passagers  <b><?= $date ?></b>
+                    <b><?= $total ?></b> passagers  <b>depuis le début de l'utilisation du site de marieteam</b>
                 </div>
                 <canvas id="myChart" width="200" height="200"></canvas>
                 <script>
@@ -125,7 +134,7 @@ if (isset($_SESSION['loginAdmin'])){
                             labels: ['Adulte', 'Jeune', 'Enfant'],
                             datasets: [{
                                 label: '# transporter',
-                                data: [<?=$rw2?>, <?=$rw3?>, <?=$rw?>],
+                                data: [<?=$b?>, <?=$c?>, <?=$a?>],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.75)',
                                     'rgba(54, 162, 235, 0.75)',
@@ -140,7 +149,9 @@ if (isset($_SESSION['loginAdmin'])){
                     });
                 </script>
             </div>
-<?php } ?>
+            <label>Le chiffre d'affaire total de cette période est de <?=$prixTotal?></label>
+
+            <?php } ?>
 
 <style>
     .stat
