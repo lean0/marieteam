@@ -33,7 +33,14 @@ $rw = $req->rowCount();
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                    <div class="form-group">
+
+                        <div class="form-group">
+                            <label for="distance" class="col-form-label">Code de la liaison</label>
+                            <input type="number" value="<?=@$_POST['codeLiaison'] ?>"  class="form-control" placeholder=" " name="codeLiaison" id="codeLiaison" required="">
+                        </div>
+
+
+                        <div class="form-group">
                         <form action="createliaison.php" method="post">
 
                             <label for="port depart" class="col-form-label">Ile de départ</label>
@@ -48,6 +55,8 @@ $rw = $req->rowCount();
 
                             </select>
                         </div>
+
+
 
                     <?php
                     $req2 = $db->connection()->prepare('SELECT nom FROM iledeservie');
@@ -68,8 +77,8 @@ $rw = $req->rowCount();
                     </div>
 
                             <div class="form-group">
-                                <label for="distance" class="col-form-label">Distance KM</label>
-                                <input type="number" value="<?=@$_POST['distance'] ?>"  class="form-control" placeholder=" " name="distance" id="distance" required="">
+                                <label for="distance" class="col-form-label">Distance (En miles marin)</label>
+                                <input type="text" value="<?=@$_POST['distance'] ?>"  class="form-control" placeholder=" " name="distance" id="distance" required="">
                             </div>
 
                         <?php
@@ -126,7 +135,7 @@ $rw = $req->rowCount();
                                     ?>
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>CODE</th>
                                         <th>Port Départ</th>
                                         <th>Port Arrivé</th>
                                         <th>Distance KM</th>
