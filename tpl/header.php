@@ -50,7 +50,7 @@
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="#">Historique</a>
+                                            <a class="dropdown-item" href="compte.php?key=<?=$_SESSION['idClient'];?>#Historique">Historique</a>
                                             <a class="dropdown-item" href="compte.php?key=<?=$_SESSION['idClient'];?>">Mon compte</a>
                                             <a class="dropdown-item" href="session/logout.php"><i class="fas fa-sign-out-alt"></i></a>
                                         </div>
