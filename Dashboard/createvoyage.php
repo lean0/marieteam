@@ -2,19 +2,25 @@
 
 require("../global.php");
 if (isset($_SESSION['loginAdmin'])) {
-    if(isset($_POST['nomVoyage']) && isset($_POST['date']) && isset($_POST['heuredepart'])) {
-        $nomVoyage = $_POST['nomVoyage'];
+    if(isset($_POST['date']) && isset($_POST['heuredepart'])) {
         $date = $_POST['date'];
         $hdp = $_POST['heuredepart'];
         $hda = $_POST['heurearrive'];
         $bateau = $_POST['bateau'];
         $capitaine = $_POST['capitaine'];
         $liaison = $_POST['liaison'];
-        $idbat = $bateau[0];
-        $idcap = $capitaine[0];
-        $idl = $liaison[0];
+        $idbat = strtok($bateau, ' |');
+        $idcap = strtok($capitaine, ' |');
+        $idl = strtok($liaison, ' |');
 
-        $reqplace = $db->connection()->prepare('SELECT capaciteBateau FROM bateau WHERE idBateau = '. $idbat);
+        $reqLiaison = $db->connection()->prepare('SELECT portDepart, portArriver FROM liaison WHERE idLiaison ='. $idl);
+        $reqLiaison->execute();
+
+        $dataPort = $reqLiaison->fetch();
+
+        $nomVoyage = $dataPort['portDepart'] . " -> " . $dataPort['portArriver'];
+
+        $reqplace = $db->connection()->prepare("SELECT capaciteBateau FROM bateau WHERE idBateau LIKE '". $idbat . "'");
         $reqplace->execute();
 
         $databt = $reqplace->fetch();

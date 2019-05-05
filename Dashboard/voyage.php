@@ -36,20 +36,16 @@ if (isset($_GET['success'])) {
                             <h4 class="title">Ajouter un voyage</h4>
                             <form action="createvoyage.php" method="post">
                                 <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Nom du voyage</label>
-                                    <input type="text" value="<?=@$_POST['nomVoyage'] ?>" class="form-control" placeholder=" " name="nomVoyage" id="nomVoyage" required="">
-                                </div>
-                                <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">date</label>
                                     <input type="date" value="<?=@$_POST['date'] ?>"  class="form-control" placeholder=" " name="date" id="date" required="">
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-email" class="col-form-label">Heure Depart</label>
-                                    <input type="number" value="<?=@$_POST['heuredepart'] ?>"  class="form-control" name="heuredepart" id="heuredepart" required="">
+                                    <input type="text" value="<?=@$_POST['heuredepart'] ?>"  class="form-control" name="heuredepart" id="heuredepart" required="">
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-email" class="col-form-label">Heure Arriver</label>
-                                    <input type="number" value="<?=@$_POST['heurearrive'] ?>"  class="form-control" name="heurearrive" id="heurearrive" required="">
+                                    <input type="text" value="<?=@$_POST['heurearrive'] ?>"  class="form-control" name="heurearrive" id="heurearrive" required="">
                                 </div>
                                 <?php
                                 $req = $db->connection()->prepare('SELECT idBateau, nom, capaciteBateau FROM bateau');
@@ -63,7 +59,7 @@ if (isset($_GET['success'])) {
                                             for ($i = 1; $i <= $rw; $i++) {
                                                 $dt = $req->fetch();
                                                 ?>
-                                                <option><?=$dt['idBateau']." ".$dt['nom']." ".$dt['capaciteBateau']?></option>
+                                                <option><?=$dt['idBateau']." | ".$dt['nom']." | ".$dt['capaciteBateau']?></option>
                                             <?php } } ?>
 
                                     </select>
@@ -81,7 +77,7 @@ if (isset($_GET['success'])) {
                                             for ($f = 1; $f <= $rw1; $f++) {
                                                 $dt2 = $req1->fetch();
                                                 ?>
-                                                <option><?=$dt2['idCapitaine']." ".$dt2['nomCapitaine']?></option>
+                                                <option><?=$dt2['idCapitaine']." | ".$dt2['nomCapitaine']?></option>
                                             <?php } } ?>
 
                                     </select>
@@ -99,7 +95,7 @@ if (isset($_GET['success'])) {
                                             for ($g = 1; $g <= $rw2; $g++) {
                                                 $dt3 = $req2->fetch();
                                                 ?>
-                                                <option><?=$dt3['idLiaison']." ".$dt3['portDepart']." ".$dt3['portArriver']?></option>
+                                                <option><?=$dt3['idLiaison']." | ".$dt3['portDepart']." ".$dt3['portArriver']?></option>
                                             <?php } } ?>
 
                                     </select>
