@@ -41,8 +41,8 @@ if (isset($_SESSION['login'])) {
         $dataTrav = $reqTrav->fetch();
 
 
-        if ($data['fidelite'] == 100) {
-            $reqResFidel = $db->connection()->prepare('UPDATE client SET fidelite = 0 WHERE idClient = '. $idClient);
+        if ($data['fidelite'] >= 100) {
+            $reqResFidel = $db->connection()->prepare('UPDATE client SET fidelite = fidelite-100 WHERE idClient = '. $idClient);
             $reqResFidel->execute();
         }
 
