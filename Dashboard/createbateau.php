@@ -17,7 +17,7 @@ if (isset($_SESSION['loginAdmin'])) {
 
         $nomQui = $_SESSION['loginAdmin'];
         $Libelle = "BATEAU : " . $nom . " créé";
-        
+
 
         $req = $db->connection()->prepare('INSERT INTO bateau (idBateau ,nom, typeBateau, capaciteBateau, CapaciteVoiture, CapaciteCamion, Longeur, Largeur, vitesse, Image) VALUE (?,?,?,?,?,?,?,?,?,?)');
         $req->execute([$idb, $nom, $type, $capa, $capaV, $capaC, $long, $larg, $vitesse, $image]);

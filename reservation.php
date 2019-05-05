@@ -77,7 +77,7 @@ if (isset($_SESSION['login'])) {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <?php
-                                                if ($data['fidelite'] == 100) {
+                                                if ($data['fidelite'] >= 100) {
                                                     ?>
                                                     <p>Vos points de fidélité : 100 (Vous aurez 25% de réduction sur cette réservation)</p>
                                                     <?php

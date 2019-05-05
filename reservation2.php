@@ -76,7 +76,7 @@ if (isset($_SESSION['login'])) {
         $dataTarif = $reqTarif->fetch();
         $prixFinal = ($prixFinal + ($nbCamion * $dataTarif['tarification']));
 
-        if ($data['fidelite'] == 100) {
+        if ($data['fidelite'] >= 100) {
             $prixFinal = $prixFinal * 0.75;
         }
         else {

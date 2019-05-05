@@ -63,7 +63,7 @@ require("global.php");
         $resFidelite->execute();
         $dataFidelite = $resFidelite->fetch();
         $fideliteC = $dataFidelite['fidelite'];
-        if ($fideliteC == 100) {
+        if ($fideliteC >= 100) {
             ?>
             <div class="alert alert-success" role="alert">
                 Vous avez atteint <b>100pts</b> de fidélité ! Vous bénéficiez de <b>25%</b> de réduction sur votre prochaine réservation.
