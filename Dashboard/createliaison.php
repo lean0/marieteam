@@ -7,14 +7,20 @@ if(isset($_POST['selectPortDepart']) && isset($_POST['selectPortArriver']) && is
     $SPA = $_POST['selectPortArriver'];
     $distance = $_POST['distance'];
     $secteur = $_POST['secteur'];
-    $idliaison = $_POST['codeLiaison'];
+    $idLiaison = $_POST['codeLiaison'];
     $secteurid = strtok($secteur, ' |');
 
     $nomQui = $_SESSION['loginAdmin'];
     $Libelle = "LIAISON : " . $SPD . "->" . $SPA . " créée";
 
+    var_dump($idLiaison);
+    var_dump($SPD);
+    var_dump($SPA);
+    var_dump($distance);
+    var_dump($secteurid);
+
     $req = $db->connection()->prepare('INSERT INTO liaison (idLiaison, portDepart, portArriver, distance, idSecteur) VALUE (?,?,?,?,?)');
-    $req->execute([$idliaison ,$SPD, $SPA, $distance, $secteurid]);
+    $req->execute([$idLiaison ,$SPD, $SPA, $distance, $secteurid]);
 
     $req2 = $db->connection()->prepare('INSERT INTO notifications (nomQui, Libelle) VALUE (?,?)');
     $req2->execute([$nomQui, $Libelle]);

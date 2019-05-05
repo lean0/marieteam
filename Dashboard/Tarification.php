@@ -183,7 +183,7 @@ if (isset($_GET['success'])) {
                                                 for ($i = 1; $i <= $rw; $i++) {
                                                     $dt = $req->fetch();
                                                     ?>
-                                                    <option><?=$dt['id']." ".$dt['libelle']?></option>
+                                                    <option><?=$dt['id']." | ".$dt['libelle']?></option>
                                                 <?php } } ?>
 
                                         </select>
@@ -191,7 +191,7 @@ if (isset($_GET['success'])) {
 
                                     <div class="form-group">
                                         <label for="dateDebut" class="col-form-label">Montant</label>
-                                        <input type="number" value="<?=@$_POST['montant'] ?>" class="form-control" placeholder=" " name="montant" id="montant" required="">
+                                        <input type="text" value="<?=@$_POST['montant'] ?>" class="form-control" placeholder=" " name="montant" id="montant" required="">
                                     </div>
 
                                     <div class="right-w3l">
