@@ -32,7 +32,6 @@ if (isset($_SESSION['login'])){
         $reqRes = $db->connection()->prepare('SELECT libelleReservation, prix, periode, libelleTarification FROM reservation WHERE idClient = ' . $idClient);
         $reqRes->execute();
         $rowsRes = $reqRes->rowCount();
-        $dataRes = $reqRes->fetch();
 
 
         ?>
@@ -168,7 +167,7 @@ if (isset($_SESSION['login'])){
                                     <tr>
                                         <th>Libelle</th>
                                         <th>Tarif</th>
-                                        <th>Prix</th>
+                                        <th>Prix (en €)</th>
                                         <th>Date</th>
                                     </tr>
                                     </thead>
@@ -176,7 +175,7 @@ if (isset($_SESSION['login'])){
                                     <?php
                                     if ($rowsRes != 0) {
                                         for ($i = 1; $i <= $rowsRes; $i++) {
-                                            $data = $req->fetch();
+                                            $dataRes = $reqRes->fetch();
                                             ?>
                                             <tr>
                                                 <th> <?=$dataRes['libelleReservation']?>  </th>

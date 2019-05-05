@@ -47,7 +47,20 @@ if (isset($_SESSION['login'])) {
         $reqTarif->execute();
         $dataTarif = $reqTarif->fetch();
 
-        $prixFinal = $dataTarif['tarification'];
+
+
+        if ($data['fidelite'] == 100) {
+            $prixFinal = $dataTarif['tarification'] * 0.75;
+            $reqResFidel = $db->connection()->prepare('UPDATE client SET fidelite = 0 WHERE idClient = '. $idClient);
+            $reqResFidel->execute();
+        }
+        else {
+            $prixFinal = $dataTarif['tarification'];
+        }
+
+
+
+
         $libelleReservation = "Trajet " . $dataTrav['portDepart']. " -> " . $dataTrav['portArriver'];
         $dateReservation = date("d/m/Y");
         $libelleTarification = $dataTarif['libelle'];

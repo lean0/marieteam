@@ -56,9 +56,19 @@ require("global.php");
     </nav>
 
     <!--TEMPLATE-->
-    <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
 
         <?php
+        if ($fideliteC = 100) {
+            ?>
+            <div class="alert alert-success" role="alert">
+                Vous avez atteint <b>100pts</b> de fidélité ! Vous bénéficiez de <b>25%</b> de réduction sur votre prochaine réservation.
+            </div>
+    <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
+            <?php
+        }
+
+
+
         $cond = array();
         $filtre = '';
         $portAller = $_POST['selectedStart'];
@@ -71,6 +81,11 @@ require("global.php");
         </div>
 
         <?php
+        $reqFidelite = 'SELECT fidelite FROM client WHERE idClient = '. $_SESSION['idClient'];
+        $resFidelite = $db->connection()->prepare($reqFidelite);
+        $resFidelite->execute();
+        $dataFidelite = $resFidelite->fetch();
+        $fideliteC = $dataFidelite['fidelite'];
 
 
         $reqFiltre = 'SELECT * FROM liaison WHERE portDepart = "'.$portAller.'" AND portArriver = "'.$portRetour.'"';
@@ -89,8 +104,6 @@ require("global.php");
                 $res->execute();
                 $rows = $res->rowCount();
                 echo "<br>";
-
-
                 //Si toutes les conditions sont validées, afficher l'offre//
                 if ($rows >= 1) {
                     $reqTrav = 'SELECT * FROM liaison WHERE idLiaison ="' . $correctRow . '"';
@@ -131,6 +144,7 @@ require("global.php");
             <?php
         }
         ?>
+    </div>
     </div>
     <style>
         *

@@ -73,7 +73,19 @@ if (isset($_SESSION['login'])) {
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <p>Vos points de fidélité : <?= $data["fidelite"]; ?> (25% de réduction à 100 points)</p>
+                                                <?php
+                                                if ($data['fidelite'] = 100) {
+                                                    ?>
+                                                    <p>Vos points de fidélité : 100 (Vous aurez 25% de réduction sur cette réservation)</p>
+                                                    <?php
+                                                }
+                                                else {
+                                                    ?>
+                                                    <p>Vos points de fidélité : <?= $data["fidelite"]; ?> (25% de
+                                                        réduction à 100 points)</p>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +116,6 @@ if (isset($_SESSION['login'])) {
                                                         }
                                                     }
                                                     ?>
-<!--                                                    <input type="hidden" name="selectedTarif" id="selectedTarif" value="" />-->
                                                 </select>
                                             </div>
                                         </div>

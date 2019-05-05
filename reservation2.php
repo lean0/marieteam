@@ -42,8 +42,13 @@ if (isset($_SESSION['login'])) {
         $reqTarif = $db->connection()->prepare('SELECT * FROM tarification WHERE id = '. $idTarification);
         $reqTarif->execute();
         $dataTarif = $reqTarif->fetch();
-        $prixFinal = $dataTarif['tarification'];
 
+        if ($data['fidelite'] == 100) {
+            $prixFinal = $dataTarif['tarification'] * 0.75;
+        }
+        else {
+            $prixFinal = $dataTarif['tarification'];
+        }
         ?>
         <div class="content">
             <div class="container-fluid">
