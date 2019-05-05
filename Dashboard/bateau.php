@@ -39,6 +39,10 @@ if (isset($_GET['success'])) {
                                 <h4 class="title">Ajouter un bateau</h4>
                                 <form action="createbateau.php" method="post">
                                     <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">ID Bateau</label>
+                                        <input type="text" value="<?=@$_POST['idBateau'] ?>" class="form-control" placeholder=" " name="idBateau" id="idBateau" required="">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Nom</label>
                                         <input type="text" value="<?=@$_POST['nom'] ?>" class="form-control" placeholder=" " name="nom" id="nom" required="">
                                     </div>
@@ -49,6 +53,30 @@ if (isset($_GET['success'])) {
                                     <div class="form-group">
                                         <label for="recipient-email" class="col-form-label">Capacité</label>
                                         <input type="text" value="<?=@$_POST['capaciteBateau'] ?>"  class="form-control" placeholder=" " name="capaciteBateau" id="mail" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-email" class="col-form-label">Capacité Voiture</label>
+                                        <input type="text" value="<?=@$_POST['capaciteVoiture'] ?>"  class="form-control" placeholder=" " name="capaciteVoiture" id="capaciteVoiture" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-email" class="col-form-label">Capacité Camion</label>
+                                        <input type="text" value="<?=@$_POST['capaciteCamion'] ?>"  class="form-control" placeholder=" " name="capaciteCamion" id="capaciteCamion" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-email" class="col-form-label">Longeur</label>
+                                        <input type="text" value="<?=@$_POST['longeur'] ?>"  class="form-control" placeholder=" " name="longeur" id="longeur" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-email" class="col-form-label">Largeur</label>
+                                        <input type="text" value="<?=@$_POST['largeur'] ?>"  class="form-control" placeholder=" " name="largeur" id="largeur" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-email" class="col-form-label">Vitesse</label>
+                                        <input type="text" value="<?=@$_POST['vitesse'] ?>"  class="form-control" placeholder=" " name="vitesse" id="vitesse" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-email" class="col-form-label">Image Brochure</label>
+                                        <input type="text" value="<?=@$_POST['image'] ?>"  class="form-control" placeholder=" " name="image" id="image" required="">
                                     </div>
                                     <br class="right-w3l">
                                         <input type="submit" class="form-control serv_bottom" value="Ajouter"></br>

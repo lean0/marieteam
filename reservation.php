@@ -163,8 +163,6 @@ if (isset($_SESSION['login'])) {
                                                 }
                                                 ?>
 
-
-
                                                 <label>Tarif</label><br>
                                                 <table id="tabuser" class="table table-striped table-bordered" style="width:100%">
                                                     <tr>
