@@ -84,7 +84,7 @@ $rw = $req->rowCount();
                                     for ($f = 1; $f <= $rw3; $f++) {
                                         $dt3 = $req3->fetch();
                                         ?>
-                                        <option><?=$dt3['id']." ".$dt3['nomSecteur']?></option>
+                                        <option><?=$dt3['id']." | ".$dt3['nomSecteur']?></option>
                                     <?php } } ?>
 
                             </select>
