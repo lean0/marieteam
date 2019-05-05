@@ -63,7 +63,6 @@ if (isset($_GET['success'])) {
                                         </thead>
                                         <tbody>
                                     <?php
-                                //print_r($data);
                                 if ($rows != 0) {
                                     for ($i = 1; $i <= $rows; $i++) {
                                         $data = $req->fetch();

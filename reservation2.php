@@ -55,7 +55,7 @@ if (isset($_SESSION['login'])) {
                                 <h4 class="title">Réservations</h4>
                             </div>
                             <div class="content">
-                                <form method="post" action="reservationsql.php?key=<?= $_SESSION['idClient'] ?>&idt=<?= $_GET['idt']?>">
+                                <form method="post" action="reservationsql.php?key=<?= $_SESSION['idClient'] ?>&idt=<?= $_GET['idt']?>&idta=<?=$_POST['tarifAge']?>">
                                     <p>Informations</p>
                                     <div class="row">
                                         <div class="col-md-3">
@@ -97,9 +97,6 @@ if (isset($_SESSION['login'])) {
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="tarifAge" id="tarifAge" value="<?=$_POST['tarifAge']?>">
-
-
 
                                     <button type="submit" class="btn btn-info btn-fill pull-right">Réserver</button>
                                     <div class="clearfix"></div>

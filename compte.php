@@ -19,11 +19,22 @@ if (isset($_SESSION['login'])){
         <?php
         require ('tpl/navbartopC.php');
 
+
+        //Récup l'id du client
         $idClient = $_GET['key'];
 
+        //Récup les données du client
         $req = $db->connection()->prepare('SELECT idClient, nom, prenom, mail, password, dateInscription, fidelite FROM client WHERE idClient = ' . $idClient);
         $req->execute();
         $data = $req->fetch();
+
+        //Récup la liste des réservations du client
+        $reqRes = $db->connection()->prepare('SELECT libelleReservation, prix, periode, libelleTarification FROM reservation WHERE idClient = ' . $idClient);
+        $reqRes->execute();
+        $rowsRes = $reqRes->rowCount();
+        $dataRes = $reqRes->fetch();
+
+
         ?>
         <div class="content">
             <div class="container-fluid">
@@ -78,22 +89,6 @@ if (isset($_SESSION['login'])){
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <p>Vos points de fidélité : <?= $data["fidelite"]; ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <h4>Historique de réservation</h4>
-
-                                                <table id="tabuser" class="table table-striped table-bordered" style="width:100%">
-                                                    <tr>
-                                                        <td>a</td>
-                                                        <td>faire</td>
-                                                        <td>plus tard</td>
-                                                    </tr>
-                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -159,6 +154,45 @@ if (isset($_SESSION['login'])){
                                     <button type="submit" class="btn btn-info btn-fill pull-right">Modifier vos informations</button>
                                     <div class="clearfix"></div>
                                 </form>
+                            </div>
+                        </div>
+
+
+                        <div class="card" id="Historique">
+                            <div class="header">
+                                <h4 class="title">Historique de réservations</h4>
+                            </div>
+                            <div class="content">
+                                <table class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th>Libelle</th>
+                                        <th>Tarif</th>
+                                        <th>Prix</th>
+                                        <th>Date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    if ($rowsRes != 0) {
+                                        for ($i = 1; $i <= $rowsRes; $i++) {
+                                            $data = $req->fetch();
+                                            ?>
+                                            <tr>
+                                                <th> <?=$dataRes['libelleReservation']?>  </th>
+                                                <th> <?=$dataRes['libelleTarification']?> </th>
+                                                <th> <?=$dataRes['prix'] ?></th>
+                                                <th> <?=$dataRes['periode'] ?></th>
+                                            </tr>
+                                            <?php
+                                        }
+                                    }
+                                    else{
+                                        echo "Vous n'avez effectué aucune réservation :'(";
+                                    }
+                                    ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
