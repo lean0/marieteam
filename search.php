@@ -57,33 +57,33 @@ require("global.php");
 
     <!--TEMPLATE-->
 
-        <?php
-        $reqFidelite = 'SELECT fidelite FROM client WHERE idClient = '. $_SESSION['idClient'];
-        $resFidelite = $db->connection()->prepare($reqFidelite);
-        $resFidelite->execute();
-        $dataFidelite = $resFidelite->fetch();
-        $fideliteC = $dataFidelite['fidelite'];
-        if ($fideliteC >= 100) {
-            ?>
-            <div class="alert alert-success" role="alert">
-                Vous avez atteint <b>100pts</b> de fidélité ! Vous bénéficiez de <b>25%</b> de réduction sur votre prochaine réservation.
-            </div>
-            <?php
-        }
-
-
-
-        $cond = array();
-        $filtre = '';
-        $portAller = $_POST['selectedStart'];
-        $portRetour = $_POST['selectedEnd'];
-        $dateDepart = $_POST['dateDepart'];
+    <?php
+    $reqFidelite = 'SELECT fidelite FROM client WHERE idClient = '. $_SESSION['idClient'];
+    $resFidelite = $db->connection()->prepare($reqFidelite);
+    $resFidelite->execute();
+    $dataFidelite = $resFidelite->fetch();
+    $fideliteC = $dataFidelite['fidelite'];
+    if ($fideliteC >= 100) {
         ?>
-        <!--PORT ALLER -> PORT ARRIVER-->
-    <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
-        <div class="lieu">
-            <?= $portAller ?> → <?= $portRetour ?>
+        <div class="alert alert-success" role="alert">
+            Vous avez atteint <b>100pts</b> de fidélité ! Vous bénéficiez de <b>25%</b> de réduction sur votre prochaine réservation.
         </div>
+        <?php
+    }
+
+
+
+    $cond = array();
+    $filtre = '';
+    $portAller = $_POST['selectedStart'];
+    $portRetour = $_POST['selectedEnd'];
+    $dateDepart = $_POST['dateDepart'];
+    ?>
+    <!--PORT ALLER -> PORT ARRIVER-->
+    <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
+
+        <h3> Liste des traversées de <?= $portAller ?> → <?= $portRetour ?></h3>
+
 
         <?php
 
@@ -113,15 +113,38 @@ require("global.php");
                         $data = $res->fetch();
                         $dataLi = $resTrav->fetch();
                         ?>
-                        <div class="ligne">
-                            <div class="duree">
-                                <?= $data['heureDepart'] ?> --------------------> <?= $data['heureArrive'] ?>
-                                <p>Places disponibles : <?= $data['placeDispo'] ?></p>
-                            </div>
-                            <div class='prix'>
-                                <a href="reservation.php?key=<?= $_SESSION['idClient'] ?>&idt=<?= $data['idTraverse'] ?>"
-                                   style="margin-right: -30px; padding: 30px 12.5px; border: none; border-radius: 3.5px; background: #17a2b8; color: white ">
-                                    Réserver</a>
+                        <div class="col-md-12 rounded border ligne" id="tid<?=?>">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col">
+                                            <b>Départ</b> : <?= $data['heureDepart'] ?>
+                                        </div>
+                                        <div class="col">
+                                            <b>Arrivée</b> : <?= $data['heureArrive'] ?>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            Places passagers disponibles : <?= $data['placeDispo'] ?>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            Places voitures disponibles : <?= $data['placeDispoV'] ?>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            Places camions disponibles : <?= $data['placeDispoC'] ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="margin-right: -30px; padding: 30px 12.5px; border: none; border-radius: 3.5px; background: #17a2b8; color: white ">
+                                    <div class='prix '>
+                                        <a style="color: white; font-size: 20px" href="reservation.php?key=<?= $_SESSION['idClient'] ?>&idt=<?= $data['idTraverse'] ?>">Réserver</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <?php
@@ -152,19 +175,17 @@ require("global.php");
             transition: all 0.35s ease-in-out;
         }
         .ligne {
-            margin: 5px 0;
-            background: #dadfdd;
-            width: 100%;
+            background: white;
             border-radius: 2px;
-            border: none;
+            border-color: #17a2b8;;
             color: black;
-            min-height: 115px;
-            display: flex;
-            flex-direction: row;
+            min-height: 100px;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 10px 20px;
             text-align: center
+        }
+        .ligne:hover {
+            box-shadow: 1px 1px 10px #17a2b8;
         }
         .nul
         {
@@ -192,6 +213,7 @@ require("global.php");
         {
             padding: 10px 15px;
             margin: auto 10px;
+            color: white;
             /*border: 0.75px solid black*/
         }
 
@@ -218,12 +240,9 @@ require("global.php");
 
     <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%">
         <table>
-
         </table>
     </div>
 
-
-    <div class="line">1</div>
     <style>
         .line {
             margin: 5px auto;
