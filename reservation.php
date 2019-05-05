@@ -19,8 +19,9 @@ if (isset($_SESSION['login'])) {
         <?php
         require('tpl/navbartopC.php');
 
-        $idClient = $_GET['key'];
+        $idClient = $_SESSION['idClient'];
         $idTraverse = $_GET['idt'];
+        $_SESSION['idTraverse'] = $idTraverse;
 
         $todayDate = date("Y-m-d");
 
@@ -46,7 +47,7 @@ if (isset($_SESSION['login'])) {
                                 <h4 class="title">Réservations</h4>
                             </div>
                             <div class="content">
-                                <form method="post" action="reservation2.php?key=<?= $_SESSION['idClient'] ?>&idt=<?= $_GET['idt']?>">
+                                <form method="post" action="reservation2.php?idt=<?= $_GET['idt']?>">
                                     <p>Vos informations</p>
                                     <div class="row">
                                         <div class="col-md-3">
@@ -121,6 +122,7 @@ if (isset($_SESSION['login'])) {
                                                 $travDate = strtotime($travDate);
 
                                                 $todayPeriode = $idPeriode1;
+                                                $_SESSION['periode'] = $todayPeriode;
 
                                                 if (($travDate > $periode1Start) && ($travDate < $periode1End)) {
                                                     $todayPeriode = $idPeriode1;
@@ -186,6 +188,7 @@ if (isset($_SESSION['login'])) {
                                                                     <option><?=$i1?></option>
                                                                     <?php
                                                                 }
+                                                                $dataTarif = $reqTarif->fetch();
                                                                 ?>
                                                             </select>
                                                         </td>
@@ -205,6 +208,7 @@ if (isset($_SESSION['login'])) {
                                                                     <option><?=$i2?></option>
                                                                     <?php
                                                                 }
+                                                                $dataTarif = $reqTarif->fetch();
                                                                 ?>
                                                             </select>
                                                         </td>
@@ -224,6 +228,7 @@ if (isset($_SESSION['login'])) {
                                                                     <option><?=$i3?></option>
                                                                     <?php
                                                                 }
+                                                                $dataTarif = $reqTarif->fetch();
                                                                 ?>
                                                             </select>
                                                         </td>
@@ -243,6 +248,7 @@ if (isset($_SESSION['login'])) {
                                                                     <option><?=$i4?></option>
                                                                     <?php
                                                                 }
+                                                                $dataTarif = $reqTarif->fetch();
                                                                 ?>
                                                             </select>
                                                         </td>
@@ -262,6 +268,7 @@ if (isset($_SESSION['login'])) {
                                                                     <option><?=$i5?></option>
                                                                     <?php
                                                                 }
+                                                                $dataTarif = $reqTarif->fetch();
                                                                 ?>
                                                             </select>
                                                         </td>
@@ -281,11 +288,51 @@ if (isset($_SESSION['login'])) {
                                                                     <option><?=$i6?></option>
                                                                     <?php
                                                                 }
+                                                                $dataTarif = $reqTarif->fetch();
                                                                 ?>
                                                             </select>
                                                         </td>
                                                     </tr>
 
+                                                    <tr>
+                                                        <td>Camping Car</td>
+                                                        <td><?=$dataTarif['tarification']?>€</td>
+                                                        <td><?=$dataTrav['placeDispoC']?></td>
+                                                        <td>
+                                                            <select name="nbCCar" id="nbCCar">
+                                                                <?php
+
+                                                                for ($i7=0; $i7 < $maxIndexC; $i7++) {
+
+                                                                    ?>
+                                                                    <option><?=$i7?></option>
+                                                                    <?php
+                                                                }
+                                                                $dataTarif = $reqTarif->fetch();
+                                                                ?>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Camion</td>
+                                                        <td><?=$dataTarif['tarification']?>€</td>
+                                                        <td><?=$dataTrav['placeDispoC']?></td>
+                                                        <td>
+                                                            <select name="nbCamion" id="nbCamion">
+                                                                <?php
+
+                                                                for ($i8=0; $i8 < $maxIndexC; $i8++) {
+
+                                                                    ?>
+                                                                    <option><?=$i8?></option>
+                                                                    <?php
+                                                                }
+                                                                $dataTarif = $reqTarif->fetch();
+                                                                ?>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
                                                 </table>
                                             </div>
                                         </div>

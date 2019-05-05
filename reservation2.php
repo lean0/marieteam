@@ -19,9 +19,25 @@ if (isset($_SESSION['login'])) {
         <?php
         require('tpl/navbartopC.php');
 
-        $idClient = $_GET['key'];
+        $idClient = $_SESSION['idClient'];
         $idTraverse = $_GET['idt'];
-        $idTarification = $_POST['tarifAge'];
+        $idPeriode = $_SESSION['periode'];
+        $nbAdulte = $_POST['nbAdulte'];
+        $_SESSION['nbAdulte'] = $nbAdulte;
+        $nbJunior = $_POST['nbJunior'];
+        $_SESSION['nbJunior'] = $nbJunior;
+        $nbEnfant = $_POST['nbEnfant'];
+        $_SESSION['nbEnfant'] = $nbEnfant;
+        $nbVoit4m = $_POST['nbVoit4m'];
+        $_SESSION['nbVoit4m'] = $nbVoit4m;
+        $nbVoit5m = $_POST['nbVoit5m'];
+        $_SESSION['nbVoit5m'] = $nbVoit5m;
+        $nbFourg = $_POST['nbFourg'];
+        $_SESSION['nbFourg'] = $nbFourg;
+        $nbCCar = $_POST['nbCCar'];
+        $_SESSION['nbCCar'] = $nbCCar;
+        $nbCamion = $_POST['nbCamion'];
+        $_SESSION['nbCamion'] = $nbCamion;
 
         $req = $db->connection()->prepare('SELECT idClient, nom, prenom, mail, password, dateInscription, fidelite FROM client WHERE idClient = ' . $idClient);
         $req->execute();
@@ -39,21 +55,34 @@ if (isset($_SESSION['login'])) {
         $reqTrav->execute();
         $dataTrav = $reqTrav->fetch();
 
-        $reqTarif = $db->connection()->prepare('SELECT * FROM tarification WHERE id = '. $idTarification);
+        $reqTarif = $db->connection()->prepare('SELECT * FROM tarification WHERE idPeriode = '. $idPeriode);
         $reqTarif->execute();
         $dataTarif = $reqTarif->fetch();
 
-        
-
-
-
+        $prixFinal = 0;
+        $prixFinal = ($prixFinal + ($nbAdulte * $dataTarif['tarification']));
+        $dataTarif = $reqTarif->fetch();
+        $prixFinal = ($prixFinal + ($nbJunior * $dataTarif['tarification']));
+        $dataTarif = $reqTarif->fetch();
+        $prixFinal = ($prixFinal + ($nbEnfant * $dataTarif['tarification']));
+        $dataTarif = $reqTarif->fetch();
+        $prixFinal = ($prixFinal + ($nbVoit4m * $dataTarif['tarification']));
+        $dataTarif = $reqTarif->fetch();
+        $prixFinal = ($prixFinal + ($nbVoit5m * $dataTarif['tarification']));
+        $dataTarif = $reqTarif->fetch();
+        $prixFinal = ($prixFinal + ($nbFourg * $dataTarif['tarification']));
+        $dataTarif = $reqTarif->fetch();
+        $prixFinal = ($prixFinal + ($nbCCar * $dataTarif['tarification']));
+        $dataTarif = $reqTarif->fetch();
+        $prixFinal = ($prixFinal + ($nbCamion * $dataTarif['tarification']));
 
         if ($data['fidelite'] == 100) {
-            $prixFinal = $dataTarif['tarification'] * 0.75;
+            $prixFinal = $prixFinal * 0.75;
         }
         else {
-            $prixFinal = $dataTarif['tarification'];
+            $prixFinal = $prixFinal * 1;
         }
+        $_SESSION['prix'] = $prixFinal;
         ?>
         <div class="content">
             <div class="container-fluid">
@@ -65,7 +94,7 @@ if (isset($_SESSION['login'])) {
                                 <h4 class="title">Réservations</h4>
                             </div>
                             <div class="content">
-                                <form method="post" action="reservationsql.php?key=<?= $_SESSION['idClient'] ?>&idt=<?= $_GET['idt']?>&idta=<?=$_POST['tarifAge']?>">
+                                <form method="post" action="reservationsql.php?idt=<?= $_GET['idt']?>">
                                     <p>Informations</p>
                                     <div class="row">
                                         <div class="col-md-3">
@@ -77,7 +106,7 @@ if (isset($_SESSION['login'])) {
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Distance</label>
-                                                <p><?= $dataTrav['distance'] ?>km</p>
+                                                <p><?= $dataTrav['distance'] ?> miles marin</p>
                                             </div>
                                         </div>
                                     </div>
@@ -87,14 +116,14 @@ if (isset($_SESSION['login'])) {
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Date :</label>
-                                                <p><?=$dataTrav['date']?>, Départ à <?= $dataTrav['heureDepart']?>, Arrivée à <?= $dataTrav['heureArrive']?></p>
+                                                <p><?=$dataTrav['date']?>, Départ à <?= $dataTrav['heureDepart']?>,<br> Arrivée estimée à <?= $dataTrav['heureArrive']?></p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <p>Bateau : <?= $dataTrav['nom'];?>, Piloté par le capitaine <?= $dataTrav['nomCapitaine'];?></p>
+                                                <p>Bateau : <?= $dataTrav['nom'];?>, Piloté par le capitain <?= $dataTrav['nomCapitaine'];?></p>
                                             </div>
                                         </div>
                                     </div>

@@ -19,9 +19,10 @@ if (isset($_SESSION['login'])) {
         <?php
         require('tpl/navbartopC.php');
 
-        $idClient = $_GET['key'];
+        $idClient = $_SESSION['idClient'];
         $idTraverse = $_GET['idt'];
-        $idTarification = $_GET['idta'];
+        $prixFinal = $_SESSION['prix'];
+        $idPeriode = $_SESSION['periode'];
 
         $req = $db->connection()->prepare('SELECT idClient, nom, prenom, mail, password, dateInscription, fidelite FROM client WHERE idClient = ' . $idClient);
         $req->execute();
@@ -39,37 +40,118 @@ if (isset($_SESSION['login'])) {
         $reqTrav->execute();
         $dataTrav = $reqTrav->fetch();
 
-        $reqTarif = $db->connection()->prepare('SELECT * FROM tarification
-                                                          INNER JOIN categorietarification
-                                                          WHERE tarification.idType = categorietarification.id
-                                                          AND tarification.id = '. $idTarification
-        );
-        $reqTarif->execute();
-        $dataTarif = $reqTarif->fetch();
-
-
 
         if ($data['fidelite'] == 100) {
-            $prixFinal = $dataTarif['tarification'] * 0.75;
             $reqResFidel = $db->connection()->prepare('UPDATE client SET fidelite = 0 WHERE idClient = '. $idClient);
             $reqResFidel->execute();
         }
-        else {
-            $prixFinal = $dataTarif['tarification'];
-        }
-
-
-
 
         $libelleReservation = "Trajet " . $dataTrav['portDepart']. " -> " . $dataTrav['portArriver'];
         $dateReservation = date("d/m/Y");
-        $libelleTarification = $dataTarif['libelle'];
-
-        $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, libelleTarification) VALUE (?,?,?,?,?,?)');
-        $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prixFinal, $dateReservation, $libelleTarification]);
 
 
+        $idPeriode = $_SESSION['periode'];
 
+        $nbAdulte = $_SESSION['nbAdulte'];
+
+        $nbJunior = $_SESSION['nbJunior'];
+
+        $nbEnfant = $_SESSION['nbEnfant'];
+
+        $nbVoit4m = $_SESSION['nbVoit4m'];
+
+        $nbVoit5m = $_SESSION['nbVoit5m'];
+
+        $nbFourg = $_SESSION['nbFourg'];
+
+        $nbCCar = $_SESSION['nbCCar'];
+
+        $nbCamion = $_SESSION['nbCamion'];
+
+        $reqTarif = $db->connection()->prepare('SELECT * FROM tarification WHERE idPeriode = '. $idPeriode);
+        $reqTarif->execute();
+        $dataTarif = $reqTarif->fetch();
+
+        if ($nbAdulte > 0) {
+            $libelleTarification = "Ticket adulte";
+            $prix = $dataTarif['tarification'];
+            $idTarif = 1;
+            for ($i = 0; $i < $nbAdulte; $i++) {
+                $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, idTarif, libelleTarification) VALUE (?,?,?,?,?,?,?)');
+                $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prix, $dateReservation, $idTarif, $libelleTarification]);
+            }
+            $dataTarif = $reqTarif->fetch();
+        }
+        if ($nbJunior > 0) {
+            $libelleTarification = "Ticket Junior";
+            $prix = $dataTarif['tarification'];
+            $idTarif = 1;
+            for ($i = 0; $i < $nbJunior; $i++) {
+                $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, idTarif, libelleTarification) VALUE (?,?,?,?,?,?,?)');
+                $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prix, $dateReservation, $idTarif, $libelleTarification]);
+            }
+            $dataTarif = $reqTarif->fetch();
+        }
+        if ($nbEnfant > 0) {
+            $libelleTarification = "Ticket Enfant";
+            $prix = $dataTarif['tarification'];
+            $idTarif = 1;
+            for ($i = 0; $i < $nbEnfant; $i++) {
+                $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, idTarif, libelleTarification) VALUE (?,?,?,?,?,?,?)');
+                $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prix, $dateReservation, $idTarif, $libelleTarification]);
+            }
+            $dataTarif = $reqTarif->fetch();
+        }
+        if ($nbVoit4m > 0) {
+            $libelleTarification = "Ticket Voiture inf.4m";
+            $prix = $dataTarif['tarification'];
+            $idTarif = 2;
+            for ($i = 0; $i < $nbVoit4m; $i++) {
+                $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, idTarif, libelleTarification) VALUE (?,?,?,?,?,?,?)');
+                $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prix, $dateReservation, $idTarif, $libelleTarification]);
+            }
+            $dataTarif = $reqTarif->fetch();
+        }
+        if ($nbVoit5m > 0) {
+            $libelleTarification = "Ticket Voiture inf.5m";
+            $prix = $dataTarif['tarification'];
+            $idTarif = 2;
+            for ($i = 0; $i < $nbVoit5m; $i++) {
+                $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, idTarif, libelleTarification) VALUE (?,?,?,?,?,?,?)');
+                $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prix, $dateReservation, $idTarif, $libelleTarification]);
+            }
+            $dataTarif = $reqTarif->fetch();
+        }
+        if ($nbFourg > 0) {
+            $libelleTarification = "Ticket Fourgon";
+            $prix = $dataTarif['tarification'];
+            $idTarif = 3;
+            for ($i = 0; $i < $nbFourg; $i++) {
+                $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, idTarif, libelleTarification) VALUE (?,?,?,?,?,?,?)');
+                $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prix, $dateReservation, $idTarif, $libelleTarification]);
+            }
+            $dataTarif = $reqTarif->fetch();
+        }
+        if ($nbCCar > 0) {
+            $libelleTarification = "Ticket Camping Car";
+            $prix = $dataTarif['tarification'];
+            $idTarif = 3;
+            for ($i = 0; $i < $nbCCar; $i++) {
+                $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, idTarif, libelleTarification) VALUE (?,?,?,?,?,?,?)');
+                $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prix, $dateReservation, $idTarif, $libelleTarification]);
+            }
+            $dataTarif = $reqTarif->fetch();
+        }
+        if ($nbCamion > 0) {
+            $libelleTarification = "Ticket Camion";
+            $prix = $dataTarif['tarification'];
+            $idTarif = 3;
+            for ($i = 0; $i < $nbCamion; $i++) {
+                $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, idTarif, libelleTarification) VALUE (?,?,?,?,?,?,?)');
+                $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prix, $dateReservation, $idTarif, $libelleTarification]);
+            }
+            $dataTarif = $reqTarif->fetch();
+        }
         ?>
         <div class="content">
             <div class="container-fluid">
@@ -79,6 +161,12 @@ if (isset($_SESSION['login'])) {
                         <div class="card">
                             <div class="header">
                                 <h2 class="title">Merci !</h2>
+                                <br>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p> Votre réservation a été confirmée !</p>
+                                </div>
                             </div>
                         </div>
                     </div>
