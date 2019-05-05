@@ -36,7 +36,7 @@ $rw = $req->rowCount();
                     <div class="form-group">
                         <form action="createliaison.php" method="post">
 
-                            <label for="port depart" class="col-form-label">Port de départ</label>
+                            <label for="port depart" class="col-form-label">Ile de départ</label>
                             <select class="form-control" id="selectPortDepart" name="selectPortDepart" value="<?=@$_POST['selectPortDepart'] ?>">
                             <?php if($rw != 0) {
                         for ($j = 1; $j <= $rw; $j++) {
@@ -55,7 +55,7 @@ $rw = $req->rowCount();
                     $rw2 = $req2->rowCount();
                     ?>
                     <div class="form-group">
-                            <label for="port depart" class="col-form-label">Port de départ</label>
+                            <label for="port depart" class="col-form-label">Ile d'arrivée</label>
                             <select class="form-control" id="selectPortArriver" name="selectPortArriver" value="<?=@$_POST['selectPortArriver'] ?>">
                                 <?php if($rw2 != 0) {
                                     for ($h = 1; $h <= $rw2; $h++) {
