@@ -96,7 +96,7 @@ require("global.php");
 
 				</div>
 				<div class="col-md-3 button">
-					<a href="about.php " class="w3ls-button-agile">Réserver
+					<a href="index.php " class="w3ls-button-agile">Réserver
 						<i class="fas fa-hand-point-right"></i>
 					</a>
 				</div>
@@ -154,10 +154,7 @@ require("global.php");
 			</div>
 		</div>
 	</section>
-	<!-- our services -->
-    <div class="container text-center py-4">
-        <a class="btn btn-primary w-50" href="services.php" role="button">Nos destinations</a>
-    </div>
+
 	<!-- //about-team -->
 
    <!--footer -->

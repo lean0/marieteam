@@ -30,18 +30,7 @@
                         <li class="nav-item  mr-lg-3">
                             <a class="nav-link" href="about.php">À propos</a>
                         </li>
-                        <li class="nav-item active dropdown mr-lg-3">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false" style="color: white">
-                                menu
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="services.php">Destinations</a>
-                                <a class="dropdown-item" href="gallery.php">Souvenir</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="typo.php">Typography</a>
-                            </div>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="contact.php">Contactez-nous</a>
                         </li>

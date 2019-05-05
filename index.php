@@ -128,22 +128,20 @@ require("global.php");
             <div class="col-lg-3 col-md-6">
                 <div class="agileits-services-grids">
                     <i class="fas fa-ship"></i>
-                    <h4>Ship
+                    <h4>Voyager facile !
                     </h4>
                     <span></span>
-                    <p> Rejoignez nous pour la découverte du monde bleu </p>
-                    <a href="about.php" class="service-btn">Lire plus</a>
+                    <p>Utilisé notre réseaux maritime avec simplicité ! </p>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6">
                 <div class="agileits-services-grids">
                     <i class="fas fa-ship"></i>
-                    <h4>Tool transport
+                    <h4>Emporté votre véhicule !
                     </h4>
                     <span></span>
-                    <p> Nous envoyons vos colis comme jamais</p>
-                    <a href="about.php" class="service-btn">Lire plus</a>
+                    <p>Emporte votre véhicule avec vous même en voyangant sur notre réseau !</p>
                 </div>
             </div>
         </div>
@@ -155,7 +153,7 @@ require("global.php");
     <div class="container py-xl-3 py-lg-3">
         <div class="row">
             <div class="col-md-9 banner-left-bottom-w3ls">
-                <h3 class="text-white my-3"> Le moyen le plus rapide de comparer vos plus 450 trajets </h3>
+                <h3 class="text-white my-3"> Une société a votre écoute peu importe votre demande ! </h3>
 
             </div>
             <div class="col-md-3 button">
@@ -258,6 +256,23 @@ require("global.php");
 -->
 <!-- //blog -->
 <!-- stats -->
+<?php
+$req = $db->connection()->prepare('SELECT idClient FROM client');
+$req->execute();
+$data = $req->rowCount();
+
+$req2 = $db->connection()->prepare('SELECT nom FROM iledeservie');
+$req2->execute();
+$data2 = $req2->rowCount();
+
+$req3 = $db->connection()->prepare('SELECT id FROM contact');
+$req3->execute();
+$data3 = $req3->rowCount();
+
+$req4 = $db->connection()->prepare('SELECT idBateau FROM bateau');
+$req4->execute();
+$data4 = $req4->rowCount();
+?>
 <section class="stat_w3l py-5">
     <div class="container">
         <div class="w3ls-titles text-center mb-5">
@@ -265,34 +280,33 @@ require("global.php");
             <span class="btmspn">
 					<i class="fas fa-bus"></i>
 				</span>
-            <p class="mt-2 mx-auto text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore consectetur dolorum, voluptatum possimus temporibus vel ab, nesciunt quod!</p>
         </div>
         <div class="row py-lg-5 stats-con">
             <div class="col-lg-3 col-md-6 stats_info counter_grid">
                 <div class="stats_info1">
                     <i class="fas fa-users"></i>
-                    <p class="counter">25,000</p>
+                    <p class="counter"><?=$data?></p>
                     <h4>Clients Heureux</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 stats_info counter_grid">
                 <div class="stats_info1">
                     <i class="fas fa-fighter-jet"></i>
-                    <p class="counter">120</p>
-                    <h4>Destinations Canon </h4>
+                    <p class="counter"><?=$data2?></p>
+                    <h4>Destinations  </h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 stats_info counter_grid1">
                 <div class="stats_info1">
-                    <i class="fas fa-briefcase"></i>
-                    <p class="counter">300</p>
-                    <h4>Partenaires</h4>
+                    <i class="fas fa-ship"></i>
+                    <p class="counter"><?=$data4?></p>
+                    <h4>Bateau</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 stats_info counter_grid2">
                 <div class="stats_info1">
                     <i class="fas fa-comments"></i>
-                    <p class="counter">6,812</p>
+                    <p class="counter"><?=$data3 ?></p>
                     <h4>Questions Repondus</h4>
                 </div>
             </div>
@@ -302,109 +316,9 @@ require("global.php");
 <!-- //stats -->
 
 <!-- branches -->
-<section class="branches py-md-5 pt-4">
-    <div class="container">
-        <div class="w3ls-titles text-center mb-5">
-            <h3 class="title"><span class="hdng">Nouvelles </span>destinations</h3>
-            <span class="btmspn">
-					<i class="fas fa-bus"></i>
-				</span>
-            <p class="mt-2 mx-auto">
-                Depuis Octobre, nous avons acqueri la possiiblité de desservir sur ses nouvelles destinations!
-            </p>
-        </div>
+<span class="btmspn">
+	<section class="branches py-md-5 pt-4">
 
-        <div class="row py-5 branches-position">
-            <div class="col-lg-3 col-md-6">
-                <!-- team-img -->
-                <div class="team-block">
-                    <div class="team-img">
-                        <img src="images/h1.jpg" alt="" class="img-fluid">
-                        <div class="team-content">
-                            <h4 class="text-white">Turkey</h4>
-                            <p class="team-meta"> 8 days…</p>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <p class="team-meta">-Istanbul,  </p>
-                                <p class="team-meta">- Antalya,</p>
-                                <p class="team-meta">
-                                    -Ephesus.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.team-img -->
-            <div class="col-lg-3 col-md-6">
-                <!-- team-img -->
-                <div class="team-block">
-                    <div class="team-img">
-                        <img src="images/h2.jpg" alt="" class="img-fluid">
-                        <div class="team-content">
-                            <h4 class="text-white">United Kingdom</h4>
-                            <p class="team-meta">13 days…</p>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <p class="team-meta">-England,   </p>
-                                <p class="team-meta">- Scotland,</p>
-                                <p class="team-meta">
-                                    -Wales.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.team-img -->
-            <div class="col-lg-3 col-md-6">
-                <!-- team-img -->
-                <div class="team-block">
-                    <div class="team-img">
-                        <img src="images/h3.jpg" alt="" class="img-fluid">
-                        <div class="team-content">
-                            <h4 class="text-white">Spain</h4>
-                            <p class="team-meta">9 days…</p>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <p class="team-meta">-Madrid,   </p>
-                                <p class="team-meta">- Andalucia,</p>
-                                <p class="team-meta">
-                                    -Barcelona.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.team-img -->
-            <div class="col-lg-3 col-md-6">
-                <!-- team-img -->
-                <div class="team-block">
-                    <div class="team-img">
-                        <img src="images/h4.jpg" alt="" class="img-fluid">
-                        <div class="team-content">
-                            <h4 class="text-white">Europe</h4>
-                            <p class="team-meta">10 days…</p>
-                        </div>
-                        <div class="overlay">
-                            <div class="text tex-center">
-
-                                <p class="team-meta">-Slovenia,  </p>
-                                <p class="team-meta">- Hungary,</p>
-                                <p class="team-meta">
-                                    -Poland.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 <!-- //branches -->
 <!--footer -->
