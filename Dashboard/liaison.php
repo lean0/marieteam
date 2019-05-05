@@ -43,7 +43,7 @@ $rw = $req->rowCount();
                         $dt = $req->fetch();
                         echo $dt;
                         ?>
-                            <option><?=$dt['nom']?></option>
+                            <option><?=utf8_encode($dt['nom'])?></option>
                         <?php } } ?>
 
                             </select>
@@ -61,7 +61,7 @@ $rw = $req->rowCount();
                                     for ($h = 1; $h <= $rw2; $h++) {
                                         $dt2 = $req2->fetch();
                                         ?>
-                                        <option><?=$dt2['nom']?></option>
+                                        <option><?=utf8_encode($dt2['nom'])?></option>
                                     <?php } } ?>
 
                             </select>

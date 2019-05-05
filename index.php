@@ -74,7 +74,7 @@ require("global.php");
                     for ($i = 1; $i <= $rows; $i++) {
                         $data = $req->fetch();
                         ?>
-                        <option value="<?= $data['idIle'] ?>"><?= $data['nom'] ?></option>
+                        <option value="<?= $data['idIle'] ?>"><?= utf8_encode($data['nom']) ?></option>
                         <?php
                     }
                     ?>
@@ -83,10 +83,10 @@ require("global.php");
             </div>
 
             <div class="entity">
-                <span class="libelle">Retour</span>
+                <span class="libelle">Arrivée</span>
                 <br>
                 <select id="inputState" name="inputRetour" onchange="document.getElementById('selectedEnd').value=this.options[this.selectedIndex].text">
-                    <option value="">-- Arriver --</option>
+                    <option value="">-- Arrivée --</option>
                     <?php
                     $req = $db->connection()->prepare('SELECT * FROM iledeservie');
                     $req->execute();
@@ -94,7 +94,7 @@ require("global.php");
                     for ($i = 1; $i <= $rows; $i++) {
                         $data = $req->fetch();
                         ?>
-                        <option value="<?= $data['idIle'] ?>"><?= $data['nom'] ?></option>
+                        <option value="<?= $data['idIle'] ?>"><?= utf8_encode($data['nom']) ?></option>
                         <?php
                     }
                     ?>
@@ -103,7 +103,7 @@ require("global.php");
             </div>
 
             <div class="entity">
-                <span class="libelle">Départ</span><br>
+                <span class="libelle">Date</span><br>
                 <input type="date" id="date_to" class="date_to" name="dateDepart" placeholder="Départ"/>
             </div>
             <div  class="entity" id="entity-submit">
