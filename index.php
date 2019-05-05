@@ -63,7 +63,7 @@ require("global.php");
         <form id="trip_form" method="post" action="search.php">
 
             <div class="entity">
-                <span class="libelle">Aller</span>
+                <span class="libelle">Port de départ</span>
                 <br>
                 <select id="inputState" name="inputAller" onchange="document.getElementById('selectedStart').value=this.options[this.selectedIndex].text">
                     <option value="">-- Départ --</option>
@@ -83,7 +83,7 @@ require("global.php");
             </div>
 
             <div class="entity">
-                <span class="libelle">Arrivée</span>
+                <span class="libelle">Port d'arrivée</span>
                 <br>
                 <select id="inputState" name="inputRetour" onchange="document.getElementById('selectedEnd').value=this.options[this.selectedIndex].text">
                     <option value="">-- Arrivée --</option>
