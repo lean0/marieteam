@@ -51,10 +51,11 @@ if (isset($_SESSION['login'])) {
         $libelleReservation = "Trajet " . $dataTrav['portDepart']. " -> " . $dataTrav['portArriver'];
         $dateReservation = date("d/m/Y");
         $libelleTarification = $dataTarif['libelle'];
-        $idres = 1;
 
-        $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, libelleReservation, prix, periode, libelleTarification) VALUE (?,?,?,?,?)');
-        $reqInsert->execute([$idClient, $libelleReservation, $prixFinal, $dateReservation, $libelleTarification]);
+        $reqInsert = $db->connection()->prepare('INSERT INTO reservation (idClient, idTraverse, libelleReservation, prix, periode, libelleTarification) VALUE (?,?,?,?,?,?)');
+        $reqInsert->execute([$idClient, $idTraverse, $libelleReservation, $prixFinal, $dateReservation, $libelleTarification]);
+
+
 
         ?>
         <div class="content">

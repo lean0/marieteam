@@ -69,8 +69,9 @@ require("global.php");
         <div class="lieu">
             <?= $portAller ?> → <?= $portRetour ?>
         </div>
+
         <?php
-        //Récup toutes les liason avec les ports correspondants//
+
 
         $reqFiltre = 'SELECT * FROM liaison WHERE portDepart = "'.$portAller.'" AND portArriver = "'.$portRetour.'"';
         $resFiltre = $db->connection()->prepare($reqFiltre);
@@ -80,12 +81,10 @@ require("global.php");
 
         if ($rowsFiltre != 0) {
             //Récup l'idLiaison des lignes avec les ports correspondants pour ensuite comparer avec la date//
-            for ($i = 1;
-                 $i <= $rowsFiltre;
-                 $i++) {
+            for ($i = 1; $i <= $rowsFiltre; $i++) {
                 $dataFiltre = $resFiltre->fetch();
                 $correctRow = $dataFiltre['idLiaison'];
-                $req = 'SELECT * FROM traverse WHERE date ="' . $dateDepart . '" AND  idLiaison ="' . $correctRow . '"';
+                $req = 'SELECT * FROM traverse WHERE date ="' . $dateDepart . '" AND  idLiaison ="' . $correctRow . '" AND  placeDispo >=1';
                 $res = $db->connection()->prepare($req);
                 $res->execute();
                 $rows = $res->rowCount();
@@ -114,6 +113,13 @@ require("global.php");
                         </div>
                         <?php
                     }
+                }
+                else {
+                    ?>
+                    <div class="ligne nul">
+                        Aucun trajet correspondant !
+                    </div>
+                    <?php
                 }
             }
         }
