@@ -13,7 +13,7 @@ if(isset($_POST['selectPortDepart']) && isset($_POST['selectPortArriver']) && is
     $nomQui = $_SESSION['loginAdmin'];
     $Libelle = "LIAISON : " . $SPD . "->" . $SPA . " créée";
 
-    $req = $db->connection()->prepare('INSERT INTO liaison (idLiaison, portDepart, portArriver, distance, idSecteur) VALUE (?,?,?,?)');
+    $req = $db->connection()->prepare('INSERT INTO liaison (idLiaison, portDepart, portArriver, distance, idSecteur) VALUE (?,?,?,?,?)');
     $req->execute([$idliaison ,$SPD, $SPA, $distance, $secteurid]);
 
     $req2 = $db->connection()->prepare('INSERT INTO notifications (nomQui, Libelle) VALUE (?,?)');

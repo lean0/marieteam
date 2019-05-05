@@ -138,7 +138,7 @@ $rw = $req->rowCount();
                                         <th>CODE</th>
                                         <th>Port Départ</th>
                                         <th>Port Arrivé</th>
-                                        <th>Distance KM</th>
+                                        <th>Miles marin</th>
                                         <th>Secteur</th>
 
                                     </tr>
