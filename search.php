@@ -58,12 +58,16 @@ require("global.php");
     <!--TEMPLATE-->
 
         <?php
-        if ($fideliteC = 100) {
+        $reqFidelite = 'SELECT fidelite FROM client WHERE idClient = '. $_SESSION['idClient'];
+        $resFidelite = $db->connection()->prepare($reqFidelite);
+        $resFidelite->execute();
+        $dataFidelite = $resFidelite->fetch();
+        $fideliteC = $dataFidelite['fidelite'];
+        if ($fideliteC == 100) {
             ?>
             <div class="alert alert-success" role="alert">
                 Vous avez atteint <b>100pts</b> de fidélité ! Vous bénéficiez de <b>25%</b> de réduction sur votre prochaine réservation.
             </div>
-    <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
             <?php
         }
 
@@ -76,16 +80,12 @@ require("global.php");
         $dateDepart = $_POST['dateDepart'];
         ?>
         <!--PORT ALLER -> PORT ARRIVER-->
+    <div style="background: none; min-height: calc(100vh - 615px); margin-bottom: 15px; padding: 15px 2.5%;max-width: 750px;">
         <div class="lieu">
             <?= $portAller ?> → <?= $portRetour ?>
         </div>
 
         <?php
-        $reqFidelite = 'SELECT fidelite FROM client WHERE idClient = '. $_SESSION['idClient'];
-        $resFidelite = $db->connection()->prepare($reqFidelite);
-        $resFidelite->execute();
-        $dataFidelite = $resFidelite->fetch();
-        $fideliteC = $dataFidelite['fidelite'];
 
 
         $reqFiltre = 'SELECT * FROM liaison WHERE portDepart = "'.$portAller.'" AND portArriver = "'.$portRetour.'"';

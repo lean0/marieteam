@@ -43,6 +43,11 @@ if (isset($_SESSION['login'])) {
         $reqTarif->execute();
         $dataTarif = $reqTarif->fetch();
 
+        
+
+
+
+
         if ($data['fidelite'] == 100) {
             $prixFinal = $dataTarif['tarification'] * 0.75;
         }
