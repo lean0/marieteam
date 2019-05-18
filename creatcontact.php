@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <?php
 require("global.php");
 ?>
-<html lang="zxx">
+<html lang="fr">
 <head>
     <title>Voyage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
