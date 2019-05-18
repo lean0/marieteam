@@ -113,7 +113,7 @@ require("global.php");
                         $data = $res->fetch();
                         $dataLi = $resTrav->fetch();
                         ?>
-                        <div class="col-md-12 rounded border ligne" id="tid<?=?>">
+                        <div class="col-md-12 rounded border ligne" id="tid<?=""?>">
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="row">

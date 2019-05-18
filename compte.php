@@ -4,6 +4,59 @@ if (isset($_SESSION['login'])){
     ?>
     <!doctype html>
     <html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function()
+        {
+            $('#bic').on('input', function()
+            {
+                var bic=$(this);
+
+                if (bic.val() != "")
+                {
+                    var re = /^[a-zA-Z]{4}[a-zA-Z0-9]{2}[a-zA-Z]{2,5}$/;
+                    var is_bic = re.test(bic.val());
+
+                    if(is_bic)
+                    {
+                        bic.removeClass("invalid").addClass("valid");
+                    }
+                    else
+                    {
+                        bic.removeClass("valid").addClass("invalid");
+                    }
+                }
+                else
+                {
+                    bic.removeClass("valid").removeClass("invalid");
+                }
+            });
+        });
+    </script>
+    <style>
+        .valid
+        {
+            -webkit-box-shadow: 0px 0px 3.5px 2px rgba(60,118,61,1);
+            -moz-box-shadow: 0px 0px 3.5px 2px rgba(60,118,61,1);
+            box-shadow: 0px 0px 3.5px 2px rgba(60,118,61,1);
+            border: none;
+        }
+
+        .invalid
+        {
+            -webkit-box-shadow: 0px 0px 3.5px 2px rgba(169,68,66,1);
+            -moz-box-shadow: 0px 0px 3.5px 2px rgba(169,68,66,1);
+            box-shadow: 0px 0px 3.5px 2px rgba(169,68,66,1);
+            border: none;
+
+        }
+    </style>
     <?php
     require("tpl/navbarC.php");
     require("tpl/headerC.php");
@@ -14,6 +67,7 @@ if (isset($_SESSION['login'])){
             border-collapse: collapse;
         }
     </style>
+
     <body>
     <div class="main-panel">
         <?php
@@ -24,7 +78,7 @@ if (isset($_SESSION['login'])){
         $idClient = $_GET['key'];
 
         //Récup les données du client
-        $req = $db->connection()->prepare('SELECT idClient, nom, prenom, mail, password, dateInscription, fidelite FROM client WHERE idClient = ' . $idClient);
+        $req = $db->connection()->prepare('SELECT idClient, idBic, nom, prenom, mail, password, dateInscription, fidelite FROM client WHERE idClient = ' . $idClient);
         $req->execute();
         $data = $req->fetch();
 
@@ -45,7 +99,7 @@ if (isset($_SESSION['login'])){
                                 <h4 class="title">Votre profile</h4>
                             </div>
                             <div class="content">
-                                <form>
+                                <div>
                                     <p>Vos informations</p>
                                     <div class="row">
                                         <div class="col-md-3">
@@ -63,10 +117,50 @@ if (isset($_SESSION['login'])){
                                     </div>
                                     <!-- Nouvelle ligne -->
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Email</label>
                                                 <p><?=$data['mail']?></p>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="form-group">
+                                                <label>BIC</label>
+                                                <br>
+                                                <?php
+                                                    if(isset($data["idBic"]) && $data["idBic"] != NULL)
+                                                    {
+                                                        echo $data["idBic"];
+                                                    }
+                                                    else
+                                                    {
+                                                        ?>
+                                                     <form action="newbic.php" method="post" style="display: flex; flex-direction: column; width: auto;">
+
+                                                        <select id="inputState" name="mybic" onchange="document.getElementById('selectedEnd').value=this.options[this.selectedIndex].text">
+                                                            <?php
+                                                            $req = $db->connection()->prepare('SELECT * FROM bic');
+                                                            $req->execute();
+                                                            $rows = $req->rowCount();
+                                                            for ($i = 1; $i <= $rows; $i++) {
+                                                                $data = $req->fetch();
+                                                                ?>
+                                                                <option value="<?= $data['id'] ?>"><?= utf8_encode($data['lib']) ?></option>
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                            <input type="hidden" name="selectedEnd" id="selectedEnd" value="" />
+                                                        </select>
+                                                        <br><br>
+                                                        Si vous ne trouvez pas le votre, veuillez remplir ci dessous et confirmer
+                                                        <br><br>
+                                                            <input type="text" name="bic" id="bic" placeholder="XXXX XX XX">
+                                                            <input type="submit" value="saisir" name="new-bic">
+                                                     </form>
+                                                        <?php
+                                                    }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -91,7 +185,7 @@ if (isset($_SESSION['login'])){
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
 
@@ -207,6 +301,8 @@ if (isset($_SESSION['login'])){
             </div>
         </footer>
     </body>
+
+
     <script src="Dashboard/assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
     <script src="Dashboard/assets/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="Dashboard/assets/js/chartist.min.js"></script>
